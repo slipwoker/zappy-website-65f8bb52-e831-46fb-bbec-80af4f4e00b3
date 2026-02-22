@@ -140,7 +140,7 @@
 --primary: #664200;
   --secondary: #101010;
   --accent: #FFFFFF;
-  --bg-light: #664200;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -151,7 +151,7 @@
   --gradient-primary: linear-gradient(180deg, #3B1A49 0%, #2B1A2F 100%);
   --gradient-gold-shine: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.55) 28%, rgba(255,255,255,0.00) 60%);
   --gradient-secondary: linear-gradient(180deg, #0C7C79 0%, #085B59 100%);
-  --gradient-gold-accent: linear-gradient(180deg, #101010 0%, #101010 55%, #A97935 100%);
+  --gradient-gold-accent: linear-gradient(180deg, #101010 0%, #101010 55%, #101010 100%);
   --gradient-dark-section: linear-gradient(135deg, #2B1A2F 0%, #3B1A49 55%, #2B1A2F 100%);
   --gradient-overlay-dark: linear-gradient(90deg, rgba(43,26,47,0.78) 0%, rgba(43,26,47,0.20) 55%, rgba(43,26,47,0.00) 78%);
   --gradient-light-section: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
@@ -178,7 +178,7 @@
   --primary-color: #664200;
   --secondary-color: #101010;
   --accent-color: #FFFFFF;
-  --background-color: #664200;
+  --background-color: #4D0080;
   --surface-color: #F9FAFB;
   --text-color: #4A4A4A;
   --text-secondary-color: #8C8C8C;
@@ -597,7 +597,7 @@ ol {
   --primary: #664200;
   --secondary: #101010;
   --accent: #FFFFFF;
-  --bg-light: #664200;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -814,7 +814,7 @@ ol {
   --primary: #664200;
   --secondary: #101010;
   --accent: #FFFFFF;
-  --bg-light: #664200;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -1649,7 +1649,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   --primary: #664200;
   --secondary: #101010;
   --accent: #FFFFFF;
-  --bg-light: #664200;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -2019,7 +2019,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 /* Primary Button */
 .home-hero-section .home-hero-btn-primary {
-  background: linear-gradient(180deg, #101010 0%, #101010 60%, #A97935 100%);
+  background: linear-gradient(180deg, #101010 0%, #101010 60%, #101010 100%);
   color: #2B1A2F;
   border: none;
   box-shadow: 0 10px 20px rgba(43,26,47,0.3), 0 4px 8px rgba(0,0,0,0.15);
@@ -2601,7 +2601,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 .home-cta-section .btn-primary {
   display: inline-block;
-  background: linear-gradient(180deg, #101010 0%, #101010 60%, #A97935 100%);
+  background: linear-gradient(180deg, #101010 0%, #101010 60%, #101010 100%);
   color: #2B1A2F;
   padding: 14px 32px;
   border-radius: 999px;
@@ -3874,7 +3874,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-form-section .btn-submit {
-  background: linear-gradient(180deg, #101010 0%, #101010 60%, #A97935 100%);
+  background: linear-gradient(180deg, #101010 0%, #101010 60%, #101010 100%);
   color: #2B1A2F;
   padding: 14px 32px;
   border-radius: 999px;
