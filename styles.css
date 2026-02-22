@@ -137,10 +137,10 @@
   src: url('assets/fonts/Rubik-Bold.woff2') format('woff2');
 }
 :root {
-  --primary: #5A2A55;
-  --secondary: #3FA7A3;
-  --accent: #D6B25E;
-  --bg-light: #F6F1EB;
+--primary: #664200;
+  --secondary: #101010;
+  --accent: #FFFFFF;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -151,7 +151,7 @@
   --gradient-primary: linear-gradient(180deg, #3B1A49 0%, #2B1A2F 100%);
   --gradient-gold-shine: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.55) 28%, rgba(255,255,255,0.00) 60%);
   --gradient-secondary: linear-gradient(180deg, #0C7C79 0%, #085B59 100%);
-  --gradient-gold-accent: linear-gradient(180deg, #E3C47E 0%, #C89A57 55%, #A97935 100%);
+  --gradient-gold-accent: linear-gradient(180deg, #E3C47E 0%, #101010 55%, #A97935 100%);
   --gradient-dark-section: linear-gradient(135deg, #2B1A2F 0%, #3B1A49 55%, #2B1A2F 100%);
   --gradient-overlay-dark: linear-gradient(90deg, rgba(43,26,47,0.78) 0%, rgba(43,26,47,0.20) 55%, rgba(43,26,47,0.00) 78%);
   --gradient-light-section: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
@@ -175,6 +175,13 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --primary-color: #664200;
+  --secondary-color: #101010;
+  --accent-color: #FFFFFF;
+  --background-color: #4D0080;
+  --surface-color: #F9FAFB;
+  --text-color: #4A4A4A;
+  --text-secondary-color: #8C8C8C;
 }
 
 * {
@@ -587,10 +594,10 @@ ol {
 
 /* Navbar Styles */
 :root {
-  --primary: #5A2A55;
-  --secondary: #3FA7A3;
-  --accent: #D6B25E;
-  --bg-light: #F6F1EB;
+  --primary: #664200;
+  --secondary: #101010;
+  --accent: #FFFFFF;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -804,10 +811,10 @@ ol {
   }
 }
 :root {
-  --primary: #5A2A55;
-  --secondary: #3FA7A3;
-  --accent: #D6B25E;
-  --bg-light: #F6F1EB;
+  --primary: #664200;
+  --secondary: #101010;
+  --accent: #FFFFFF;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -1639,10 +1646,10 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 /* Footer Styles */
 :root {
-  --primary: #5A2A55;
-  --secondary: #3FA7A3;
-  --accent: #D6B25E;
-  --bg-light: #F6F1EB;
+  --primary: #664200;
+  --secondary: #101010;
+  --accent: #FFFFFF;
+  --bg-light: #4D0080;
   --bg-dark: #23121F;
   --text-dark: #1B1A18;
   --text-light: #F6F1EB;
@@ -2012,7 +2019,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 /* Primary Button */
 .home-hero-section .home-hero-btn-primary {
-  background: linear-gradient(180deg, #E3C47E 0%, #C89A57 60%, #A97935 100%);
+  background: linear-gradient(180deg, #E3C47E 0%, #101010 60%, #A97935 100%);
   color: #2B1A2F;
   border: none;
   box-shadow: 0 10px 20px rgba(43,26,47,0.3), 0 4px 8px rgba(0,0,0,0.15);
@@ -2594,7 +2601,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 .home-cta-section .btn-primary {
   display: inline-block;
-  background: linear-gradient(180deg, #E3C47E 0%, #C89A57 60%, #A97935 100%);
+  background: linear-gradient(180deg, #E3C47E 0%, #101010 60%, #A97935 100%);
   color: #2B1A2F;
   padding: 14px 32px;
   border-radius: 999px;
@@ -3848,7 +3855,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
   color: #2B1A2F;
-  background: #FFFFFF;
+  background: #4D0080;
   border: 1px solid rgba(46,23,54,0.20);
   border-radius: 0;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -3857,7 +3864,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 .contact-form-section .form-group input:focus,
 .contact-form-section .form-group textarea:focus {
   outline: none;
-  border-color: #C89A57;
+  border-color: #101010;
   box-shadow: 0 0 0 3px rgba(200,154,87,0.12);
 }
 
@@ -3867,7 +3874,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-form-section .btn-submit {
-  background: linear-gradient(180deg, #E3C47E 0%, #C89A57 60%, #A97935 100%);
+  background: linear-gradient(180deg, #E3C47E 0%, #101010 60%, #A97935 100%);
   color: #2B1A2F;
   padding: 14px 32px;
   border-radius: 999px;
@@ -4434,7 +4441,7 @@ img, picture, figure {
 
 /* Basic Accessibility Enhancements */
 :root {
-  --accessibility-focus: #5A2A55;
+  --accessibility-focus: #664200;
 }
 
 /* Skip link styles */
@@ -4563,9 +4570,9 @@ img, picture, figure {
 #mic-access-tool-general-button svg line,
 #mic-access-tool-general-button svg polyline,
 #mic-access-tool-general-button svg g {
-  fill: #5A2A55 !important;
-  stroke: #5A2A55 !important;
-  color: #5A2A55 !important;
+  fill: #664200 !important;
+  stroke: #664200 !important;
+  color: #664200 !important;
 }
 
 /* Target images if the icon is an img instead of SVG */
@@ -4586,7 +4593,7 @@ img, picture, figure {
 .mic-access-tool-box-header,
 div[id*="mic-access-tool-box"] header,
 div[id*="mic-access-tool-box"] .header {
-  background: #5A2A55 !important;
+  background: #664200 !important;
   color: white !important;
 }
 
@@ -4613,8 +4620,8 @@ div[id*="mic-access-tool-box"] .header * {
 #mic-access-tool-box button:hover,
 div[id*="mic-access-tool-box"] button.active,
 div[id*="mic-access-tool-box"] button:hover {
-  border-color: #5A2A55 !important;
-  color: #5A2A55 !important;
+  border-color: #664200 !important;
+  color: #664200 !important;
   background-color: rgba(90, 42, 85, 0.1) !important;
 }
 
@@ -4623,7 +4630,7 @@ div[id*="mic-access-tool-box"] button:hover {
 #mic-access-tool-box button[title*="Reset"],
 #mic-access-tool-box [class*="reset"],
 div[id*="mic-access-tool-box"] button[class*="reset"] {
-  background: #5A2A55 !important;
+  background: #664200 !important;
   color: white !important;
 }
 
