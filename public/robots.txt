@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pickwig.zappy5.app/sitemap.xml
+Sitemap: https://pickwig.com/sitemap.xml

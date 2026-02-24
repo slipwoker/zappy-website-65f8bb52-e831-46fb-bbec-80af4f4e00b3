@@ -1,57 +1,47 @@
-# פיקוויג PICKWIG — Generative Engine Optimization Map
-
-> A יופי ובריאות business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
 ### בית
-https://pickwig.zappy5.app
+https://pickwig.com
 פאות טבעיות ונוחות במיוחד לחולות אונקולוגיה, נשים דתיות ואלופציה. פיקוויג מציעה פתרונות שיער יוקרתיים בעבודת יד למראה שופע ובריא. התייעצות ללא התחייבות!
 
 ### אודות
-https://pickwig.zappy5.app/about
+https://pickwig.com/about
 למעלה משני עשורים של ניסיון בייצור פאות יוקרתיות וטופרים בעבודת יד. צוות פיקוויג מתמחה בפתרונות אישיים לחולות אונקולוגיה, נשים דתיות ואלופציה. גלי את המחויבות שלנו לאיכות ונוחות.
 
 ### חומרים
-https://pickwig.zappy5.app/materials
+https://pickwig.com/materials
 שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.
 
 ### צור קשר
-https://pickwig.zappy5.app/contact
+https://pickwig.com/contact
 צרי קשר לייעוץ מקצועי והתאמה אישית של פאות ומערכות שיער. הצוות שלנו זמין לענות על כל שאלה ולתת פתרון מושלם למראה השיער שחלמת עליו. התייעצות ראשונה ללא עלות!
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://pickwig.zappy5.app/privacy
+https://pickwig.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://pickwig.zappy5.app/terms
+https://pickwig.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://pickwig.zappy5.app/accessibility
+https://pickwig.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About פיקוויג PICKWIG
-פיקוויג PICKWIG is a business in the יופי ובריאות industry.
-
-## Target Audience
-חולות אונקולוגיה, נשים עם אלופציה ודלילות שיער, נשים דתיות, נשים המעוניינות במראה של שיער שופע ובריא
-
-## Industry
-יופי ובריאות
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://pickwig.zappy5.app/sitemap.xml
-- **Robots.txt**: https://pickwig.zappy5.app/robots.txt
+- **Sitemap**: https://pickwig.com/sitemap.xml
+- **Robots.txt**: https://pickwig.com/robots.txt
