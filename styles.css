@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* Self-hosted fonts (Inter + Rubik for multi-language support) */
 
@@ -183,7 +183,7 @@
   --text-color: #4A4A4A;
   --text-secondary-color: #8C8C8C;
 
-  --heading-font: 'Roboto', sans-serif;}
+  --heading-font: 'Poppins', sans-serif;}
 
 * {
   margin: 0;
@@ -216,7 +216,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
   letter-spacing: -0.02em;
 
@@ -2314,7 +2314,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-intro h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -2350,7 +2350,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-card h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
@@ -2585,7 +2585,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-cta-section h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.3;
@@ -2703,7 +2703,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-spotlight-section h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -2804,7 +2804,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-intro h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -2875,7 +2875,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-step h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.18;
@@ -2992,7 +2992,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-team-header h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;
@@ -3068,7 +3068,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-team-info h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.4;
@@ -3187,7 +3187,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-cover-section h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3275,7 +3275,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .materials-intro h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3345,7 +3345,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .material-content h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
@@ -3432,7 +3432,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .materials-comparison-header h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3470,7 +3470,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .comparison-label h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 34px;
   font-weight: 700;
   line-height: 1.18;
@@ -3493,7 +3493,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .comparison-item h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
@@ -3588,7 +3588,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-portfolio-header h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3714,7 +3714,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-intro-section .contact-intro-content h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3812,7 +3812,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-form-section .contact-form-content h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3993,7 +3993,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-details-section h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -4883,6 +4883,16 @@ body.accessibility-widget-visible ._access-menu {
   [data-zappy-auto-grid="true"] {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
+  }
+  
+  /* Grid children: override min-width:auto so children with fixed-width
+     content (e.g. zoom wrappers with width:448px!important) can shrink
+     to fit the 1fr column instead of overflowing the grid container. */
+  .zappy-preserve-css-grid[data-zappy-auto-grid="true"] > *,
+  [data-zappy-auto-grid="true"] > *,
+  [data-zappy-explicit-columns="true"] > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
   }
   
   /* Featured/product grids - force single column on mobile */
