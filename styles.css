@@ -219,18 +219,19 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', sans-serif;
-  color: var(--text-dark);
+  color: #FF99CC;
   letter-spacing: -0.02em;
 
-  font-weight: 600;}
+  font-weight: 700;}
 
 h1 {
-  font-size: 59px;
-  font-weight: 400;
+  font-size: 66px;
+  font-weight: 700;
   line-height: 1.2 !important;
   margin-bottom: 1rem !important;
   margin-top: 0.5rem !important;
-}
+
+  color: #FF99CC;}
 
 h2 {
   font-size: 32px !important;
@@ -508,9 +509,10 @@ ol {
   }
 
   h1 {
-    font-size: 59px;
+    font-size: 66px;
   
-  font-weight: 400;}
+  font-weight: 700;
+  color: #FF99CC;}
 
   h2 {
     font-size: 28px !important;
@@ -547,11 +549,12 @@ ol {
   }
 
   h1 {
-    font-size: 59px;
+    font-size: 66px;
     margin-bottom: 1rem !important;
     margin-top: 0.5rem !important;
   
-  font-weight: 400;}
+  font-weight: 700;
+  color: #FF99CC;}
 
   h2 {
     font-size: 22px !important;
@@ -4221,9 +4224,10 @@ img, picture, figure {
 
   /* 4. TYPOGRAPHY SCALING - Only headings, NOT spans (breaks icons) */
   h1 {
-    font-size: 59px;
+    font-size: 66px;
   
-  font-weight: 400;}
+  font-weight: 700;
+  color: #FF99CC;}
   
   h2 {
     font-size: clamp(24px, 6vw, 36px) !important;
@@ -4350,11 +4354,11 @@ img, picture, figure {
 }
 
 .legal-page-content h1 {
-  font-size: 59px;
+  font-size: 66px;
   margin-bottom: 1rem;
-  color: inherit;
+  color: #FF99CC;
 
-  font-weight: 400;}
+  font-weight: 700;}
 
 .legal-page-content .last-updated {
   color: #666;
