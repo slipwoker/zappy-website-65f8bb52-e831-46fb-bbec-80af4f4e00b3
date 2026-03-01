@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* Self-hosted fonts (Inter + Rubik for multi-language support) */
 
@@ -183,9 +183,9 @@
   --text-color: #4A4A4A;
   --text-secondary-color: #8C8C8C;
 
-  --heading-font: 'Poppins', sans-serif;
-  --body-font: 'Heebo', sans-serif;
-  --font-family: 'Heebo', sans-serif;}
+  --heading-font: 'Open Sans', sans-serif;
+  --body-font: 'Montserrat', sans-serif;
+  --font-family: 'Montserrat', sans-serif;}
 
 * {
   margin: 0;
@@ -208,7 +208,7 @@ html {
 }
 
 body {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px !important;
   line-height: 1.7 !important;
   color: var(--text-dark);
@@ -218,7 +218,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: var(--text-dark);
   letter-spacing: -0.02em;
 
@@ -339,7 +339,7 @@ ol {
   align-items: center;
   justify-content: center;
   padding: 0.875rem 2rem;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -1669,7 +1669,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   color: var(--text-light);
   padding: 3rem 1.5rem 1.5rem;
   direction: rtl;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-container {
@@ -1971,7 +1971,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 /* Headline */
 .home-hero-section .home-hero-headline {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.12;
@@ -1983,7 +1983,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 /* Subtitle */
 .home-hero-section .home-hero-subtitle {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.6;
@@ -2009,7 +2009,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   justify-content: center;
   padding: 14px 32px;
   border-radius: 999px;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -2058,7 +2058,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-hero-section .home-hero-note {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -2183,7 +2183,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-gallery-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.3;
@@ -2316,7 +2316,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-intro h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -2325,7 +2325,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-intro p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -2352,7 +2352,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-card h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
@@ -2362,7 +2362,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-card p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -2395,7 +2395,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-assurance p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -2506,7 +2506,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-testimonial-quote {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 1.8;
   color: var(--text-light);
@@ -2516,7 +2516,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-testimonial-attribution {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -2587,7 +2587,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-cta-section h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.3;
@@ -2705,7 +2705,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-spotlight-section h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -2715,7 +2715,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-spotlight-section p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -2806,7 +2806,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-intro h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -2815,7 +2815,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-intro p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -2877,7 +2877,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-step h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.18;
@@ -2886,7 +2886,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-step p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -2994,7 +2994,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-team-header h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;
@@ -3070,7 +3070,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-team-info h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.4;
@@ -3189,7 +3189,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-cover-section h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -3200,7 +3200,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-cover-section p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.7;
@@ -3277,7 +3277,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .materials-intro h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3287,7 +3287,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .materials-intro p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -3347,7 +3347,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .material-content h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
@@ -3357,7 +3357,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .material-content p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -3434,7 +3434,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .materials-comparison-header h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3443,7 +3443,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .materials-comparison-header p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 1.8;
   color: rgba(43,26,47,0.78);
@@ -3472,7 +3472,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .comparison-label h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 34px;
   font-weight: 700;
   line-height: 1.18;
@@ -3495,7 +3495,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .comparison-item h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
@@ -3504,7 +3504,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .comparison-item p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 1.8;
   color: rgba(43,26,47,0.78);
@@ -3590,7 +3590,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-portfolio-header h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3599,7 +3599,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-portfolio-header p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -3716,7 +3716,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-intro-section .contact-intro-content h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3726,7 +3726,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-intro-section .contact-intro-content p {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -3814,7 +3814,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-form-section .contact-form-content h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -3824,7 +3824,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-form-section .contact-form-intro {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -3846,7 +3846,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 
 .contact-form-section .form-group label {
   display: block;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #3D0066;
@@ -3858,7 +3858,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 .contact-form-section .form-group textarea {
   width: 100%;
   padding: 14px 16px;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #2B1A2F;
   background: #664200;
@@ -3885,7 +3885,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   padding: 14px 32px;
   border-radius: 999px;
   border: none;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.02em;
@@ -3905,7 +3905,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-form-section .privacy-note {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
@@ -3995,7 +3995,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-details-section h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
@@ -4005,7 +4005,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-details-section .contact-info-item {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -4096,7 +4096,7 @@ img, picture, figure {
 
 /* Global font override - exclude icon fonts and special elements */
 *:not(.fas):not(.far):not(.fab):not(.fa):not([class*="fa-"]):not(.iconify):not([class*="icon"]):not(code):not(pre):not(i[class*="fa"]) {
-  font-family: 'Heebo', sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 
