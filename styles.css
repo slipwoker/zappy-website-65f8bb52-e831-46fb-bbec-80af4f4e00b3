@@ -5054,6 +5054,229 @@ nav.navbar .sub-menu li a:hover { color: #664200 !important; background-color: r
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   V2 REGENERATED SECTION CSS (בית-gallery)
+   Added: 2026-03-01T22:21:58.491Z
+   ═══════════════════════════════════════════════════════════ */
+.index-gallery-section {
+  position: relative;
+  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
+  color: var(--text-dark);
+  padding: 120px 16px 80px;
+  overflow: visible;
+  direction: rtl;
+}
+
+.index-gallery-section .gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.index-gallery-section .gallery-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.index-gallery-section .gallery-header h2 {
+  font-family: 'Canela', 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-dark);
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.index-gallery-section .header-description {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.index-gallery-section .header-description p {
+  color: var(--text-dark);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.index-gallery-section .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 60px;
+  direction: rtl;
+}
+
+.index-gallery-section .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgba(251,245,238,0.92);
+  box-shadow: 0 10px 18px rgba(43,26,47,0.22);
+  border: 1px solid rgba(46,23,54,0.14);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.index-gallery-section .gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(43,26,47,0.28);
+}
+
+.index-gallery-section .gallery-item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.index-gallery-section .gallery-item-tall {
+  grid-row: span 2;
+}
+
+.index-gallery-section .gallery-item-wide {
+  grid-column: span 2;
+}
+
+.index-gallery-section .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+}
+
+.index-gallery-section .gallery-item-large .image-wrapper {
+  min-height: 576px;
+}
+
+.index-gallery-section .gallery-item-tall .image-wrapper {
+  min-height: 576px;
+}
+
+.index-gallery-section .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.index-gallery-section .image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(90,42,85,0) 0%, rgba(90,42,85,0.15) 100%);
+  opacity: 0;
+  transition: opacity 240ms ease;
+  pointer-events: none;
+}
+
+.index-gallery-section .gallery-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.index-gallery-section .gallery-philosophy {
+  background: rgba(251,245,238,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0px;
+  border: 1px solid rgba(255,255,255,0.55);
+  box-shadow: 0 16px 34px rgba(43,26,47,0.12);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.index-gallery-section .philosophy-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.index-gallery-section .philosophy-text {
+  margin-bottom: 32px;
+}
+
+.index-gallery-section .philosophy-text p {
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.index-gallery-section .philosophy-audience {
+  padding-top: 32px;
+  border-top: 1px solid rgba(46,23,54,0.10);
+}
+
+.index-gallery-section .philosophy-audience p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.index-gallery-section .gallery-decorative-element {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.index-gallery-section .gallery-decorative-element svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .index-gallery-section {
+    padding: 100px 16px 60px;
+  }
+
+  .index-gallery-section .gallery-header {
+    margin-bottom: 40px;
+  }
+
+  .index-gallery-section .gallery-header h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .index-gallery-section .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .index-gallery-section .gallery-item-large,
+  .index-gallery-section .gallery-item-tall,
+  .index-gallery-section .gallery-item-wide {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  .index-gallery-section .image-wrapper,
+  .index-gallery-section .gallery-item-large .image-wrapper,
+  .index-gallery-section .gallery-item-tall .image-wrapper {
+    min-height: 240px;
+  }
+
+  .index-gallery-section .gallery-philosophy {
+    padding: 32px 24px;
+  }
+
+  .index-gallery-section .philosophy-text {
+    margin-bottom: 24px;
+  }
+
+  .index-gallery-section .philosophy-audience {
+    padding-top: 24px;
+  }
+
+  .index-gallery-section .gallery-decorative-element {
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    left: -10%;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */

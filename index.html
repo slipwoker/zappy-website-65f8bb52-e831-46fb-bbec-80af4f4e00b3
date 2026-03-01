@@ -455,6 +455,228 @@
   }
 }
 </style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-gallery-section {
+  position: relative;
+  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
+  color: var(--text-dark);
+  padding: 120px 16px 80px;
+  overflow: visible;
+  direction: rtl;
+}
+
+.index-gallery-section .gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.index-gallery-section .gallery-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.index-gallery-section .gallery-header h2 {
+  font-family: 'Canela', 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-dark);
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.index-gallery-section .header-description {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.index-gallery-section .header-description p {
+  color: var(--text-dark);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.index-gallery-section .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 60px;
+  direction: rtl;
+}
+
+.index-gallery-section .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgba(251,245,238,0.92);
+  box-shadow: 0 10px 18px rgba(43,26,47,0.22);
+  border: 1px solid rgba(46,23,54,0.14);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.index-gallery-section .gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(43,26,47,0.28);
+}
+
+.index-gallery-section .gallery-item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.index-gallery-section .gallery-item-tall {
+  grid-row: span 2;
+}
+
+.index-gallery-section .gallery-item-wide {
+  grid-column: span 2;
+}
+
+.index-gallery-section .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+}
+
+.index-gallery-section .gallery-item-large .image-wrapper {
+  min-height: 576px;
+}
+
+.index-gallery-section .gallery-item-tall .image-wrapper {
+  min-height: 576px;
+}
+
+.index-gallery-section .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.index-gallery-section .image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(90,42,85,0) 0%, rgba(90,42,85,0.15) 100%);
+  opacity: 0;
+  transition: opacity 240ms ease;
+  pointer-events: none;
+}
+
+.index-gallery-section .gallery-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.index-gallery-section .gallery-philosophy {
+  background: rgba(251,245,238,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0px;
+  border: 1px solid rgba(255,255,255,0.55);
+  box-shadow: 0 16px 34px rgba(43,26,47,0.12);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.index-gallery-section .philosophy-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.index-gallery-section .philosophy-text {
+  margin-bottom: 32px;
+}
+
+.index-gallery-section .philosophy-text p {
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.index-gallery-section .philosophy-audience {
+  padding-top: 32px;
+  border-top: 1px solid rgba(46,23,54,0.10);
+}
+
+.index-gallery-section .philosophy-audience p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.index-gallery-section .gallery-decorative-element {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.index-gallery-section .gallery-decorative-element svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .index-gallery-section {
+    padding: 100px 16px 60px;
+  }
+
+  .index-gallery-section .gallery-header {
+    margin-bottom: 40px;
+  }
+
+  .index-gallery-section .gallery-header h2 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .index-gallery-section .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .index-gallery-section .gallery-item-large,
+  .index-gallery-section .gallery-item-tall,
+  .index-gallery-section .gallery-item-wide {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  .index-gallery-section .image-wrapper,
+  .index-gallery-section .gallery-item-large .image-wrapper,
+  .index-gallery-section .gallery-item-tall .image-wrapper {
+    min-height: 240px;
+  }
+
+  .index-gallery-section .gallery-philosophy {
+    padding: 32px 24px;
+  }
+
+  .index-gallery-section .philosophy-text {
+    margin-bottom: 24px;
+  }
+
+  .index-gallery-section .philosophy-audience {
+    padding-top: 24px;
+  }
+
+  .index-gallery-section .gallery-decorative-element {
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    left: -10%;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -593,97 +815,80 @@
 
 
 
-<section class="index-gallery-section" data-layout-spec="בית-gallery" data-zappy-section="true" id="zappy-section-1" style="opacity: 1;">
-  <div class="index-gallery-section__container">
-    <div class="index-gallery-section__header">
-      <h2 class="index-gallery-section__title">המותג ששינה את עולם הפאות</h2>
+<section class="index-gallery-section" data-layout-spec="בית-gallery" data-zappy-section="true">
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <h2>המותג ששינה את עולם הפאות</h2>
+      <div class="header-description">
+        <p>כל פאה בפיקוויג נבחרת בקפידה מתוך שיער פרימיום ברזילאי ורוסי, עם גימור משיי ותחושה טבעית שמשדרת איכות ונוחות יוצאות דופן. הסיבים עוברים בחינה מדוקדקת למראה ומגע שופעים.</p>
+      </div>
     </div>
 
-    <div class="index-gallery-section__content">
-      <div class="index-gallery-section__text-panel">
-        <div class="index-gallery-section__text-content">
-          <p>כל פאה בפיקוויג נבחרת בקפידה מתוך שיער פרימיום ברזילאי ורוסי, עם גימור משיי ותחושה טבעית שמשדרת איכות ונוחות יוצאות דופן. הסיבים עוברים בחינה מדוקדקת למראה ומגע שופעים.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item-large">
+        <div class="image-wrapper">
+          <img alt="סיבי שיער פרימיום במבט מקרוב" src="/assets/site-home-service-image-1-1771797340088-i4njlq.webp?v=1771797341321" data-placeholder="home-gallery-image-1" data-context="Extreme macro close-up of premium wig fiber strands for a professional beauty and health business specializing in wigs for oncology patients and women with hair loss - show individual hair strands with visible cuticle alignment and natural sheen, soft focus background, editorial magazine quality, warm neutral tones" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item gallery-item-tall">
+        <div class="image-wrapper">
+          <img alt="תפירת ווופט מדויקת" src="/assets/site-home-gallery-image-2.webp" data-placeholder="home-gallery-image-2" data-context="Detailed macro shot of wig weft stitching and construction for a professional beauty and health business - show precise hand-stitched weft with visible thread work and fiber attachment, editorial quality, soft lighting, neutral background" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="image-wrapper">
+          <img alt="יישור קוטיקולה טבעי" src="/assets/site-home-service-image-3-1771797314287-866uzt.webp?v=1771797315344" data-placeholder="home-gallery-image-3" data-context="Close-up of wig hair cuticle alignment showing natural flow and direction for a professional beauty and health business - macro photography of aligned hair fibers with visible cuticle scales, soft sheen, editorial magazine style, warm tones" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="image-wrapper">
+          <img alt="ברק טבעי עדין" src="/assets/site-home-service-image-4-1771797411873-d1tzd1.webp?v=1771797414356" data-placeholder="home-gallery-image-4" data-context="Macro detail of premium wig hair showing subtle natural sheen and light reflection for a professional beauty and health business - individual strands catching light, silky texture visible, editorial quality, soft focus, neutral palette" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item gallery-item-wide">
+        <div class="image-wrapper">
+          <img alt="פרט הידוק מקצועי" src="/assets/site-home-gallery-image-5.webp" data-placeholder="home-gallery-image-5" data-context="Close-up of professional wig fastening detail and cap construction for a beauty and health business - show clips, combs, or elastic bands with precise attachment, editorial quality, soft lighting, neutral tones" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="image-wrapper">
+          <img alt="טקסטורה משיית במיקוד רך" src="/assets/site-home-gallery-image-6.webp" data-placeholder="home-gallery-image-6" data-context="Soft-focus artistic macro of wig hair texture showing silky premium quality for a professional beauty and health business - dreamy bokeh background, individual strands visible but blurred, warm editorial lighting, luxurious feel" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+          <div class="image-overlay"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-philosophy">
+      <div class="philosophy-content">
+        <div class="philosophy-text">
           <p>הקונספט של פיקוויג הוא חופש יצירה מוחלט של הפאה והטופר האולטימטיביים. כל אורך שיער, גוון ומלאות הן לבחירתך מבחינת איכות השיער, הגוון, האורך והמלאות. האירופא הוא האיכותי ביותר ולך יש את חופש היצירה המוחלט.והמותג שלנו מנגיש יוקרה לכולן!</p>
+        </div>
+        <div class="philosophy-audience">
           <p>נשים עם דלילות שיער, אלופציה, חולות אונקולוגיות, נשים דתיות, ונשים המעוניינות במראה המעניק תחושת שלמות</p>
         </div>
-        <div class="index-gallery-section__decorative-accent">
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" data-no-icon-edit="true" aria-hidden="true">
-            <circle cx="40" cy="40" r="38" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.3"></circle>
-            <circle cx="40" cy="40" r="28" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.5"></circle>
-            <circle cx="40" cy="40" r="18" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.7"></circle>
-          </svg>
-        </div>
-      </div>
-
-      <div class="index-gallery-section__gallery-grid">
-        <div class="index-gallery-section__gallery-item index-gallery-section__gallery-item--large">
-          <div class="index-gallery-section__image-wrapper">
-            <img alt="סיבי שיער פרימיום במבט מקרוב" src="/assets/site-home-service-image-1-1771797340088-i4njlq.webp?v=1771797341321" data-placeholder="home-gallery-image-1" data-context="Extreme macro close-up of premium wig fiber strands for a professional beauty and health business specializing in wigs for oncology patients and women with hair loss - show individual hair strands with visible cuticle alignment and natural sheen, soft focus background, editorial magazine quality, warm neutral tones" style="width: 100%; height: 100%; object-fit: cover; object-position: center" data-zappy-editable-image="true" data-element-type="image" data-element-id="img-1772403629988-q4obqpshx" class="zappy-editable-image" data-resize-handler-attached="true">
-            <div class="index-gallery-section__image-overlay"></div>
-          </div>
-        </div>
-
-        <div class="index-gallery-section__gallery-item">
-          <div class="index-gallery-section__image-wrapper">
-            <img alt="תפירת ווופט מדויקת" src="/assets/site-home-gallery-image-2.webp" data-placeholder="home-gallery-image-2" data-context="Detailed macro shot of wig weft stitching and construction for a professional beauty and health business - show precise hand-stitched weft with visible thread work and fiber attachment, editorial quality, soft lighting, neutral background" style="width: 100%; height: 100%; object-fit: cover; object-position: center" data-zappy-editable-image="true" data-element-type="image" data-element-id="img-1772403629988-u3a868vba" class="zappy-editable-image" data-resize-handler-attached="true">
-            <div class="index-gallery-section__image-overlay"></div>
-          </div>
-        </div>
-
-        <div class="index-gallery-section__gallery-item">
-          <div class="index-gallery-section__image-wrapper">
-            <img alt="יישור קוטיקולה טבעי" src="/assets/site-home-service-image-3-1771797314287-866uzt.webp?v=1771797315344" data-placeholder="home-gallery-image-3" data-context="Close-up of wig hair cuticle alignment showing natural flow and direction for a professional beauty and health business - macro photography of aligned hair fibers with visible cuticle scales, soft sheen, editorial magazine style, warm tones" style="width: 100%; height: 100%; object-fit: cover; object-position: center" data-zappy-editable-image="true" data-element-type="image" data-element-id="img-1772403629988-bckp2l31z" class="zappy-editable-image" data-resize-handler-attached="true">
-            <div class="index-gallery-section__image-overlay"></div>
-          </div>
-        </div>
-
-        <div class="index-gallery-section__gallery-item index-gallery-section__gallery-item--wide">
-          <div class="index-gallery-section__image-wrapper">
-            <img alt="ברק טבעי עדין" src="/assets/site-home-service-image-4-1771797411873-d1tzd1.webp?v=1771797414356" data-placeholder="home-gallery-image-4" data-context="Macro detail of premium wig hair showing subtle natural sheen and light reflection for a professional beauty and health business - individual strands catching light, silky texture visible, editorial quality, soft focus, neutral palette" style="width: 100%; height: 100%; object-fit: cover; object-position: center" data-zappy-editable-image="true" data-element-type="image" data-element-id="img-1772403629988-u4b5oyrz5" class="zappy-editable-image" data-resize-handler-attached="true">
-            <div class="index-gallery-section__image-overlay"></div>
-          </div>
-        </div>
-
-        <div class="index-gallery-section__gallery-item">
-          <div class="index-gallery-section__image-wrapper">
-            <img alt="פרט הידוק מקצועי" src="/assets/site-home-gallery-image-5.webp" data-placeholder="home-gallery-image-5" data-context="Close-up of professional wig fastening detail and cap construction for a beauty and health business - show clips, combs, or elastic bands with precise attachment, editorial quality, soft lighting, neutral tones" style="width: 100%; height: 100%; object-fit: cover; object-position: center" data-zappy-editable-image="true" data-element-type="image" data-element-id="img-1772403629988-8xi3vbylq" class="zappy-editable-image" data-resize-handler-attached="true">
-            <div class="index-gallery-section__image-overlay"></div>
-          </div>
-        </div>
-
-        <div class="index-gallery-section__gallery-item">
-          <div class="index-gallery-section__image-wrapper">
-            <div data-zappy-zoom-wrapper="true" data-element-id="img-1772403629988-9294j0naz" data-element-type="image" data-zappy-zoom-wrapper-width="226px" data-zappy-zoom-wrapper-height="292px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 226px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 292px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="טקסטורה משיית במיקוד רך" src="/assets/site-home-gallery-image-6.webp" data-placeholder="home-gallery-image-6" data-context="Soft-focus artistic macro of wig hair texture showing silky premium quality for a professional beauty and health business - dreamy bokeh background, individual strands visible but blurred, warm editorial lighting, luxurious feel" style="width: 100% !important; height: 100% !important; object-fit: fill !important; object-position: 38% 57%; margin: 0px !important; position: absolute !important; left: 0% !important; top: 0% !important; max-width: none !important; max-height: none !important; display: block" data-zappy-editable-image="true" data-element-type="image" data-element-id="img-1772403629988-9294j0naz" class="zappy-editable-image" data-resize-handler-attached="true" data-zappy-zoom="0.5"></div>
-            <div class="index-gallery-section__image-overlay"></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
-  <div class="index-gallery-section__decorative-beam index-gallery-section__decorative-beam--top">
-    <svg width="100%" height="200" viewBox="0 0 1200 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" data-no-icon-edit="true" aria-hidden="true">
+  <div class="gallery-decorative-element">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-no-icon-edit="true">
       <defs>
-        <linearGradient id="beamGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.08"></stop>
-          <stop offset="50%" style="stop-color:var(--secondary);stop-opacity:0.04"></stop>
-          <stop offset="100%" style="stop-color:var(--accent);stop-opacity:0"></stop>
+        <linearGradient id="galleryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.15"></stop>
+          <stop offset="100%" style="stop-color:var(--secondary);stop-opacity:0.08"></stop>
         </linearGradient>
       </defs>
-      <path d="M0,0 Q300,100 600,80 T1200,40 L1200,0 Z" fill="url(#beamGradient1)"></path>
-    </svg>
-  </div>
-
-  <div class="index-gallery-section__decorative-beam index-gallery-section__decorative-beam--bottom">
-    <svg width="100%" height="180" viewBox="0 0 1200 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" data-no-icon-edit="true" aria-hidden="true">
-      <defs>
-        <linearGradient id="beamGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:var(--secondary);stop-opacity:0.06"></stop>
-          <stop offset="50%" style="stop-color:var(--accent);stop-opacity:0.03"></stop>
-          <stop offset="100%" style="stop-color:var(--secondary);stop-opacity:0"></stop>
-        </linearGradient>
-      </defs>
-      <path d="M0,180 Q300,80 600,100 T1200,140 L1200,180 Z" fill="url(#beamGradient2)"></path>
+      <circle cx="100" cy="100" r="80" fill="url(#galleryGrad)"></circle>
     </svg>
   </div>
 </section>
