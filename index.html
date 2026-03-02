@@ -552,7 +552,7 @@
   
   <!-- Content Overlay Group -->
   <div class="home-hero-content">
-    <p class="brand-tagline" data-zappy-editable-text="true" style=""><font color="#3d0066">PICKWIG</font></p><div class="home-hero-text-group">
+    <h1><font color="#3d0066"><b>PICKWIG</b></font></h1><div class="home-hero-text-group">
       
       <h3 class="home-hero-subtitle" style="font-weight: 700; font-family: Roboto, sans-serif; color: #FF99CC; font-size: 50px;"></h3>
       
@@ -561,7 +561,7 @@
         
         
       </div>
-    </div><p class="brand-subtitle" data-zappy-editable-text="true" style="">BY MAAYAN BAREKET</p><p style="text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; width: 100% !important;"><a href="#contact" class="cta-button" data-zappy-editable-text="true" data-native-element="true" data-element-id="btn-1772460603043-fr18ja4k4" data-element-type="button" style="outline: none; color: rgb(18, 18, 18) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;">צור קשר</a>
+    </div><p style="text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; width: 100% !important;"><a href="#contact" class="cta-button" data-zappy-editable-text="true" data-native-element="true" data-element-id="btn-1772460603043-fr18ja4k4" data-element-type="button" style="outline: none; color: rgb(18, 18, 18) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;">צור קשר</a>
       </p>
     
     <!-- Side Notes -->
@@ -570,7 +570,7 @@
       
       
     </div>
-  </div><!-- Bottom Divider: Silk Wave Transition -->
+  </div><p class="brand-subtitle" data-zappy-editable-text="true" style="" data-element-id="move-1772489247381-kl077dqh">BY MAAYAN BAREKET</p><!-- Bottom Divider: Silk Wave Transition -->
   <div class="home-hero-divider-wrapper">
     <svg aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -1051,16 +1051,172 @@
   </div>
 </section>
 
-<section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; min-height: 100vh; overflow: hidden; background: var(--gradient-dark-section); display: flex; align-items: center; justify-content: center; padding: 0; margin: 0;" data-zappy-section="true" class="section">
+<section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--gradient-dark-section); overflow: hidden; padding: 0; margin: 0;" data-zappy-section="true" class="section">
   <style>
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(2deg); }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    .hero-container-pickwig {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .hero-bg-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.15;
+    }
+    
+    .hero-bg-pattern::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse-glow 8s ease-in-out infinite;
+    }
+    
+    .hero-bg-pattern::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(61, 0, 102, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse-glow 6s ease-in-out infinite reverse;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.15; }
+      50% { transform: scale(1.2) translate(20px, -20px); opacity: 0.25; }
+    }
+    
+    .hero-content-wrapper {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 1400px;
+      padding: 0 2rem;
+      width: 100%;
+    }
+    
+    .hero-logo-brand {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .hero-logo-brand::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 1px;
+      background: var(--gradient-gold-shine);
+      opacity: 0.6;
+    }
+    
+    .hero-main-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--text-light);
+      margin: 0 0 2rem 0;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 0.6s forwards;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    
+    .hero-main-heading::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -5%;
+      width: 110%;
+      height: 120%;
+      background: radial-gradient(ellipse at center, rgba(102, 66, 0, 0.15) 0%, transparent 60%);
+      transform: translateY(-50%);
+      z-index: -1;
+      animation: shimmer 3s ease-in-out infinite;
     }
     
     @keyframes shimmer {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
+      0%, 100% { opacity: 0.3; transform: translateY(-50%) scale(1); }
+      50% { opacity: 0.6; transform: translateY(-50%) scale(1.05); }
+    }
+    
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 1.2s forwards, bounce 2s ease-in-out 2s infinite;
+      text-align: center;
+    }
+    
+    .scroll-text {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+    }
+    
+    .scroll-arrow {
+      width: 30px;
+      height: 50px;
+      border: 2px solid rgba(246, 241, 235, 0.5);
+      border-radius: 20px;
+      position: relative;
+      margin: 0 auto;
+    }
+    
+    .scroll-arrow::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--text-light);
+      border-radius: 50%;
+      animation: scroll-down 2s ease-in-out infinite;
+    }
+    
+    @keyframes scroll-down {
+      0% { top: 8px; opacity: 1; }
+      50% { top: 20px; opacity: 0.5; }
+      100% { top: 8px; opacity: 1; }
     }
     
     @keyframes fadeInUp {
@@ -1074,230 +1230,150 @@
       }
     }
     
-    @keyframes rotateGlow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-10px); }
     }
     
-    .hero-pickwig-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    .hero-pickwig-bg {
+    .decorative-lines {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at 30% 40%, rgba(61, 0, 102, 0.6) 0%, transparent 50%),
-                  radial-gradient(ellipse at 70% 60%, rgba(102, 66, 0, 0.4) 0%, transparent 50%),
-                  var(--gradient-dark-section);
+      top: 0;
+      left: 0;
       z-index: 1;
-    }
-    
-    .hero-pickwig-glow {
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(from 0deg at 50% 50%, 
-        transparent 0deg, 
-        rgba(61, 0, 102, 0.15) 90deg, 
-        transparent 180deg,
-        rgba(102, 66, 0, 0.15) 270deg,
-        transparent 360deg);
-      animation: rotateGlow 20s linear infinite;
-      z-index: 2;
       pointer-events: none;
     }
     
-    .hero-pickwig-content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      max-width: 900px;
-      padding: 0 2rem;
-      animation: fadeInUp 1.2s ease-out;
-    }
-    
-    .hero-pickwig-brand {
-      font-family: var(--font-heading);
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 400;
-      letter-spacing: 0.4em;
-      color: var(--text-light);
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      text-transform: uppercase;
-      background: var(--gradient-gold-shine);
-      background-size: 200% auto;
-      animation: shimmer 3s linear infinite;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-    
-    .hero-pickwig-title {
-      font-family: var(--font-heading);
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--text-light);
-      margin: 0 0 3rem 0;
-      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-      position: relative;
-      display: inline-block;
-    }
-    
-    .hero-pickwig-title::after {
+    .decorative-lines::before,
+    .decorative-lines::after {
       content: '';
       position: absolute;
-      bottom: -1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      border-radius: 2px;
+      background: linear-gradient(90deg, transparent 0%, rgba(102, 66, 0, 0.3) 50%, transparent 100%);
+      height: 1px;
     }
     
-    .hero-pickwig-scroll {
+    .decorative-lines::before {
+      top: 25%;
+      left: 0;
+      right: 0;
+      animation: slide-right 4s ease-in-out infinite;
+    }
+    
+    .decorative-lines::after {
+      bottom: 25%;
+      left: 0;
+      right: 0;
+      animation: slide-left 4s ease-in-out infinite;
+    }
+    
+    @keyframes slide-right {
+      0%, 100% { transform: translateX(-100%); opacity: 0; }
+      50% { transform: translateX(100%); opacity: 1; }
+    }
+    
+    @keyframes slide-left {
+      0%, 100% { transform: translateX(100%); opacity: 0; }
+      50% { transform: translateX(-100%); opacity: 1; }
+    }
+    
+    .geometric-accent {
       position: absolute;
-      bottom: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      animation: float 3s ease-in-out infinite;
-    }
-    
-    .hero-pickwig-scroll-text {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      letter-spacing: 0.15em;
-      color: var(--text-light);
-      opacity: 0.8;
-      text-transform: uppercase;
-    }
-    
-    .hero-pickwig-scroll-icon {
-      width: 30px;
-      height: 50px;
-      border: 2px solid rgba(246, 241, 235, 0.5);
-      border-radius: 25px;
-      position: relative;
-    }
-    
-    .hero-pickwig-scroll-icon::before {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 8px;
-      background: var(--text-light);
-      border-radius: 2px;
-      animation: scrollDot 2s ease-in-out infinite;
-    }
-    
-    @keyframes scrollDot {
-      0%, 100% { top: 8px; opacity: 1; }
-      50% { top: 24px; opacity: 0.5; }
-    }
-    
-    .hero-pickwig-decorative {
-      position: absolute;
-      pointer-events: none;
-      z-index: 3;
-    }
-    
-    .hero-pickwig-decorative.circle-1 {
-      top: 15%;
+      top: 50%;
       right: 10%;
+      transform: translateY(-50%) rotate(45deg);
       width: 300px;
       height: 300px;
+      border: 1px solid rgba(102, 66, 0, 0.2);
+      z-index: 2;
+      opacity: 0;
+      animation: fadeInRotate 1.5s ease-out 0.8s forwards;
+    }
+    
+    .geometric-accent::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      height: 70%;
       border: 1px solid rgba(61, 0, 102, 0.3);
-      border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
     }
     
-    .hero-pickwig-decorative.circle-2 {
-      bottom: 20%;
-      left: 8%;
-      width: 200px;
-      height: 200px;
-      border: 1px solid rgba(102, 66, 0, 0.3);
-      border-radius: 50%;
-      animation: float 8s ease-in-out infinite reverse;
-    }
-    
-    .hero-pickwig-decorative.line-1 {
-      top: 30%;
-      left: 15%;
-      width: 150px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(246, 241, 235, 0.3), transparent);
-      transform: rotate(-30deg);
-    }
-    
-    .hero-pickwig-decorative.line-2 {
-      bottom: 35%;
-      right: 12%;
-      width: 200px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(246, 241, 235, 0.3), transparent);
-      transform: rotate(30deg);
+    @keyframes fadeInRotate {
+      from {
+        opacity: 0;
+        transform: translateY(-50%) rotate(0deg) scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(-50%) rotate(45deg) scale(1);
+      }
     }
     
     @media (max-width: 768px) {
-      .hero-pickwig-container {
+      .hero-container-pickwig {
         padding-top: 100px;
       }
       
-      .hero-pickwig-title::after {
-        width: 80px;
+      .hero-logo-brand {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 2rem;
       }
       
-      .hero-pickwig-decorative.circle-1,
-      .hero-pickwig-decorative.circle-2 {
-        display: none;
+      .hero-main-heading {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+        margin-bottom: 1.5rem;
       }
       
-      .hero-pickwig-scroll {
+      .hero-scroll-indicator {
         bottom: 2rem;
+      }
+      
+      .geometric-accent {
+        width: 200px;
+        height: 200px;
+        right: 5%;
+      }
+      
+      .hero-bg-pattern::before,
+      .hero-bg-pattern::after {
+        width: 400px;
+        height: 400px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-content-wrapper {
+        padding: 0 1.5rem;
+      }
+      
+      .hero-logo-brand {
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .geometric-accent {
+        display: none;
       }
     }
   </style>
   
-  <div class="hero-pickwig-container">
-    <div class="hero-pickwig-bg"></div>
-    <div class="hero-pickwig-glow"></div>
+  <div class="hero-container-pickwig">
+    <div class="hero-bg-pattern"></div>
+    <div class="decorative-lines"></div>
+    <div class="geometric-accent"></div>
     
-    <div class="hero-pickwig-decorative circle-1"></div>
-    <div class="hero-pickwig-decorative circle-2"></div>
-    <div class="hero-pickwig-decorative line-1"></div>
-    <div class="hero-pickwig-decorative line-2"></div>
-    
-    <div class="hero-pickwig-content">
-      <div class="hero-pickwig-brand">PICKWIG</div>
-      <h1 class="hero-pickwig-title">לבחור את הפאה הייחודית מבלי להתפשר</h1>
+    <div class="hero-content-wrapper">
+      <div class="hero-logo-brand">PICKWIG</div>
+      <h1 class="hero-main-heading">לבחור את הפאה הייחודית מבלי להתפשר</h1>
     </div>
     
-    <div class="hero-pickwig-scroll">
-      <span class="hero-pickwig-scroll-text">גלול למטה</span>
-      <div class="hero-pickwig-scroll-icon"></div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-text">גלול למטה</div>
+      <div class="scroll-arrow"></div>
     </div>
   </div>
 </section>
