@@ -681,95 +681,164 @@
 /* V2 Regenerated Section CSS */
 .index-services-section {
   position: relative;
-  overflow: visible;
-  background-color: #FBF5EE;
-  background-image: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
+  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
   color: var(--text-dark);
-  padding: 80px 16px 120px;
+  padding: 100px 16px 120px;
+  overflow: visible;
   direction: rtl;
 }
 
-.index-services-section .index-services-container {
+.index-services-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.index-services-section .index-services-intro {
+.index-services-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
-.index-services-section .index-services-intro h2 {
+.index-services-header h2 {
   font-family: "Noto Serif Hebrew", "Times New Roman", serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
   color: #2B1A2F;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.index-services-section .index-services-intro p {
+.index-services-intro {
   font-family: "Heebo", "Rubik", Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
   line-height: 1.8;
   color: rgba(43,26,47,0.78);
-  margin: 0;
+  text-align: center;
+  max-width: none !important;
 }
 
-.index-services-section .index-services-list {
-  display: flex;
-  flex-direction: column;
+.index-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  margin-bottom: 60px;
 }
 
-.index-services-section .index-services-card {
-  position: relative;
+.index-services-card {
   background: rgba(251,245,238,0.92);
-  border: 1px solid rgba(46,23,54,0.10);
   border-radius: 0px;
-  padding: 40px;
+  border: 1px solid rgba(46,23,54,0.10);
   box-shadow: 0 12px 26px rgba(43,26,47,0.14);
+  padding: 40px 32px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.index-services-section .index-services-card h3 {
+.index-services-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(43,26,47,0.20);
+  border-color: rgba(200,154,87,0.30);
+}
+
+.index-services-card-featured {
+  background: linear-gradient(180deg, rgba(251,245,238,0.96) 0%, rgba(242,232,220,0.92) 100%);
+  border-top: 2px solid rgba(200,154,87,0.40);
+  border-bottom: 2px solid rgba(200,154,87,0.40);
+  box-shadow: 0 16px 34px rgba(43,26,47,0.18);
+}
+
+.index-services-card-featured:hover {
+  box-shadow: 0 22px 50px rgba(12,124,121,0.22);
+}
+
+.index-services-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  color: #C89A57;
+  transition: all 0.4s ease;
+}
+
+.index-services-card:hover .index-services-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  color: #0C7C79;
+}
+
+.index-services-card-featured .index-services-card-icon {
+  color: #0C7C79;
+}
+
+.index-services-card h3 {
   font-family: "Noto Serif Hebrew", "Times New Roman", serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
   color: #2E1736;
   margin-bottom: 16px;
-  text-align: start;
+  text-align: center;
 }
 
-.index-services-section .index-services-card p {
+.index-services-card p {
   font-family: "Heebo", "Rubik", Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(43,26,47,0.78);
+  text-align: right;
+}
+
+.index-services-quality-badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 18px;
+  background: linear-gradient(180deg, #E3C47E 0%, #C89A57 60%, #A97935 100%);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(43,26,47,0.18);
+}
+
+.index-services-quality-badge span {
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2B1A2F;
+}
+
+.index-services-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  background: rgba(255,255,255,0.60);
+  border-radius: 0px;
+  border: 1px solid rgba(200,154,87,0.20);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), inset 0 -1px 0 rgba(43,26,47,0.06);
+}
+
+.index-services-footer-note svg {
+  flex-shrink: 0;
+  color: #C89A57;
+}
+
+.index-services-footer-note p {
+  font-family: "Heebo", "Rubik", Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.8;
   color: rgba(43,26,47,0.78);
   margin: 0;
-  text-align: start;
+  text-align: right;
 }
 
-.index-services-section .index-services-card-middle {
-  z-index: 1;
-}
-
-.index-services-section .index-services-decorative-panel {
-  position: absolute;
-  bottom: -20px;
-  left: -30px;
-  width: 280px;
-  height: 180px;
-  background: linear-gradient(135deg, rgba(227,196,126,0.25) 0%, rgba(181,106,122,0.20) 100%);
-  border-radius: 0px;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.index-services-section .index-services-divider-wrapper {
+.index-services-divider-wrapper {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -779,7 +848,7 @@
   z-index: 5;
 }
 
-.index-services-section .index-services-divider-wrapper svg {
+.index-services-divider-wrapper svg {
   display: block;
   width: 100%;
   height: 100%;
@@ -787,38 +856,45 @@
 
 @media (max-width: 768px) {
   .index-services-section {
-    padding: 60px 16px 100px;
+    padding: 80px 16px 100px;
   }
 
-  .index-services-section .index-services-intro {
+  .index-services-header {
     margin-bottom: 40px;
   }
 
-  .index-services-section .index-services-intro h2 {
+  .index-services-header h2 {
     font-size: 32px;
   }
 
-  .index-services-section .index-services-list {
+  .index-services-grid {
+    grid-template-columns: 1fr !important;
     gap: 24px;
+    margin-bottom: 40px;
   }
 
-  .index-services-section .index-services-card {
-    padding: 24px;
+  .index-services-card {
+    padding: 32px 24px;
   }
 
-  .index-services-section .index-services-card h3 {
-    font-size: 22px;
+  .index-services-card h3 {
+    font-size: 24px;
   }
 
-  .index-services-section .index-services-decorative-panel {
-    width: 200px;
-    height: 130px;
-    bottom: -15px;
-    left: -20px;
+  .index-services-card-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
   }
 
-  .index-services-section .index-services-divider-wrapper {
-    height: 40px;
+  .index-services-footer-note {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 24px;
+  }
+
+  .index-services-footer-note p {
+    text-align: center;
   }
 }
 </style>
@@ -1415,42 +1491,70 @@
 
 
 
-<section class="index-services-section" data-layout-spec="בית-services">
+<section class="index-services-section" data-layout-spec="בית-services" data-zappy-section="true">
   <div class="index-services-container">
-    <div class="index-services-intro">
-      <h2>שירותי פיקוויג המקצועיים</h2>
-      <p>אנחנו מציעים מגוון פתרונות שיער פרימיום המותאמים אישית לכל לקוחה. כל פאה ותוספת מיוצרת בעבודת יד מדויקת, משיער אירופאי ברזילאי ורוסי איכותי, עם תשומת לב לכל פרט.</p>
+    <div class="index-services-header">
+      <h2>ייצור פאות וטופרים בהתאמה אישית ועבודת יד</h2>
+      <p class="index-services-intro">כל פאה וטופר נוצרים בעבודת יד מדויקת, מותאמים לצרכים האישיים שלך ומלווים בתשומת לב מקצועית</p>
     </div>
 
-    <div class="index-services-list">
+    <div class="index-services-grid">
       <article class="index-services-card">
-        <h3>פאות נשים בהתאמה אישית</h3>
-        <p>פאות מיוצרות בעבודת יד מדויקה משיער טבעי פרימיום. כל פאה עוברת תהליך התאמה אישית מלא - מבחירת הגוון והאורך ועד לעיצוב סופי שמתאים בדיוק למבנה הפנים והסגנון האישי שלך. אנחנו עובדות עם חומרי גלם ברמה הגבוהה ביותר ומקפידות על גימור מושלם.</p>
+        <div class="index-services-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.2"></circle>
+            <path d="M28 14C28 14 20 18 20 28C20 38 28 42 28 42C28 42 36 38 36 28C36 18 28 14 28 14Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M23 28C23 28 25 26 28 26C31 26 33 28 33 28" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <circle cx="25" cy="24" r="1.5" fill="currentColor"></circle>
+            <circle cx="31" cy="24" r="1.5" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <h3>התאמה וייעוץ אישי</h3>
+        <p>פגישת התאמה מעמיקה בה אנו בוחנים את מבנה השיער, גוון העור ואורח החיים שלך כדי למצוא את הפתרון המושלם. אנו מקדישים זמן להבין את הציפיות ולהתאים את הפאה או הטופר בדיוק לצרכים שלך.</p>
       </article>
 
-      <article class="index-services-card index-services-card-middle">
-        <div class="index-services-decorative-panel" aria-hidden="true"></div>
-        <h3>תוספות שיער ייחודיות</h3>
-        <p>תוספות שיער טבעיות המשתלבות בצורה מושלמת עם השיער הקיים. מתאימות לנשים עם דלילות שיער או אלופציה, ומעניקות מראה של שיער שופע ובריא. התוספות מיוצרות בטכניקות מתקדמות המאפשרות חיבור בלתי נראה ותחושה טבעית לחלוטין.</p>
+      <article class="index-services-card index-services-card-featured">
+        <div class="index-services-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="18" width="28" height="24" rx="2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></rect>
+            <path d="M19 18V15C19 14.4477 19.4477 14 20 14H36C36.5523 14 37 14.4477 37 15V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M24 26L26 28L32 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.15"></circle>
+          </svg>
+        </div>
+        <h3>עבודת יד מקצועית</h3>
+        <p>כל פאה וטופר עוברים תהליך הכנה ידני מדויק - החל מבחירת השיער האיכותי ביותר (רוסי או ברזילאי), דרך גזירה והתאמה אישית, ועד לגימור סופי שמבטיח מראה טבעי ונוח לשימוש יומיומי.</p>
+        <div class="index-services-quality-badge">
+          <span>בקרת איכות קפדנית</span>
+        </div>
       </article>
 
       <article class="index-services-card">
-        <h3>ייעוץ מקצועי וטיפול שוטף</h3>
-        <p>ליווי אישי לאורך כל התהליך - מהייעוץ הראשוני ועד לתחזוקה השוטפת. אנחנו מספקות הדרכה מלאה על טיפול נכון בפאה, שטיפה, עיצוב ושמירה על המראה המושלם לאורך זמן. כל לקוחה מקבלת תשומת לב אישית ומענה מקצועי לכל שאלה.</p>
+        <div class="index-services-card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.2"></circle>
+            <path d="M20 28C20 28 23 22 28 22C33 22 36 28 36 28" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M28 22V32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <path d="M24 32H32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            <circle cx="28" cy="36" r="2" stroke="currentColor" stroke-width="1.8"></circle>
+          </svg>
+        </div>
+        <h3>הדרכה ותחזוקה</h3>
+        <p>מעבר למכירה, אנו מלווים אותך בהדרכה מקיפה לטיפול נכון בפאה - שטיפה, עיצוב ואחסון. נספק לך את כל הכלים והידע לשמור על המראה והאיכות לאורך זמן.</p>
       </article>
+    </div>
+
+    <div class="index-services-footer-note">
+      <svg data-no-icon-edit="true" aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <p>אנו מקפידים על בקרת איכות קפדנית ונוחות מקסימלית בכל שלב, כך שתוכלי להרגיש בטוחה ויפה.</p>
     </div>
   </div>
 
   <div class="index-services-divider-wrapper">
     <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 60" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="silk-ribbon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#5A2A55;stop-opacity:0.35"></stop>
-          <stop offset="50%" style="stop-color:#5A2A55;stop-opacity:0.45"></stop>
-          <stop offset="100%" style="stop-color:#5A2A55;stop-opacity:0.35"></stop>
-        </linearGradient>
-      </defs>
-      <path d="M0,60 L0,20 Q300,15 600,25 T1200,20 L1200,60 Z" fill="#23121F"></path>
+      <path d="M0,60 L0,25 Q100,18 200,22 T400,18 Q500,24 600,20 T800,22 Q900,18 1000,24 T1200,20 L1200,60 Z" fill="#23121F"></path>
     </svg>
   </div>
 </section>
