@@ -527,9 +527,9 @@
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-grid">
-      <div class="footer-section footer-brand">
-        <img src="/assets/pickwig-logo-1771796589174-xv1mbh.webp?v=1771796589433-b2j6va" alt="פיקוויג PICKWIG" class="logo">
-        <p class="footer-tagline">יופי ובריאות טבעיים לחיים טובים יותר</p>
+      <div class="footer-section footer-brand" style="min-height: 175.516px !important;">
+        <div data-zappy-zoom-wrapper="true" data-element-id="img-1772497957656-g1kwah6ud" data-element-type="image" data-zappy-zoom-wrapper-width="160px" data-zappy-zoom-wrapper-height="40px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 160px !important; max-width: 100% !important; margin-left: auto !important; margin-right: 0px !important; height: 40px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img src="/assets/pickwig-logo-1771796589174-xv1mbh.webp?v=1771796589433-b2j6va" alt="פיקוויג PICKWIG" class="logo zappy-editable-image" data-original-position="static" style="position: absolute !important; object-fit: fill !important; object-position: 50% 50%; margin: 0px !important; left: 0% !important; top: -60% !important; width: 100% !important; height: 220% !important; max-width: none !important; max-height: none !important; display: block;" data-element-type="image" data-element-id="img-1772497957656-g1kwah6ud" data-resize-handler-attached="true" data-zappy-zoom="0.7"></div>
+        <p class="footer-tagline" style="">Pickwig&nbsp;</p>
       </div>
       
       <div class="footer-section footer-links">
@@ -544,9 +544,9 @@
       <div class="footer-section footer-contact">
         <h3 class="footer-title" style="font-weight: 700; color: #FF99CC; font-size: 50px;">יצירת קשר</h3>
         <ul class="contact-list">
-          <li><i class="fas fa-envelope"></i> <a href="mailto:bareketwigs@gmail.com">bareketwigs@gmail.com</a></li>
-          <li><i class="fas fa-phone"></i> <a href="tel:054-4509858">054-4509858</a></li>
-          <li><a href="/"><i class="fas fa-map-marker-alt"></i> <span>כתובת החברה, ישראל</span></a></li>
+          <li><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1772497957655-ikd8yjh1p" data-icon-type="fontawesome"></i> <a href="/cdn-cgi/l/email-protection#9efcffecfbf5fbeae9f7f9eddef9f3fff7f2b0fdf1f3" style="">Bareketwigs@gmail.com</a></li>
+          <li><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1772497957655-7g6kxgts6" data-icon-type="fontawesome"></i> <a href="tel:054-4509858">054-4509858</a></li>
+          <li><a href="/"><i class="fas fa-map-marker-alt" data-element-type="icon" data-element-id="icon-1772497957655-wtvwfu3di" data-icon-type="fontawesome"></i> <span><i class="fas fa-map-marker-alt" data-element-type="icon" data-element-id="icon-1772403326812-hp3p0j3b4" data-icon-type="fontawesome" style="cursor: pointer;"></i>תל אביב ן פרדס חנה כרכור&nbsp;</span></a></li>
         </ul>
       </div>
       
@@ -554,9 +554,9 @@
         <h3 class="footer-title" style="font-weight: 700; color: #FF99CC; font-size: 50px;">עקבו אחרינו</h3>
         <div class="social-links">
           <a href="https://facebook.com/https://www.facebook.com/profile.php?id=61586173236226" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://instagram.com/https://www.instagram.com/bareketwigs/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/972544509858" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://tiktok.com/@https://www.tiktok.com/@pickwig" aria-label="TikTok" data-element-id="element-ai-1771795839243-t7k9m2" data-element-type="social-link"><i class="fab fa-tiktok"></i></a>
+          <a href="https://instagram.com/https://www.instagram.com/bareketwigs/" aria-label="Instagram"><i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1772497957655-2uek9glah" data-icon-type="fontawesome"></i></a>
+          <a href="https://wa.me/972544509858" aria-label="WhatsApp"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1772497957655-wlyth1sum" data-icon-type="fontawesome"></i></a>
+          <a href="https://tiktok.com/@https://www.tiktok.com/@pickwig" aria-label="TikTok" data-element-id="element-ai-1771795839210-t7k9m3" data-element-type="social-link"><i class="fab fa-tiktok" data-element-type="icon" data-element-id="icon-1772497957655-mfb2sjnfw" data-icon-type="fontawesome"></i></a>
         </div>
       </div>
     </div>
@@ -637,6 +637,34 @@
           observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
         });
       }, 500);
+    })();
+    </script>
+
+    <script>
+    (function(){
+      if(window.innerWidth>768)return;
+      function fixZW(){
+        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          var cw=w.style.getPropertyValue('width');
+          if(!cw||cw==='100%')return;
+          w.style.setProperty('width','100%','important');
+          w.style.setProperty('max-width','100%','important');
+          w.style.setProperty('height','auto','important');
+          var img=w.querySelector('img');
+          if(img){
+            img.style.setProperty('position','relative','important');
+            img.style.setProperty('width','100%','important');
+            img.style.setProperty('height','auto','important');
+            img.style.setProperty('max-width','100%','important');
+            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('object-fit','cover','important');
+            img.style.setProperty('left','0','important');
+            img.style.setProperty('top','0','important');
+          }
+        });
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
+      else setTimeout(fixZW,50);
     })();
     </script>
 </body>
