@@ -898,6 +898,252 @@
   }
 }
 </style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-services-section {
+  position: relative;
+  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
+  color: var(--text-dark);
+  padding: 100px 16px 80px;
+  overflow: visible;
+  direction: rtl;
+}
+
+.index-services-section .index-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.index-services-section .index-services-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.index-services-section .index-services-header h2 {
+  font-family: "Noto Serif Hebrew", "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #2B1A2F;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.index-services-section .index-services-intro {
+  font-family: "Heebo", "Rubik", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(43,26,47,0.78);
+  text-align: center;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.index-services-section .index-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.index-services-section .index-service-card {
+  background: rgba(251,245,238,0.92);
+  border-radius: 0px;
+  border: 1px solid rgba(46,23,54,0.10);
+  box-shadow: 0 12px 26px rgba(43,26,47,0.14);
+  padding: 40px 32px;
+  text-align: right;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.index-services-section .index-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #E3C47E 0%, #C89A57 50%, #0C7C79 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.index-services-section .index-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(43,26,47,0.20);
+}
+
+.index-services-section .index-service-card:hover::before {
+  opacity: 1;
+}
+
+.index-services-section .index-service-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 24px;
+  margin-inline-start: auto;
+  color: var(--primary);
+  position: relative;
+}
+
+.index-services-section .index-service-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.index-services-section .index-service-content h3 {
+  font-family: "Noto Serif Hebrew", "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.18;
+  color: #2E1736;
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+.index-services-section .index-service-content p {
+  font-family: "Heebo", "Rubik", Arial, sans-serif;
+  line-height: 1.8;
+  color: rgba(43,26,47,0.78);
+  text-align: right;
+}
+
+.index-services-section .index-services-quality {
+  background: linear-gradient(180deg, rgba(251,245,238,0.96) 0%, rgba(242,232,220,0.92) 100%);
+  border-radius: 0px;
+  border-top: 1px solid rgba(46,23,54,0.10);
+  border-bottom: 1px solid rgba(46,23,54,0.10);
+  padding: 40px;
+  text-align: center;
+  max-width: 800px;
+  margin-inline: auto;
+  position: relative;
+}
+
+.index-services-section .index-quality-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(180deg, #E3C47E 0%, #C89A57 60%, #A97935 100%);
+  color: #2B1A2F;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 20px rgba(43,26,47,0.22);
+  margin-bottom: 20px;
+}
+
+.index-services-section .index-quality-badge svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.index-services-section .index-quality-text {
+  font-family: "Heebo", "Rubik", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(43,26,47,0.78);
+  text-align: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.index-services-section .index-services-decorative-layer {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(200,154,87,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.index-services-section .index-services-decorative-layer::after {
+  content: '';
+  position: absolute;
+  top: 60%;
+  right: -20%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(12,124,121,0.10) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .index-services-section {
+    padding: 100px 16px 60px;
+  }
+
+  .index-services-section .index-services-header {
+    margin-bottom: 40px;
+  }
+
+  .index-services-section .index-services-header h2 {
+    font-size: 32px;
+  }
+
+  .index-services-section .index-services-intro {
+    font-size: 16px;
+  }
+
+  .index-services-section .index-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .index-services-section .index-service-card {
+    padding: 32px 24px;
+  }
+
+  .index-services-section .index-service-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+  }
+
+  .index-services-section .index-service-content h3 {
+    font-size: 24px;
+  }
+
+  .index-services-section .index-services-quality {
+    padding: 32px 24px;
+  }
+
+  .index-services-section .index-quality-badge {
+    font-size: 13px;
+    padding: 10px 24px;
+  }
+
+  .index-services-section .index-quality-text {
+    font-size: 16px;
+  }
+
+  .index-services-section .index-services-decorative-layer {
+    width: 200px;
+    height: 200px;
+  }
+
+  .index-services-section .index-services-decorative-layer::after {
+    width: 150px;
+    height: 150px;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -956,16 +1202,16 @@
 
   <nav class="navbar" dir="rtl" style="background: transparent;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1771797932969-fnrvqw8c9" data-native-element="true">
-    <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
-    <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display:none;">
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
       <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call" data-element-type="button" data-element-id="btn-1771797932969-jvwxjho66" data-native-element="true">
-    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
@@ -1014,7 +1260,7 @@
     </div>
   </div><p class="brand-subtitle" data-zappy-editable-text="true" style="" data-element-id="move-1772489247381-kl077dqh">BY MAAYAN BAREKET</p><!-- Bottom Divider: Silk Wave Transition -->
   <div class="home-hero-divider-wrapper">
-    <svg aria-hidden="true" viewbox="0 0 1200 100" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="home-hero-silk-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style="stop-color:#E3C47E;stop-opacity:0.3"></stop>
@@ -1410,7 +1656,7 @@
           <p style="" class="zappy-editable" id="zappy-drop-nswof7tkv">הקונספט של פיקוויג מבוסס על חופש יצירה מוחלט.&nbsp;<br>במקום שפקטורים שונים ייקרו את הפאה, פיקוויג מנטרלת אותם מראש ומאפשרת לך ליצור את הפאה או הטופר המושלמים עבורך - בכל אורך, גוון ומלאות - במחיר אחיד והוגן. יוקרה היא סטנדרט שנגיש לכולן.<br><br>בפיקוויג אנו מבינות שכל אישה מגיעה עם צורך שונה וסיפור אחר: נשים עם דלילות שיער מחפשות טופר טבעי ובלתי מורגש, נשים עם אלופציה הזקוקות לפאה נוחה ובטוחה, חולות אונקולוגיה הזקוקות לרכות, קלילות ונשימה לקרקפת, נשים דתיות המחפשות פאה איכותית ואלגנטית, וכל אישה שרוצה להרגיש שלמה עם המראה שלה.&nbsp;<br><br><br>עיצוב השיער בפיקוויג הוא שלב משלים ובלתי נפרד מהחזון, מתוך תפיסה שיוקרה אמיתית מוצעת במחירים אטרקטיביים ומונגשים. נגיעה קסומה של של גוונים, בילאז', אומברה תוך שמירה על איכות השיערה.<br><br><br>&nbsp; כל פאה וכל טופר הם יצירה ייחודית, שנעשית מתוך הקשבה, הבחנה עמוקה ויחס אישי. המטרה שלנו אחת: להעניק לך 100% תחושת נוחות, ביטחון ותחושת שלמות עם המראה שלך.&nbsp;&nbsp;</p>
           
         </div><div class="index-gallery-section__decorative-accent">
-          <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <circle cx="40" cy="40" r="38" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.3"></circle>
             <circle cx="40" cy="40" r="28" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.5"></circle>
             <circle cx="40" cy="40" r="18" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.7"></circle>
@@ -1452,7 +1698,7 @@
   </div>
 
   <div class="index-gallery-section__decorative-beam index-gallery-section__decorative-beam--top">
-    <svg width="100%" height="200" viewbox="0 0 1200 200" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg width="100%" height="200" viewBox="0 0 1200 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="beamGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.08"></stop>
@@ -1465,7 +1711,7 @@
   </div>
 
   <div class="index-gallery-section__decorative-beam index-gallery-section__decorative-beam--bottom">
-    <svg width="100%" height="180" viewbox="0 0 1200 180" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg width="100%" height="180" viewBox="0 0 1200 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="beamGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
           <stop offset="0%" style="stop-color:var(--secondary);stop-opacity:0.06"></stop>
@@ -1499,64 +1745,61 @@
     </div>
 
     <div class="index-services-grid">
-      <article class="index-services-card">
-        <div class="index-services-card-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.2"></circle>
-            <path d="M28 14C28 14 20 18 20 28C20 38 28 42 28 42C28 42 36 38 36 28C36 18 28 14 28 14Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M23 28C23 28 25 26 28 26C31 26 33 28 33 28" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <circle cx="25" cy="24" r="1.5" fill="currentColor"></circle>
-            <circle cx="31" cy="24" r="1.5" fill="currentColor"></circle>
+      <article class="index-service-card">
+        <div class="index-service-icon" data-element-type="icon" data-icon-type="svg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+            <path d="M12 6v6l4 2"></path>
           </svg>
         </div>
-        <h3>התאמה וייעוץ אישי</h3>
-        <p>פגישת התאמה מעמיקה בה אנו בוחנים את מבנה השיער, גוון העור ואורח החיים שלך כדי למצוא את הפתרון המושלם. אנו מקדישים זמן להבין את הציפיות ולהתאים את הפאה או הטופר בדיוק לצרכים שלך.</p>
-      </article>
-
-      <article class="index-services-card index-services-card-featured">
-        <div class="index-services-card-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="14" y="18" width="28" height="24" rx="2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></rect>
-            <path d="M19 18V15C19 14.4477 19.4477 14 20 14H36C36.5523 14 37 14.4477 37 15V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M24 26L26 28L32 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-            <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.15"></circle>
-          </svg>
-        </div>
-        <h3>עבודת יד מקצועית</h3>
-        <p>כל פאה וטופר עוברים תהליך הכנה ידני מדויק - החל מבחירת השיער האיכותי ביותר (רוסי או ברזילאי), דרך גזירה והתאמה אישית, ועד לגימור סופי שמבטיח מראה טבעי ונוח לשימוש יומיומי.</p>
-        <div class="index-services-quality-badge">
-          <span>בקרת איכות קפדנית</span>
+        <div class="index-service-content">
+          <h3>התאמה וייעוץ אישי</h3>
+          <p>פגישת התאמה מעמיקה בה אנו בוחנים את מבנה השיער, גוון העור ואורח החיים שלך כדי למצוא את הפתרון המושלם. אנו מקדישים זמן להבין את הציפיות ולהתאים את הפאה או הטופר בדיוק לצרכים שלך.</p>
         </div>
       </article>
 
-      <article class="index-services-card">
-        <div class="index-services-card-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="28" cy="28" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.2"></circle>
-            <path d="M20 28C20 28 23 22 28 22C33 22 36 28 36 28" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M28 22V32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <path d="M24 32H32" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-            <circle cx="28" cy="36" r="2" stroke="currentColor" stroke-width="1.8"></circle>
+      <article class="index-service-card">
+        <div class="index-service-icon" data-element-type="icon" data-icon-type="svg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 7h-9"></path>
+            <path d="M14 17H5"></path>
+            <circle cx="17" cy="17" r="3"></circle>
+            <circle cx="7" cy="7" r="3"></circle>
           </svg>
         </div>
-        <h3>הדרכה ותחזוקה</h3>
-        <p>מעבר למכירה, אנו מלווים אותך בהדרכה מקיפה לטיפול נכון בפאה - שטיפה, עיצוב ואחסון. נספק לך את כל הכלים והידע לשמור על המראה והאיכות לאורך זמן.</p>
+        <div class="index-service-content">
+          <h3>עבודת יד מקצועית</h3>
+          <p>כל פאה וטופר עוברים תהליך הכנה ידני מדויק - החל מבחירת השיער האיכותי ביותר (רוסי או ברזילאי), דרך גזירה והתאמה אישית, ועד לגימור סופי שמבטיח מראה טבעי ונוח לשימוש יומיומי.</p>
+        </div>
+      </article>
+
+      <article class="index-service-card">
+        <div class="index-service-icon" data-element-type="icon" data-icon-type="svg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <div class="index-service-content">
+          <h3>הדרכה ותחזוקה</h3>
+          <p>מעבר למכירה, אנו מלווים אותך בהדרכה מקיפה לטיפול נכון בפאה - שטיפה, עיצוב ואחסון. נספק לך את כל הכלים והידע לשמור על המראה והאיכות לאורך זמן.</p>
+        </div>
       </article>
     </div>
 
-    <div class="index-services-footer-note">
-      <svg data-no-icon-edit="true" aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
-      <p>אנו מקפידים על בקרת איכות קפדנית ונוחות מקסימלית בכל שלב, כך שתוכלי להרגיש בטוחה ויפה.</p>
+    <div class="index-services-quality">
+      <div class="index-quality-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+        </svg>
+        <span>בקרת איכות קפדנית</span>
+      </div>
+      <p class="index-quality-text">אנו מקפידים על בקרת איכות קפדנית ונוחות מקסימלית בכל שלב, כך שתוכלי להרגיש בטוחה ויפה.</p>
     </div>
   </div>
 
-  <div class="index-services-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 60" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,60 L0,25 Q100,18 200,22 T400,18 Q500,24 600,20 T800,22 Q900,18 1000,24 T1200,20 L1200,60 Z" fill="#23121F"></path>
-    </svg>
-  </div>
+  <div class="index-services-decorative-layer" aria-hidden="true"></div>
 </section>
 
 <section class="home-testimonials-section" data-layout-spec="בית-testimonials">
@@ -1585,7 +1828,7 @@
   </div>
   
   <div class="home-testimonials-divider-wrapper">
-    <svg aria-hidden="true" viewbox="0 0 1200 100" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="scallop-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style="stop-color:#5A2A55;stop-opacity:1"></stop>
