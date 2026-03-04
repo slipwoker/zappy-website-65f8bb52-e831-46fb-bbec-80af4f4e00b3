@@ -7936,7 +7936,11 @@ nav.navbar .sub-menu li a:hover { color: #664200 !important; background-color: r
 }
 
 footer {
-  background-color: #YOUR_COLOR;
+  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
+}
+
+footer * {
+  color: #2B1A2F;
 }
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
