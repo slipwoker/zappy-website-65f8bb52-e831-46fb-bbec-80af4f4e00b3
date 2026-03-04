@@ -242,6 +242,156 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.about-spotlight-section {
+  position: relative;
+  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
+  color: var(--text-dark);
+  padding: 120px 24px 100px;
+  overflow: visible;
+  direction: rtl;
+}
+
+.about-spotlight-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.about-spotlight-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-spotlight-text-column {
+  text-align: right;
+  padding-inline-end: 40px;
+}
+
+.about-spotlight-eyebrow {
+  font-family: "Heebo", "Rubik", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
+
+.about-spotlight-heading {
+  font-family: "Noto Serif Hebrew", "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--primary);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+.about-spotlight-body p {
+  font-family: "Heebo", "Rubik", Arial, sans-serif;
+  line-height: 1.8;
+  color: rgba(43,26,47,0.78);
+  margin: 0;
+}
+
+.about-spotlight-image-column {
+  position: relative;
+}
+
+.about-spotlight-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: 0 26px 60px rgba(43,26,47,0.22);
+}
+
+.about-spotlight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-spotlight-image-accent {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  border: 1px solid var(--accent);
+  border-radius: 0px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about-spotlight-decorative-layer {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.about-spotlight-deco-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .about-spotlight-section {
+    padding: 100px 16px 60px;
+  }
+
+  .about-spotlight-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-spotlight-text-column {
+    padding-inline-end: 0;
+    text-align: right;
+  }
+
+  .about-spotlight-heading {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  .about-spotlight-image-frame {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about-spotlight-image-accent {
+    top: -12px;
+    left: -12px;
+    width: calc(100% + 24px);
+    height: calc(100% + 24px);
+  }
+
+  .about-spotlight-decorative-layer {
+    width: 280px;
+    height: 280px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0.25;
+  }
+}
+</style>
     <link rel="stylesheet" href="/styles.css">
 
     <style id="zappy-dropdown-submenu-styles">
@@ -300,16 +450,16 @@
 
   <nav class="navbar" dir="rtl" style="background: transparent;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1771797932969-fnrvqw8c9" data-native-element="true">
-    <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
-    <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display:none;">
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
       <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call" data-element-type="button" data-element-id="btn-1771797932969-jvwxjho66" data-native-element="true">
-    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
@@ -330,24 +480,29 @@
 </nav>
   
   <main>
-    <section class="about-spotlight-section" data-layout-spec="אודות-spotlight" id="zappy-section-0">
-  <div class="about-spotlight-container zappy-preserve-css-grid" id="zappy-auto-grid-1772638473106-puoz3i" data-zappy-auto-grid="true" data-zappy-grid-align="center" data-original-item-width="560" data-original-gap="80px" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);" data-zappy-explicit-columns="true"><div class="zappy-inserted-element" id="zappy-element-1772638561656-13e2h8bn1" data-element-id="zappy-element-1772638561656-13e2h8bn1" data-element-type="paragraph" data-zappy-newly-inserted="true" style="margin: 0px !important; padding: 20px !important; box-sizing: border-box; display: block; align-self: start !important;"><p style="font-size: 1rem;" data-element-type="paragraph" data-element-id="zappy-element-1772638561656-13e2h8bn1" id="zappy-element-1772638561656-13e2h8bn1" data-zappy-newly-inserted="true" class="zappy-editable">PICKWIG המותג של מעיין ברקת&nbsp;<br><br><br>יוזמה זו הגיעה מצורך אישי וממשוך של שנים עם נשירת שיער - אלופציה אוניברסליס.&nbsp;<br><br>&nbsp;מעיין ברקת, עורכת דין שהחליטה לייצר בקו ייצור ייחודי פאות יוקרה משיער פרימיום במטרה להנגיש פאות וטופרים בכל הגוונים, האורכים והמלאות במחיר קבוע, כדי ליצור פאות איכותיות במחיר קבוע שמאפשר לנשים להתחדש עם פאות ומראה מחודש ולהנות מאיכות לצד היכולת להתחדש&nbsp;</p></div><div class="about-spotlight-content">
-      
-      
-      
-    </div><div class="about-spotlight-image-wrapper" style="">
-      <div data-zappy-zoom-wrapper="true" data-element-id="img-1772638473084-zwty5oydy" data-element-type="image" data-zappy-zoom-wrapper-width="520px" data-zappy-zoom-wrapper-height="712px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 520px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 712px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" class=""><img data-placeholder="about-spotlight-image-1" data-context="Close-up macro photography of premium human hair strands with beautiful natural shine and texture, showing the fine quality and silky smoothness of Russian or Brazilian hair used in luxury wigs, soft natural lighting highlighting the hair fibers, elegant and refined aesthetic for a beauty and health business specializing in premium wigs and hair toppers" width="600" height="900" src="/assets/site-about-spotlight-image-1.webp" alt="שיער פרימיום איכותי בעבודת יד" data-element-type="image" data-element-id="img-1772638473084-zwty5oydy" class="zappy-editable-image" data-original-position="static" style="object-position: 50% 50%; position: absolute !important; margin: 0px !important; left: 0% !important; top: 0% !important;" data-zappy-zoom="0.5"></div>
-    </div></div>
-  <div class="about-spotlight-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 100" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <lineargradient id="mistGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#FBF5EE;stop-"></stop>
-          <stop offset="45%" style="stop-color:#FBF5EE;stop-opacity:0.9"></stop>
-          <stop offset="100%" style="stop-color:#FBF5EE;stop-opacity:1"></stop>
-        </lineargradient>
-      </defs>
-      <path d="M0,100 L0,45 Q50,42 100,48 T200,44 Q250,47 300,42 T400,46 Q450,43 500,47 T600,42 Q650,46 700,43 T800,47 Q850,42 900,46 T1000,43 Q1050,47 1100,42 T1200,46 L1200,100 Z" fill="#FBF5EE"></path>
+    <section class="about-spotlight-section" data-layout-spec="אודות-spotlight" data-zappy-section="true">
+  <div class="about-spotlight-container">
+    <div class="about-spotlight-content-grid">
+      <div class="about-spotlight-text-column">
+        <div class="about-spotlight-eyebrow">הסיפור שלנו</div>
+        <h2 class="about-spotlight-heading">מעיין ברקת<br>ו-PICKWIG</h2>
+        <div class="about-spotlight-body">
+          <p>PICKWIG המותג של מעיין ברקת יוזמה זו הגיעה מצורך אישי וממשוך של שנים עם נשירת שיער - אלופציה אוניברסליס. מעיין ברקת, עורכת דין שהחליטה לייצר בקו ייצור ייחודי פאות יוקרה משיער פרימיום במטרה להנגיש פאות וטופרים בכל הגוונים, האורכים והמלאות במחיר קבוע, כדי ליצור פאות איכותיות במחיר קבוע שמאפשר לנשים להתחדש עם פאות ומראה מחודש ולהנות מאיכות לצד היכולת להתחדש</p>
+        </div>
+      </div>
+      <div class="about-spotlight-image-column">
+        <div class="about-spotlight-image-frame">
+          <img alt="שיער פרימיום איכותי בעבודת יד" class="about-spotlight-image" src="/assets/site-about-spotlight-image-1.webp" data-placeholder="about-spotlight-image-1" data-context="Close-up macro photography of premium human hair strands with beautiful natural shine and texture, showing the fine quality and silky smoothness of Russian or Brazilian hair used in luxury wigs, soft natural lighting highlighting the hair fibers, elegant and refined aesthetic for a beauty and health business specializing in premium wigs and hair toppers" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+          <div class="about-spotlight-image-accent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-spotlight-decorative-layer" aria-hidden="true">
+    <svg class="about-spotlight-deco-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="180" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.15"></circle>
+      <circle cx="200" cy="200" r="140" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.12"></circle>
+      <circle cx="200" cy="200" r="100" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.09"></circle>
     </svg>
   </div>
 </section>
@@ -383,7 +538,7 @@
   </div>
 
   <div class="about-process-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 60" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,60 L0,30 M20,30 L40,30 M60,30 L80,30 M100,30 L120,30 M140,30 L160,30 M180,30 L200,30 M220,30 L240,30 M260,30 L280,30 M300,30 L320,30 M340,30 L360,30 M380,30 L400,30 M420,30 L440,30 M460,30 L480,30 M500,30 L520,30 M540,30 L560,30 M580,30 L600,30 M620,30 L640,30 M660,30 L680,30 M700,30 L720,30 M740,30 L760,30 M780,30 L800,30 M820,30 L840,30 M860,30 L880,30 M900,30 L920,30 M940,30 L960,30 M980,30 L1000,30 M1020,30 L1040,30 M1060,30 L1080,30 M1100,30 L1120,30 M1140,30 L1160,30 M1180,30 L1200,30 L1200,60 Z" fill="#23121F" stroke="var(--border-light)" stroke-width="1" stroke-dasharray="15,10"></path>
     </svg>
   </div>
@@ -432,7 +587,7 @@
   </div>
 
   <div class="about-team-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 100" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,100 L0,45 Q50,52 100,48 Q150,44 200,50 Q250,55 300,48 Q350,42 400,50 Q450,56 500,48 Q550,40 600,52 Q650,58 700,50 Q750,44 800,52 Q850,58 900,50 Q950,45 1000,52 Q1050,56 1100,48 Q1150,42 1200,50 L1200,100 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
