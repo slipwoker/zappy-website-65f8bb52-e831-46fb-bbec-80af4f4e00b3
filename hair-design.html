@@ -2687,12 +2687,355 @@
 </nav>
   
   <main>
-      <section id="layout-1772643163433" class="py-16 md:py-24 bg-white layout-section zappy-removable" data-zappy-component="true" style="width: 100%; padding: 60px 0;">
-        <div class="container mx-auto px-4 md:px-8 text-center">
-          <h1 class="text-3xl md:text-4xl font-bold mb-4">עיצוב שיער</h1>
-          <p class="text-gray-600 text-lg">שירות עיצוב השיער בפיקוויג<br><br>עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.<br><br>כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.<br>הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.<br><br>כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את להרחיב את השינוי.<br><br>פיקוויג מעניקה אחריות של שלושה חודשים מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך.&nbsp;<br><br>האחריות כולל בין היתר:<br>התאמות בעבודת לייס<br>שזירת שיער והוספת טרסים<br>הגדלה או הקטנה של הרשת<br>דיוקים בתספורת ובמבנה&nbsp; העיצובי<br>התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון&nbsp;<br>זמני האספקה בפיקוויג נעים בין 7-45 ימים ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם.<br><br>בפיקוויג מבינים שאת רוכשת פאה ורוצה להנות ממנה, ולכן בתקופה בה הפאה תשאר לתיקונים במסגרת האחריות, תוכלי לקבל פאה חלופית שתתאים לך ועד למועד סיום התיקון.</p>
+      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: var(--gradient-dark-section); overflow: hidden; padding: 120px 0 100px 0; min-height: 100vh; display: flex; align-items: center;" data-zappy-section="true" class="section">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+    
+    .hair-design-section {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hair-design-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+    }
+    
+    .hair-design-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+    }
+    
+    .hair-design-hero {
+      position: sticky;
+      top: 120px;
+      z-index: 5;
+    }
+    
+    .hair-design-title-wrapper {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    
+    .hair-design-title {
+      font-family: var(--font-heading);
+      font-size: clamp(4rem, 8vw, 9rem);
+      font-weight: 800;
+      color: transparent;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F0D9FF 50%, #C89EFF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin: 0;
+      text-align: right;
+      position: relative;
+      display: inline-block;
+      animation: titleReveal 1.2s ease-out;
+    }
+    
+    @keyframes titleReveal {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hair-design-title::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      width: 200px;
+      height: 6px;
+      background: linear-gradient(90deg, transparent 0%, var(--secondary) 50%, transparent 100%);
+      animation: lineGrow 1s ease-out 0.5s both;
+    }
+    
+    @keyframes lineGrow {
+      from {
+        width: 0;
+      }
+      to {
+        width: 200px;
+      }
+    }
+    
+    .hair-design-decorative {
+      position: absolute;
+      top: -60px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      animation: pulse 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+      }
+    }
+    
+    .hair-design-content {
+      position: relative;
+      z-index: 3;
+    }
+    
+    .hair-design-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: cardSlideIn 0.8s ease-out backwards;
+    }
+    
+    .hair-design-card:nth-child(1) { animation-delay: 0.2s; }
+    .hair-design-card:nth-child(2) { animation-delay: 0.4s; }
+    .hair-design-card:nth-child(3) { animation-delay: 0.6s; }
+    .hair-design-card:nth-child(4) { animation-delay: 0.8s; }
+    
+    @keyframes cardSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .hair-design-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .hair-design-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(102, 66, 0, 0.3);
+      transform: translateX(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hair-design-card:hover::before {
+      opacity: 1;
+    }
+    
+    .hair-design-card-text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin: 0;
+      text-align: right;
+      position: relative;
+      z-index: 2;
+      font-weight: 300;
+    }
+    
+    .hair-design-card-text strong {
+      color: #F0D9FF;
+      font-weight: 600;
+    }
+    
+    .hair-design-highlight {
+      background: rgba(102, 66, 0, 0.15);
+      border-right: 4px solid var(--secondary);
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hair-design-highlight::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-gold-shine);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+    
+    .hair-design-highlight:hover::after {
+      opacity: 0.1;
+      animation: shine 1.5s ease;
+    }
+    
+    @keyframes shine {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    
+    .hair-design-floating-element {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(61, 0, 102, 0.2) 0%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .hair-design-floating-element:nth-child(1) {
+      top: 10%;
+      right: -100px;
+      animation-delay: 0s;
+    }
+    
+    .hair-design-floating-element:nth-child(2) {
+      bottom: 20%;
+      left: -150px;
+      animation-delay: 2s;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(30px, -30px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+    
+    @media (max-width: 1024px) {
+      .hair-design-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+      
+      .hair-design-hero {
+        position: relative;
+        top: 0;
+      }
+      
+      .hair-design-title {
+        font-size: clamp(3rem, 10vw, 6rem);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .section-hair-design {
+        padding-top: 100px;
+        padding-bottom: 80px;
+      }
+      
+      .hair-design-container {
+        padding: 0 1.5rem;
+      }
+      
+      .hair-design-card {
+        padding: 2rem;
+      }
+      
+      .hair-design-highlight {
+        padding: 2rem;
+      }
+      
+      .hair-design-title::after {
+        width: 100px;
+      }
+      
+      .hair-design-decorative {
+        width: 200px;
+        height: 200px;
+        top: -40px;
+        left: -40px;
+      }
+    }
+  </style>
+  
+  <div class="hair-design-floating-element"></div>
+  <div class="hair-design-floating-element"></div>
+  
+  <div class="hair-design-section">
+    <div class="hair-design-container">
+      <div class="hair-design-grid">
+        <div class="hair-design-hero">
+          <div class="hair-design-title-wrapper">
+            <div class="hair-design-decorative"></div>
+            <h1 class="hair-design-title">עיצוב שיער</h1>
+          </div>
         </div>
-      </section>
+        
+        <div class="hair-design-content">
+          <div class="hair-design-card">
+            <p class="hair-design-card-text"><strong>שירות עיצוב השיער בפיקוויג</strong><br>עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.</p>
+          </div>
+          
+          <div class="hair-design-card">
+            <p class="hair-design-card-text">כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.</p>
+          </div>
+          
+          <div class="hair-design-card">
+            <p class="hair-design-card-text">כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את להרחיב את השינוי.</p>
+          </div>
+          
+          <div class="hair-design-card hair-design-highlight">
+            <p class="hair-design-card-text">פיקוויג מעניקה <strong>אחריות של שלושה חודשים</strong> מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך. האחריות כולל בין היתר:<br><br>
+            התאמות בעבודת לייס<br>
+            שזירת שיער והוספת טרסים<br>
+            הגדלה או הקטנה של הרשת<br>
+            דיוקים בתספורת ובמבנה  העיצובי<br>
+            התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון</p>
+          </div>
+          
+          <div class="hair-design-card">
+            <p class="hair-design-card-text">זמני האספקה בפיקוויג נעים בין <strong>7-45 ימים</strong> ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם.</p>
+          </div>
+          
+          <div class="hair-design-card">
+            <p class="hair-design-card-text">בפיקוויג מבינים שאת רוכשת פאה ורוצה להנות ממנה, ולכן בתקופה בה הפאה תשאר לתיקונים במסגרת האחריות, תוכלי לקבל <strong>פאה חלופית</strong> שתתאים לך ועד למועד סיום התיקון.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
   
   
