@@ -2687,12 +2687,295 @@
 </nav>
   
   <main>
-      <section id="layout-1772652179459" class="py-16 md:py-24 bg-white layout-section zappy-removable" data-zappy-component="true" style="width: 100%; padding: 60px 0;">
-        <div class="container mx-auto px-4 md:px-8 text-center">
-          <h1 class="text-3xl md:text-4xl font-bold mb-4">מחיר קבוע אחיד ולא משתנה<br><br>לכל גוון אורך ומלאות<br>משיער פרימיום רוסי או ברזילאי<br><br>כדי שאת תוכלי להתרכז במה שהכי חשוב באמת - המראה שלך<br><br>9,999 ש"ח + מע"מ&nbsp;<br>וחבילת עיצוב שיער לבחירתך במחיר אטרקטיבי</h1>
+      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; min-height: 100vh; background: var(--gradient-dark-section); overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 80px;" data-zappy-section="true" class="section">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    .price-hero-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .price-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      position: relative;
+    }
+    
+    .price-display-wrapper {
+      position: relative;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    
+    .price-mega-number {
+      font-family: var(--font-heading);
+      font-size: clamp(80px, 15vw, 220px);
+      font-weight: 900;
+      line-height: 0.9;
+      color: transparent;
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      text-shadow: 0 0 80px rgba(255, 215, 0, 0.3);
+      margin: 0;
+      position: relative;
+      animation: priceGlow 3s ease-in-out infinite;
+      letter-spacing: -0.02em;
+    }
+    
+    @keyframes priceGlow {
+      0%, 100% { 
+        filter: brightness(1) drop-shadow(0 0 40px rgba(255, 215, 0, 0.4));
+      }
+      50% { 
+        filter: brightness(1.2) drop-shadow(0 0 60px rgba(255, 215, 0, 0.6));
+      }
+    }
+    
+    .price-currency {
+      font-size: clamp(40px, 8vw, 100px);
+      display: inline-block;
+      margin-right: 0.3em;
+      opacity: 0.9;
+    }
+    
+    .price-vat-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: clamp(16px, 2.5vw, 28px);
+      font-weight: 600;
+      color: var(--text-light);
+      background: rgba(255, 215, 0, 0.15);
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      padding: 0.5em 1.5em;
+      border-radius: 50px;
+      margin-top: 1.5rem;
+      backdrop-filter: blur(10px);
+      animation: badgePulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes badgePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .price-description-box {
+      margin-top: 4rem;
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .price-description-box::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+      border-radius: 24px;
+      z-index: -1;
+      opacity: 0;
+      animation: borderShine 3s linear infinite;
+    }
+    
+    @keyframes borderShine {
+      0% { opacity: 0; transform: translateX(-100%); }
+      50% { opacity: 1; }
+      100% { opacity: 0; transform: translateX(100%); }
+    }
+    
+    .price-feature-text {
+      font-family: var(--font-heading);
+      font-size: clamp(24px, 4vw, 48px);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.4;
+      margin: 0;
+      text-align: center;
+    }
+    
+    .price-highlight {
+      color: #FFD700;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .price-highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #FFD700, transparent);
+      animation: highlightGlow 2s ease-in-out infinite;
+    }
+    
+    @keyframes highlightGlow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    
+    .price-bonus-section {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    .price-bonus-text {
+      font-family: var(--font-body);
+      font-size: clamp(18px, 3vw, 32px);
+      font-weight: 500;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin: 0;
+      text-align: center;
+    }
+    
+    .price-bonus-highlight {
+      color: #FFA500;
+      font-weight: 700;
+    }
+    
+    .floating-decoration {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.1;
+    }
+    
+    .deco-1 {
+      top: 10%;
+      right: 5%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #FFD700 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .deco-2 {
+      bottom: 15%;
+      left: 8%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #FFA500 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite reverse;
+    }
+    
+    .deco-3 {
+      top: 40%;
+      left: 3%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #FF8C00 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 7s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      33% { transform: translateY(-30px) translateX(20px); }
+      66% { transform: translateY(20px) translateX(-20px); }
+    }
+    
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+      background-size: 100px 100px;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    
+    @media (max-width: 768px) {
+      .price-hero-container {
+        padding: 2rem 1rem;
+      }
+      
+      .price-display-wrapper {
+        padding: 2rem 1rem;
+      }
+      
+      .price-description-box {
+        padding: 2rem 1.5rem;
+        margin-top: 3rem;
+      }
+      
+      .price-bonus-section {
+        margin-top: 2rem;
+        padding-top: 2rem;
+      }
+      
+      .floating-decoration {
+        opacity: 0.05;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .price-mega-number {
+        font-size: 70px;
+      }
+      
+      .price-currency {
+        font-size: 35px;
+      }
+      
+      .price-feature-text {
+        font-size: 20px;
+      }
+      
+      .price-bonus-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <div class="grid-overlay"></div>
+  <div class="floating-decoration deco-1"></div>
+  <div class="floating-decoration deco-2"></div>
+  <div class="floating-decoration deco-3"></div>
+
+  <div class="price-hero-container">
+    <div class="price-hero-grid">
+      <div class="price-display-wrapper">
+        <h1 class="price-mega-number">
+          <span class="price-currency">₪</span>9,999
+        </h1>
+        <div class="price-vat-badge">+ מע"מ</div>
+        
+        <div class="price-description-box">
+          <p class="price-feature-text">
+            <span class="price-highlight">מחיר קבוע אחיד ולא משתנה</span><br>
+            לכל <span class="price-highlight">גוון אורך ומלאות</span><br>
+            משיער <span class="price-highlight">פרימיום רוסי או ברזילאי</span><br>
+            כדי שאת תוכלי להתרכז במה שהכי חשוב באמת - <span class="price-highlight">המראה שלך</span>
+          </p>
           
+          <div class="price-bonus-section">
+            <p class="price-bonus-text">
+              <span class="price-bonus-highlight">וחבילת עיצוב שיער לבחירתך במחיר אטרקטיבי</span>
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
   
   
