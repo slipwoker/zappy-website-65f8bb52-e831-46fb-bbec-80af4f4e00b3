@@ -2320,79 +2320,119 @@
   </div>
 </section>
 
-<section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; min-height: 100vh; background: var(--gradient-dark-section); overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 120px 2rem 80px;" data-zappy-section="true" class="section">
+<section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; background: var(--gradient-dark-section); padding: 0; margin: 0;" data-zappy-section="true" class="section">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600&display=swap');
     
-    .price-showcase-container {
+    .price-hero-section {
       position: relative;
-      z-index: 10;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .floating-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.4;
-      animation: float 8s ease-in-out infinite;
-      pointer-events: none;
-    }
-    
-    .orb-1 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-      top: -200px;
-      right: -100px;
-      animation-delay: 0s;
-    }
-    
-    .orb-2 {
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
-      bottom: -150px;
-      left: -100px;
-      animation-delay: 2s;
-    }
-    
-    .orb-3 {
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, #0C7C79 0%, transparent 70%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation-delay: 4s;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -30px) scale(1.1); }
-      66% { transform: translate(-30px, 30px) scale(0.9); }
-    }
-    
-    .premium-badge {
-      display: inline-block;
-      background: var(--gradient-gold-accent);
-      color: var(--text-light);
-      padding: 0.75rem 2rem;
-      border-radius: 50px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 24px rgba(61, 0, 102, 0.3);
-      animation: pulse-glow 2s ease-in-out infinite;
-      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
       overflow: hidden;
     }
     
-    .premium-badge::before {
+    .price-hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(102, 66, 0, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(61, 0, 102, 0.2) 0%, transparent 60%);
+      animation: pulseGlow 8s ease-in-out infinite;
+      z-index: 0;
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
+      50% { transform: scale(1.1) rotate(5deg); opacity: 0.8; }
+    }
+    
+    .price-content-wrapper {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .price-ornament-top {
+      width: 120px;
+      height: 2px;
+      background: var(--gradient-gold-accent);
+      margin: 0 auto 2rem;
+      position: relative;
+      animation: expandLine 1s ease-out;
+    }
+    
+    .price-ornament-top::before,
+    .price-ornament-top::after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--secondary);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      background: var(--bg-dark);
+    }
+    
+    .price-ornament-top::before {
+      right: -20px;
+    }
+    
+    .price-ornament-top::after {
+      left: -20px;
+    }
+    
+    @keyframes expandLine {
+      from { width: 0; }
+      to { width: 120px; }
+    }
+    
+    .price-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--text-light);
+      line-height: 1.1;
+      margin: 0 0 2rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+      letter-spacing: -0.02em;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .price-display-container {
+      position: relative;
+      display: inline-block;
+      margin: 3rem auto;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    .price-main-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      padding: 4rem 5rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+    }
+    
+    .price-main-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -2400,227 +2440,206 @@
       width: 100%;
       height: 100%;
       background: var(--gradient-gold-shine);
-      animation: shine 3s infinite;
-    }
-    
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 8px 24px rgba(61, 0, 102, 0.3); }
-      50% { box-shadow: 0 8px 32px rgba(61, 0, 102, 0.6); }
-    }
-    
-    @keyframes shine {
-      0% { left: -100%; }
-      50%, 100% { left: 100%; }
-    }
-    
-    .price-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-lg);
-      padding: 4rem 3rem;
-      margin: 2rem auto;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      transform-style: preserve-3d;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    
-    .price-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(61, 0, 102, 0.2) 0%, rgba(12, 124, 121, 0.2) 100%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: 0;
-    }
-    
-    .price-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 30px 80px rgba(61, 0, 102, 0.4);
-    }
-    
-    .price-card:hover::before {
-      opacity: 1;
-    }
-    
-    .price-card-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .price-main {
-      font-family: var(--font-heading);
-      font-size: 6rem;
-      font-weight: 900;
-      color: var(--text-light);
-      line-height: 1;
-      margin: 1rem 0;
-      background: linear-gradient(135deg, #FFFFFF 0%, #E0D5F0 50%, #FFFFFF 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 3s ease-in-out infinite;
-      position: relative;
-      display: inline-block;
+      animation: shimmer 3s infinite;
+      pointer-events: none;
+      z-index: 1;
     }
     
     @keyframes shimmer {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+      0% { left: -100%; }
+      50%, 100% { left: 200%; }
     }
     
-    .price-main::after {
-      content: '₪';
-      position: absolute;
-      left: -1.5rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 3rem;
-      opacity: 0.7;
+    .price-main-card:hover {
+      transform: scale(1.05) translateY(-10px);
+      border-color: var(--secondary);
+      box-shadow: 0 40px 80px rgba(102, 66, 0, 0.4),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
     
     .price-label {
       font-family: var(--font-body);
       font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.7);
-      font-weight: 400;
-      margin-top: 0.5rem;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
     }
     
-    .package-title {
+    .price-amount {
       font-family: var(--font-heading);
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-weight: 900;
       color: var(--text-light);
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
+      line-height: 1;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F0E6D2 50%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
     }
     
-    .package-subtitle {
+    .price-currency {
+      font-size: 0.4em;
+      vertical-align: super;
+      margin-right: 0.2em;
+    }
+    
+    .price-vat {
       font-family: var(--font-body);
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8);
-      font-weight: 300;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .price-floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.2) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .floating-circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      right: -50px;
+      animation-delay: 0s;
+    }
+    
+    .floating-circle:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      bottom: -80px;
+      left: -40px;
+      animation-delay: 2s;
+    }
+    
+    .floating-circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      left: 10%;
+      animation-delay: 4s;
+      background: radial-gradient(circle, rgba(61, 0, 102, 0.15) 0%, transparent 70%);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-30px) scale(1.1); opacity: 0.6; }
+    }
+    
+    .price-decorative-lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      opacity: 0.1;
     }
     
     .decorative-line {
-      width: 80px;
-      height: 3px;
-      background: var(--gradient-gold-accent);
-      margin: 2rem auto;
-      border-radius: 2px;
-      position: relative;
-    }
-    
-    .decorative-line::before,
-    .decorative-line::after {
-      content: '';
       position: absolute;
-      width: 8px;
-      height: 8px;
-      background: var(--primary);
-      border-radius: 50%;
-      top: 50%;
-      transform: translateY(-50%);
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--secondary), transparent);
     }
     
-    .decorative-line::before {
-      right: 100%;
-      margin-right: 10px;
-    }
+    .decorative-line:nth-child(1) { left: 20%; animation: lineGlow 3s infinite; }
+    .decorative-line:nth-child(2) { left: 40%; animation: lineGlow 3s infinite 1s; }
+    .decorative-line:nth-child(3) { left: 60%; animation: lineGlow 3s infinite 2s; }
+    .decorative-line:nth-child(4) { left: 80%; animation: lineGlow 3s infinite 0.5s; }
     
-    .decorative-line::after {
-      left: 100%;
-      margin-left: 10px;
-    }
-    
-    .corner-accent {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      pointer-events: none;
-    }
-    
-    .corner-accent.top-right {
-      top: 20px;
-      right: 20px;
-      border-bottom: none;
-      border-left: none;
-    }
-    
-    .corner-accent.bottom-left {
-      bottom: 20px;
-      left: 20px;
-      border-top: none;
-      border-right: none;
+    @keyframes lineGlow {
+      0%, 100% { opacity: 0.05; }
+      50% { opacity: 0.2; }
     }
     
     @media (max-width: 768px) {
-      section {
-        padding-top: 100px;
-        padding-bottom: 60px;
-        min-height: auto;
+      .price-hero-section {
+        min-height: 60vh;
+        padding: 3rem 1.5rem;
       }
       
-      .price-card {
-        padding: 3rem 2rem;
-        margin: 1.5rem 0;
+      .price-main-card {
+        padding: 3rem 2.5rem;
+        border-radius: 20px;
       }
       
-      .package-title {
+      .price-hero-title {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
       }
       
-      .package-subtitle {
-        font-size: 1rem;
-      }
-      
-      .price-main {
+      .price-amount {
         font-size: 4rem;
       }
       
-      .price-main::after {
-        font-size: 2rem;
-        left: -1rem;
+      .price-ornament-top {
+        width: 80px;
+        margin-bottom: 1.5rem;
       }
       
-      .orb-1, .orb-2, .orb-3 {
-        width: 250px;
-        height: 250px;
+      .floating-circle:nth-child(1) {
+        width: 200px;
+        height: 200px;
       }
       
-      .premium-badge {
-        font-size: 0.8rem;
-        padding: 0.6rem 1.5rem;
+      .floating-circle:nth-child(2) {
+        width: 150px;
+        height: 150px;
       }
     }
   </style>
   
-  <div class="floating-orb orb-1"></div>
-  <div class="floating-orb orb-2"></div>
-  <div class="floating-orb orb-3"></div>
-  
-  <div class="price-showcase-container">
-    <div class="premium-badge">וחבילת עיצוב שיער במחיר אטרקטיבי</div>
+  <div class="price-hero-section">
+    <div class="price-decorative-lines">
+      <div class="decorative-line"></div>
+      <div class="decorative-line"></div>
+      <div class="decorative-line"></div>
+      <div class="decorative-line"></div>
+    </div>
     
-    <div class="price-card">
-      <div class="corner-accent top-right"></div>
-      <div class="corner-accent bottom-left"></div>
+    <div class="price-floating-elements">
+      <div class="floating-circle"></div>
+      <div class="floating-circle"></div>
+      <div class="floating-circle"></div>
+    </div>
+    
+    <div class="price-content-wrapper">
+      <div class="price-ornament-top"></div>
       
-      <div class="price-card-content">
-        <h2 class="package-title">וחבילת עיצוב שיער במחיר אטרקטיבי</h2>
-        <div class="decorative-line"></div>
-        <p class="package-subtitle">במחיר קבוע של</p>
-        <div class="price-main">+ מע"מ</div>
+      <h2 class="price-hero-title">וחבילת עיצוב שיער במחיר אטרקטיבי</h2>
+      
+      <div class="price-display-container">
+        <div class="price-main-card">
+          <div class="price-label">במחיר קבוע של</div>
+          <div class="price-amount">
+            <span class="price-currency">₪</span>1,890
+          </div>
+          <div class="price-vat">+ מע"מ</div>
+        </div>
       </div>
     </div>
   </div>
