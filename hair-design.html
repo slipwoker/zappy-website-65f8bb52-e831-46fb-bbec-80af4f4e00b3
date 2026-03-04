@@ -2687,351 +2687,343 @@
 </nav>
   
   <main>
-      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: var(--gradient-dark-section); overflow: hidden; padding: 120px 0 100px 0; min-height: 100vh; display: flex; align-items: center;" data-zappy-section="true" class="section">
+      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: var(--gradient-dark-section); overflow: hidden; padding: 120px 0 80px 0; direction: rtl;" data-zappy-section="true" class="section">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
     
-    .hair-design-section {
-      width: 100%;
+    .design-section-wrapper {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
       position: relative;
       z-index: 2;
     }
     
-    .hair-design-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-    }
-    
-    .hair-design-grid {
+    .design-hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 1fr;
+      gap: 3rem;
       align-items: start;
       position: relative;
     }
     
-    .hair-design-hero {
-      position: sticky;
-      top: 120px;
-      z-index: 5;
-    }
-    
-    .hair-design-title-wrapper {
+    .design-title-block {
       position: relative;
-      margin-bottom: 2rem;
     }
     
-    .hair-design-title {
-      font-family: var(--font-heading);
-      font-size: clamp(4rem, 8vw, 9rem);
-      font-weight: 800;
-      color: transparent;
-      background: linear-gradient(135deg, #FFFFFF 0%, #F0D9FF 50%, #C89EFF 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      line-height: 0.9;
-      letter-spacing: -0.03em;
-      margin: 0;
-      text-align: right;
+    .design-title-wrapper {
       position: relative;
       display: inline-block;
-      animation: titleReveal 1.2s ease-out;
     }
     
-    @keyframes titleReveal {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .hair-design-title::after {
-      content: '';
+    .design-title-bg {
       position: absolute;
-      bottom: -20px;
-      right: 0;
-      width: 200px;
-      height: 6px;
-      background: linear-gradient(90deg, transparent 0%, var(--secondary) 50%, transparent 100%);
-      animation: lineGrow 1s ease-out 0.5s both;
+      top: -20px;
+      right: -30px;
+      width: 120%;
+      height: 140%;
+      background: var(--gradient-gold-accent);
+      opacity: 0.15;
+      transform: rotate(-2deg);
+      border-radius: 8px;
+      z-index: 0;
     }
     
-    @keyframes lineGrow {
-      from {
-        width: 0;
-      }
-      to {
-        width: 200px;
-      }
-    }
-    
-    .hair-design-decorative {
-      position: absolute;
-      top: -60px;
-      left: -80px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(102, 66, 0, 0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      filter: blur(40px);
-      animation: pulse 4s ease-in-out infinite;
-      pointer-events: none;
-    }
-    
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.6;
-      }
-      50% {
-        transform: scale(1.2);
-        opacity: 0.3;
-      }
-    }
-    
-    .hair-design-content {
+    .design-main-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin: 0 0 2rem 0;
       position: relative;
-      z-index: 3;
+      z-index: 1;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
     }
     
-    .hair-design-card {
-      background: rgba(255, 255, 255, 0.03);
+    .design-accent-line {
+      width: 120px;
+      height: 5px;
+      background: var(--gradient-gold-shine);
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%);
+      margin: 2rem 0 3rem auto;
+      border-radius: 3px;
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.6; transform: scaleX(1); }
+      50% { opacity: 1; transform: scaleX(1.1); }
+    }
+    
+    .design-content-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .design-card {
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 3rem;
-      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
       position: relative;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: cardSlideIn 0.8s ease-out backwards;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
     
-    .hair-design-card:nth-child(1) { animation-delay: 0.2s; }
-    .hair-design-card:nth-child(2) { animation-delay: 0.4s; }
-    .hair-design-card:nth-child(3) { animation-delay: 0.6s; }
-    .hair-design-card:nth-child(4) { animation-delay: 0.8s; }
-    
-    @keyframes cardSlideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    .hair-design-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(102, 66, 0, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      filter: blur(30px);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    
-    .hair-design-card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(102, 66, 0, 0.3);
-      transform: translateX(-8px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-    
-    .hair-design-card:hover::before {
-      opacity: 1;
-    }
-    
-    .hair-design-card-text {
-      font-family: var(--font-body);
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--text-light);
-      margin: 0;
-      text-align: right;
-      position: relative;
-      z-index: 2;
-      font-weight: 300;
-    }
-    
-    .hair-design-card-text strong {
-      color: #F0D9FF;
-      font-weight: 600;
-    }
-    
-    .hair-design-highlight {
-      background: rgba(102, 66, 0, 0.15);
-      border-right: 4px solid var(--secondary);
-      padding: 2.5rem 3rem;
-      border-radius: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hair-design-highlight::after {
+    .design-card::before {
       content: '';
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
       height: 100%;
-      background: var(--gradient-gold-shine);
+      background: linear-gradient(135deg, rgba(102, 66, 0, 0.15) 0%, transparent 60%);
       opacity: 0;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.4s ease;
       pointer-events: none;
     }
     
-    .hair-design-highlight:hover::after {
-      opacity: 0.1;
-      animation: shine 1.5s ease;
+    .design-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(102, 66, 0, 0.4);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
     }
     
-    @keyframes shine {
-      from {
-        transform: translateX(100%);
-      }
-      to {
-        transform: translateX(-100%);
-      }
+    .design-card:hover::before {
+      opacity: 1;
     }
     
-    .hair-design-floating-element {
+    .design-card-text {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      text-align: right;
+    }
+    
+    .design-card-text strong {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+    
+    .design-highlight-card {
+      background: linear-gradient(135deg, rgba(61, 0, 102, 0.2) 0%, rgba(102, 66, 0, 0.15) 100%);
+      border: 2px solid var(--secondary);
+      position: relative;
+    }
+    
+    .design-highlight-card::after {
+      content: '✦';
       position: absolute;
-      width: 400px;
-      height: 400px;
+      top: 20px;
+      left: 20px;
+      font-size: 2rem;
+      color: var(--secondary);
+      opacity: 0.3;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.2); opacity: 0.6; }
+    }
+    
+    .design-warranty-section {
+      margin-top: 4rem;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(102, 66, 0, 0.15) 0%, rgba(61, 0, 102, 0.1) 100%);
+      border-radius: var(--radius-lg);
+      border: 2px solid rgba(102, 66, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .design-warranty-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .design-warranty-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--text-light);
+      margin: 0 0 1.5rem 0;
+      position: relative;
+      z-index: 1;
+      text-align: right;
+    }
+    
+    .design-warranty-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .design-warranty-item {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      line-height: 2;
+      color: var(--text-light);
+      padding-right: 2rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    
+    .design-warranty-item::before {
+      content: '◆';
+      position: absolute;
+      right: 0;
+      color: var(--secondary);
+      font-size: 0.8rem;
+    }
+    
+    .design-delivery-banner {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(61, 0, 102, 0.3);
+      border-radius: var(--radius-md);
+      border-right: 4px solid var(--primary);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .design-delivery-text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: var(--text-light);
+      margin: 0;
+      text-align: right;
+    }
+    
+    .design-floating-element {
+      position: absolute;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(61, 0, 102, 0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.2) 0%, transparent 70%);
       filter: blur(60px);
       pointer-events: none;
       animation: float 8s ease-in-out infinite;
     }
     
-    .hair-design-floating-element:nth-child(1) {
+    .design-floating-element:nth-child(1) {
       top: 10%;
-      right: -100px;
+      right: 5%;
       animation-delay: 0s;
     }
     
-    .hair-design-floating-element:nth-child(2) {
-      bottom: 20%;
-      left: -150px;
+    .design-floating-element:nth-child(2) {
+      bottom: 15%;
+      left: 10%;
+      background: radial-gradient(circle, rgba(61, 0, 102, 0.2) 0%, transparent 70%);
       animation-delay: 2s;
     }
     
     @keyframes float {
-      0%, 100% {
-        transform: translate(0, 0) scale(1);
-      }
-      33% {
-        transform: translate(30px, -30px) scale(1.1);
-      }
-      66% {
-        transform: translate(-20px, 20px) scale(0.9);
-      }
-    }
-    
-    @media (max-width: 1024px) {
-      .hair-design-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-      
-      .hair-design-hero {
-        position: relative;
-        top: 0;
-      }
-      
-      .hair-design-title {
-        font-size: clamp(3rem, 10vw, 6rem);
-      }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
     }
     
     @media (max-width: 768px) {
-      .section-hair-design {
-        padding-top: 100px;
-        padding-bottom: 80px;
+      .design-main-title {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
       }
       
-      .hair-design-container {
-        padding: 0 1.5rem;
+      .design-card {
+        padding: 1.5rem;
       }
       
-      .hair-design-card {
-        padding: 2rem;
+      .design-card-text {
+        font-size: 1rem;
       }
       
-      .hair-design-highlight {
-        padding: 2rem;
+      .design-warranty-section {
+        padding: 2rem 1.5rem;
       }
       
-      .hair-design-title::after {
-        width: 100px;
+      .design-warranty-title {
+        font-size: 1.5rem;
       }
       
-      .hair-design-decorative {
+      .design-warranty-item {
+        font-size: 1rem;
+      }
+      
+      .design-floating-element {
         width: 200px;
         height: 200px;
-        top: -40px;
-        left: -40px;
       }
     }
   </style>
   
-  <div class="hair-design-floating-element"></div>
-  <div class="hair-design-floating-element"></div>
+  <div class="design-floating-element"></div>
+  <div class="design-floating-element"></div>
   
-  <div class="hair-design-section">
-    <div class="hair-design-container">
-      <div class="hair-design-grid">
-        <div class="hair-design-hero">
-          <div class="hair-design-title-wrapper">
-            <div class="hair-design-decorative"></div>
-            <h1 class="hair-design-title">עיצוב שיער</h1>
-          </div>
+  <div class="design-section-wrapper">
+    <div class="design-hero-grid">
+      <div class="design-title-block">
+        <div class="design-title-wrapper">
+          <div class="design-title-bg"></div>
+          <h1 class="design-main-title">עיצוב שיער</h1>
+        </div>
+        <div class="design-accent-line"></div>
+      </div>
+      
+      <div class="design-content-cards">
+        <div class="design-card design-highlight-card">
+          <p class="design-card-text"><strong>שירות עיצוב השיער בפיקוויג</strong><br>עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.</p>
         </div>
         
-        <div class="hair-design-content">
-          <div class="hair-design-card">
-            <p class="hair-design-card-text"><strong>שירות עיצוב השיער בפיקוויג</strong><br>עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.</p>
-          </div>
-          
-          <div class="hair-design-card">
-            <p class="hair-design-card-text">כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.</p>
-          </div>
-          
-          <div class="hair-design-card">
-            <p class="hair-design-card-text">כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את להרחיב את השינוי.</p>
-          </div>
-          
-          <div class="hair-design-card hair-design-highlight">
-            <p class="hair-design-card-text">פיקוויג מעניקה <strong>אחריות של שלושה חודשים</strong> מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך. האחריות כולל בין היתר:<br><br>
-            התאמות בעבודת לייס<br>
-            שזירת שיער והוספת טרסים<br>
-            הגדלה או הקטנה של הרשת<br>
-            דיוקים בתספורת ובמבנה  העיצובי<br>
-            התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון</p>
-          </div>
-          
-          <div class="hair-design-card">
-            <p class="hair-design-card-text">זמני האספקה בפיקוויג נעים בין <strong>7-45 ימים</strong> ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם.</p>
-          </div>
-          
-          <div class="hair-design-card">
-            <p class="hair-design-card-text">בפיקוויג מבינים שאת רוכשת פאה ורוצה להנות ממנה, ולכן בתקופה בה הפאה תשאר לתיקונים במסגרת האחריות, תוכלי לקבל <strong>פאה חלופית</strong> שתתאים לך ועד למועד סיום התיקון.</p>
-          </div>
+        <div class="design-card">
+          <p class="design-card-text">כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.</p>
         </div>
+        
+        <div class="design-card">
+          <p class="design-card-text">כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את להרחיב את השינוי.</p>
+        </div>
+      </div>
+      
+      <div class="design-warranty-section">
+        <h2 class="design-warranty-title">אחריות ושירות מלא</h2>
+        <p class="design-card-text">פיקוויג מעניקה אחריות של שלושה חודשים מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך. האחריות כולל בין היתר:</p>
+        <ul class="design-warranty-list">
+          <li class="design-warranty-item">התאמות בעבודת לייס</li>
+          <li class="design-warranty-item">שזירת שיער והוספת טרסים</li>
+          <li class="design-warranty-item">הגדלה או הקטנה של הרשת</li>
+          <li class="design-warranty-item">דיוקים בתספורת ובמבנה  העיצובי</li>
+          <li class="design-warranty-item">התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון</li>
+        </ul>
+        
+        <div class="design-delivery-banner">
+          <p class="design-delivery-text">זמני האספקה בפיקוויג נעים בין 7-45 ימים ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם.</p>
+        </div>
+      </div>
+      
+      <div class="design-card design-highlight-card">
+        <p class="design-card-text">בפיקוויג מבינים שאת רוכשת פאה ורוצה להנות ממנה, ולכן בתקופה בה הפאה תשאר לתיקונים במסגרת האחריות, תוכלי לקבל פאה חלופית שתתאים לך ועד למועד סיום התיקון.</p>
       </div>
     </div>
   </div>
