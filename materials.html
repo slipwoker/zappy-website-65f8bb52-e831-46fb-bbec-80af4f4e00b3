@@ -1105,198 +1105,79 @@
 /* V2 Regenerated Section CSS */
 .materials-cover-section {
   position: relative;
-  width: 100%;
-  height: 500px;
+  background: radial-gradient(120% 90% at 20% 15%, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.00) 55%), linear-gradient(135deg, rgba(200,154,87,0.18) 0%, rgba(181,106,122,0.22) 35%, rgba(46,23,54,0.30) 72%, rgba(12,124,121,0.16) 100%);
+  padding: 120px 16px 140px;
   overflow: visible;
-  padding-bottom: 100px;
+  color: var(--text-dark);
   direction: rtl;
 }
 
-.materials-cover-section .materials-cover-image-wrapper {
+.materials-cover-section::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-}
-
-.materials-cover-section .materials-cover-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.materials-cover-section .materials-cover-scrim {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(43,26,47,0.75) 0%, rgba(43,26,47,0.45) 50%, rgba(43,26,47,0.20) 100%);
-  z-index: 2;
-}
-
-.materials-cover-section .materials-cover-content {
-  position: relative;
-  z-index: 10;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: right;
-}
-
-.materials-cover-section .materials-cover-content h2 {
-  font-family: "Noto Serif Hebrew", "Times New Roman", serif;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--text-light);
-  margin: 0 0 20px 0;
-  max-width: 600px;
-  text-shadow: 0 10px 26px rgba(43,26,47,0.38);
-}
-
-.materials-cover-section .materials-cover-content p {
-  font-family: "Heebo", "Rubik", Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.8;
-  color: var(--text-light);
-  margin: 0;
-  max-width: 520px;
-  text-shadow: 0 4px 12px rgba(43,26,47,0.50);
-}
-
-.materials-cover-section .materials-cover-divider-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
+  background: radial-gradient(60% 120% at 50% 50%, rgba(12,124,121,0.40) 0%, rgba(12,124,121,0.14) 45%, rgba(12,124,121,0.00) 70%);
   pointer-events: none;
-  z-index: 5;
-}
-
-.materials-cover-section .materials-cover-divider-wrapper svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 768px) {
-  .materials-cover-section {
-    height: 400px;
-    padding-bottom: 80px;
-  }
-  
-  .materials-cover-section .materials-cover-content {
-    padding: 0 20px;
-    align-items: flex-start;
-  }
-  
-  .materials-cover-section .materials-cover-content h2 {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-  
-  .materials-cover-section .materials-cover-content p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-  
-  .materials-cover-section .materials-cover-scrim {
-    background: linear-gradient(90deg, rgba(43,26,47,0.80) 0%, rgba(43,26,47,0.55) 70%, rgba(43,26,47,0.30) 100%);
-  }
-  
-  .materials-cover-section .materials-cover-divider-wrapper {
-    height: 80px;
-  }
-}
-</style>
-
-<style data-zappy-section-v2-css="true">
-/* V2 Regenerated Section CSS */
-.materials-cover-section {
-  position: relative;
-  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
-  color: var(--text-dark);
-  padding: 140px 24px 80px;
-  overflow: visible;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 0;
 }
 
 .materials-cover-section .materials-cover-container {
   max-width: 1200px;
-  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .materials-cover-section .materials-cover-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-inline-end: 40px;
+  gap: 32px;
 }
 
-.materials-cover-section .materials-cover-text-panel {
-  background: rgba(251,245,238,0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 48px 40px;
-  border-radius: 0px;
-  border-top: 1px solid rgba(200,154,87,0.25);
-  border-bottom: 1px solid rgba(200,154,87,0.25);
-  box-shadow: 0 16px 34px rgba(43,26,47,0.12);
-  position: relative;
+.materials-cover-section .materials-cover-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.materials-cover-section .materials-cover-text-panel::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(200,154,87,0.6) 0%, rgba(12,124,121,0.4) 100%);
-}
-
-.materials-cover-section .materials-cover-title {
+.materials-cover-section .materials-cover-headline {
   font-family: "Noto Serif Hebrew", "Times New Roman", serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
   color: var(--text-dark);
-  margin: 0 0 24px 0;
   text-align: right;
-  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 10px 26px rgba(43,26,47,0.38);
 }
 
-.materials-cover-section .materials-cover-description {
+.materials-cover-section .materials-cover-subheadline {
+  font-family: "Noto Serif Hebrew", "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-dark);
+  text-align: right;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.materials-cover-section .materials-cover-tagline {
   font-family: "Heebo", "Rubik", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  color: var(--text-dark);
-  margin: 0;
+  color: rgba(43,26,47,0.78);
   text-align: right;
-  opacity: 0.85;
+  margin: 0;
+  max-width: 480px;
 }
 
 .materials-cover-section .materials-cover-image-wrapper {
@@ -1309,12 +1190,12 @@
 .materials-cover-section .materials-cover-image-frame {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  aspect-ratio: 3/4;
+  max-width: 520px;
+  aspect-ratio: 4/5;
   border-radius: 0px;
   overflow: hidden;
   box-shadow: 0 26px 60px rgba(43,26,47,0.22);
-  border: 1px solid rgba(255,255,255,0.55);
+  border: 1px solid rgba(46,23,54,0.10);
   z-index: 2;
 }
 
@@ -1327,31 +1208,36 @@
 
 .materials-cover-section .materials-cover-decorative-accent {
   position: absolute;
-  bottom: -30px;
-  left: -30px;
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle at center, rgba(12,124,121,0.18) 0%, rgba(200,154,87,0.12) 50%, transparent 70%);
-  border-radius: 50%;
-  z-index: 1;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, rgba(200,154,87,0.35) 0%, rgba(181,106,122,0.28) 100%);
+  border-radius: 0px;
+  z-index: 0;
   pointer-events: none;
+  box-shadow: 0 16px 34px rgba(43,26,47,0.12);
 }
 
-.materials-cover-section .materials-cover-decorative-lines {
+.materials-cover-section .materials-cover-divider-wrapper {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80px;
   pointer-events: none;
-  z-index: 0;
-  opacity: 0.7;
+  z-index: 5;
+}
+
+.materials-cover-section .materials-cover-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
   .materials-cover-section {
-    padding: 100px 16px 60px;
-    min-height: auto;
+    padding: 100px 16px 120px;
   }
 
   .materials-cover-section .materials-cover-container {
@@ -1359,22 +1245,19 @@
     gap: 48px;
   }
 
-  .materials-cover-section .materials-cover-content {
-    padding-inline-end: 0;
-    order: 2;
-  }
-
-  .materials-cover-section .materials-cover-text-panel {
-    padding: 32px 24px;
-  }
-
-  .materials-cover-section .materials-cover-title {
+  .materials-cover-section .materials-cover-headline {
     font-size: 32px;
-    margin-bottom: 16px;
+    line-height: 1.2;
   }
 
-  .materials-cover-section .materials-cover-image-wrapper {
-    order: 1;
+  .materials-cover-section .materials-cover-subheadline {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .materials-cover-section .materials-cover-tagline {
+    font-size: 16px;
+    max-width: 100%;
   }
 
   .materials-cover-section .materials-cover-image-frame {
@@ -1382,10 +1265,10 @@
   }
 
   .materials-cover-section .materials-cover-decorative-accent {
-    width: 180px;
-    height: 180px;
-    bottom: -20px;
-    left: -20px;
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    right: -20px;
   }
 }
 </style>
@@ -1447,16 +1330,16 @@
 
   <nav class="navbar" dir="rtl" style="background: transparent;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1771797932969-fnrvqw8c9" data-native-element="true">
-    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
-    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
+    <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display:none;">
       <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call" data-element-type="button" data-element-id="btn-1771797932969-jvwxjho66" data-native-element="true">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
@@ -1480,33 +1363,24 @@
     <section class="materials-cover-section" data-layout-spec="חומרים-cover" data-zappy-section="true">
   <div class="materials-cover-container">
     <div class="materials-cover-content">
-      <div class="materials-cover-text-panel">
-        <h2 class="materials-cover-title">חומרי גלם מהמשובחים בעולם</h2>
-        <p class="materials-cover-description">שיער טבעי 100% מרוסיה וברזיל. כל פאה עוברת בחירה קפדנית של סיבים איכוtiים, עיבוד ידני ובקרת איכות מחמירה. התוצאה: מראה טבעי, תחושה משיית ועמידות לאורך זמן.</p>
+      <div class="materials-cover-text-block">
+        <h2 class="materials-cover-headline">PICKWIG חרטה על דגלה לבטל את כל הפקטורים שהופכים פאת יוקרה ליקרה כלכלית</h2>
+        <h3 class="materials-cover-subheadline">PICKWIG היא הפיכה בענף הפאות המאפשרת רכישת פאות יוקרה לצד חופש יצירה מוחלט בבחירת הגוון, האורך והמלאות במחיר קבוע שאינו משתנה.</h3>
+        <p class="materials-cover-tagline">כדי שאת תוכלי להתרכז במה שהכי חשוב באמת - המראה שלך</p>
       </div>
     </div>
     <div class="materials-cover-image-wrapper">
       <div class="materials-cover-image-frame">
-        <img alt="סיבי שיער טבעיים באיכות פרימיום" class="materials-cover-image" src="/assets/pickwig-section-חומרים-cover-materials-cover-image-1.webp" data-context="Close-up of luxurious human hair fibers in warm honey and chestnut tones, showing natural texture and sheen. Soft focus background with bokeh effect. Professional beauty photography for a premium wig business." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
+        <img alt="סיבי שיער טבעי פרימיום לפאות יוקרה" class="materials-cover-image" src="/assets/site-materials-cover-image-1.webp" data-placeholder="materials-cover-image-1" data-context="Extreme close-up of premium natural hair fibers for luxury wigs, showing the silky texture and natural sheen of Russian or Brazilian hair strands in warm brown tones, with soft studio lighting highlighting the individual hair strands against a soft pearl background, professional beauty photography for a high-end wig materials showcase" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" data-zappy-editable-image="true">
       </div>
       <div class="materials-cover-decorative-accent"></div>
     </div>
   </div>
-  <svg class="materials-cover-decorative-lines" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="materials-line-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:rgba(200,154,87,0.12);stop-opacity:1"></stop>
-        <stop offset="100%" style="stop-color:rgba(12,124,121,0.08);stop-opacity:1"></stop>
-      </linearGradient>
-      <linearGradient id="materials-line-gradient-2" x1="100%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:rgba(181,106,122,0.10);stop-opacity:1"></stop>
-        <stop offset="100%" style="stop-color:rgba(200,154,87,0.06);stop-opacity:1"></stop>
-      </linearGradient>
-    </defs>
-    <path d="M 0 200 Q 300 180 600 220 T 1200 200" stroke="url(#materials-line-gradient-1)" stroke-width="1.5" fill="none" opacity="0.6"></path>
-    <path d="M 0 400 Q 400 380 800 420 T 1200 400" stroke="url(#materials-line-gradient-2)" stroke-width="1" fill="none" opacity="0.4"></path>
-    <path d="M 0 600 Q 350 620 700 580 T 1200 600" stroke="url(#materials-line-gradient-1)" stroke-width="1.2" fill="none" opacity="0.5"></path>
-  </svg>
+  <div class="materials-cover-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 80" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,45 Q60,38 120,42 T240,35 Q300,40 360,38 T480,42 Q540,36 600,40 T720,38 Q780,42 840,36 T960,40 Q1020,38 1080,42 T1200,38 L1200,80 Z" fill="#FBF5EE"></path>
+    </svg>
+  </div>
 </section>
 
 <section class="materials-section" data-layout-spec="חומרים-materials" id="zappy-section-1">
@@ -1560,7 +1434,7 @@
   </div>
   
   <div class="materials-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewbox="0 0 1200 120" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="materials-fabric-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" style="stop-color:#D6B25E;stop-opacity:0.25"></stop>
@@ -1654,7 +1528,7 @@
 
   <!-- Bottom Divider: Thread-like linework SVG -->
   <div class="materials-comparison-divider-wrapper">
-    <svg aria-hidden="true" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg aria-hidden="true" viewbox="0 0 1200 60" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,60 L0,30 Q100,25 200,32 Q250,28 300,35 Q400,30 500,38 Q600,32 700,35 Q800,38 900,30 Q1000,35 1100,28 Q1150,32 1200,30 L1200,60 Z" fill="#FBF5EE"></path>
     </svg>
   </div>
@@ -1685,7 +1559,7 @@
   </div>
 
   <div class="materials-portfolio-divider-wrapper">
-    <svg aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg aria-hidden="true" viewbox="0 0 1200 100" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,100 L0,55 Q30,48 60,52 T120,50 Q150,55 180,48 T240,52 Q270,50 300,55 T360,48 Q390,52 420,50 T480,55 Q510,48 540,52 T600,50 Q630,55 660,48 T720,52 Q750,50 780,55 T840,48 Q870,52 900,50 T960,55 Q990,48 1020,52 T1080,50 Q1110,55 1140,48 T1200,52 L1200,100 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
