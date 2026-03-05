@@ -5,42 +5,42 @@
 ## Pages
 
 ### בית
-https://pickwig.com
+https://example.com
 פאות טבעיות ונוחות במיוחד לחולות אונקולוגיה, נשים דתיות ואלופציה. פיקוויג מציעה פתרונות שיער יוקרתיים בעבודת יד למראה שופע ובריא. התייעצות ללא התחייבות!
 
 ### אודות
-https://pickwig.com/about
+https://example.com/about
 למעלה משני עשורים של ניסיון בייצור פאות יוקרתיות וטופרים בעבודת יד. צוות פיקוויג מתמחה בפתרונות אישיים לחולות אונקולוגיה, נשים דתיות ואלופציה. גלי את המחויבות שלנו לאיכות ונוחות.
 
 ### חומרים
-https://pickwig.com/materials
+https://example.com/materials
 שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.
 
 ### צור קשר
-https://pickwig.com/contact
+https://example.com/contact
 צרי קשר לייעוץ מקצועי והתאמה אישית של פאות ומערכות שיער. הצוות שלנו זמין לענות על כל שאלה ולתת פתרון מושלם למראה השיער שחלמת עליו. התייעצות ראשונה ללא עלות!
 
 ### עיצוב שיער
-https://pickwig.com/hair-design
+https://example.com/hair-design
 
 ### Page
-https://pickwig.com/price-list
+https://example.com/price-list
 
 ### Page
-https://pickwig.com/gallery
+https://example.com/gallery
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://pickwig.com/privacy
+https://example.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://pickwig.com/terms
+https://example.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://pickwig.com/accessibility
+https://example.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -52,5 +52,5 @@ Information about WCAG compliance and accessibility features.
 
 # Additional Resources
 
-- **Sitemap**: https://pickwig.com/sitemap.xml
-- **Robots.txt**: https://pickwig.com/robots.txt
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt

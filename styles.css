@@ -4123,13 +4123,6 @@ img, picture, figure {
 }
 
 
-  max-height: 40px !important;
-  height: auto !important;
-  width: auto !important;
-  object-fit: contain !important;
-}
-
-
 /* Hide WhatsApp float button on desktop (mobile-only) */
 @media (min-width: 769px) {
   .whatsapp-float {
