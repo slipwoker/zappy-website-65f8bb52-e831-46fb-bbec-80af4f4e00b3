@@ -4123,8 +4123,6 @@ img, picture, figure {
 }
 
 
-/* Logo size constraint - enforce max-height only */
-.logo, img.logo, .logo img, .logo-link img, .nav-brand img {
   max-height: 40px !important;
   height: auto !important;
   width: auto !important;
@@ -4786,10 +4784,10 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
 .navbar .mobile-submenu-toggle { color: #e0e0e0 !important; }
 .navbar .phone-header-btn { color: #e0e0e0 !important; }
 .navbar .nav-search-input,
-.navbar .nav-search-box .nav-search-input { color: #333333 !important; }
+.navbar .nav-search-box .nav-search-input { color: #E0E0E0 !important; }
 .navbar .nav-search-input::placeholder { color: var(--text-muted, rgba(128,128,128,0.6)) !important; }
-.navbar .nav-search-result-name { color: #333333 !important; }
-.navbar .nav-search-result-item a { color: #333333 !important; }
+.navbar .nav-search-result-name { color: #E0E0E0 !important; }
+.navbar .nav-search-result-item a { color: #E0E0E0 !important; }
 .navbar .nav-search-result-price { color: var(--primary) !important; }
 .navbar .nav-search-no-results,
 .navbar .search-no-results { color: var(--text-muted, rgba(128,128,128,0.6)) !important; }
@@ -4818,15 +4816,15 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   .navbar::before, .navbar::after { background: transparent !important; opacity: 0 !important; }
   body.menu-open .navbar, body.nav-open .navbar, body.mobile-menu-open .navbar, .navbar.scrolled, .navbar.active, .navbar.open, .navbar.show, .navbar.menu-open, .navbar:has(.nav-menu.active), .navbar:has(#navMenu.active), .navbar:has(.mobile-menu.active), .navbar:has(.mobile-toggle.active), .navbar:has(#mobileToggle.active) { background-color: #1a1a1a !important; }
   .nav-menu, .nav-menu.active, .nav-menu.nav-menu-active, #navMenu, #navMenu.active, .mobile-menu, .mobile-menu.active, .mobile-nav, .mobile-nav.active { background-color: #1a1a1a !important; background: #1a1a1a !important; }
-  .nav-menu a, .nav-menu > li > a, #navMenu a, #navMenu > li > a { color: #e0e0e0 !important; }
+  .nav-menu a, .nav-menu > li > a, #navMenu a, #navMenu > li > a { color: #F6F1EB !important; }
   .nav-menu a:hover, .nav-menu > li > a:hover { color: #ffffff !important; }
   .nav-menu .dropdown-menu { background: rgba(128,128,128,0.06) !important; }
-  .nav-menu .dropdown-menu a, .nav-menu .dropdown-menu li a { color: #e0e0e0 !important; }
+  .nav-menu .dropdown-menu a, .nav-menu .dropdown-menu li a { color: #F6F1EB !important; }
   .nav-menu .dropdown-menu a:hover { color: #ffffff !important; }
-  .nav-menu .sub-menu a { color: #e0e0e0 !important; }
+  .nav-menu .sub-menu a { color: #F6F1EB !important; }
   .nav-menu .sub-menu a:hover { color: #ffffff !important; }
   .nav-menu > li { position: relative !important; }
-  .navbar .nav-menu .mobile-submenu-toggle { color: #e0e0e0 !important; position: static !important; height: auto !important; flex-shrink: 0 !important; align-self: stretch !important; }
+  .navbar .nav-menu .mobile-submenu-toggle { color: #F6F1EB !important; position: static !important; height: auto !important; flex-shrink: 0 !important; align-self: stretch !important; }
   .mobile-toggle { color: #e0e0e0 !important; }
   .mobile-toggle svg { color: inherit !important; }
   .mobile-toggle svg path { stroke: currentColor !important; }
@@ -4843,7 +4841,7 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   body.menu-open .navbar .phone-header-btn, body.nav-open .navbar .phone-header-btn, body.mobile-menu-open .navbar .phone-header-btn,
   .navbar.active .phone-header-btn, .navbar.open .phone-header-btn, .navbar.show .phone-header-btn, .navbar.menu-open .phone-header-btn,
   .navbar:has(.nav-menu.active) .phone-header-btn, .navbar:has(#navMenu.active) .phone-header-btn, .navbar:has(.mobile-menu.active) .phone-header-btn, .navbar:has(.mobile-toggle.active) .phone-header-btn {
-    color: #e0e0e0 !important;
+    color: #F6F1EB !important;
   }
   
   .navbar.scrolled .mobile-toggle svg { color: inherit !important; }
@@ -4852,7 +4850,7 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   .navbar.scrolled .nav-menu > li > a,
   .navbar.scrolled .nav-menu > .nav-item > a,
   .navbar.scrolled .nav-link,
-  .navbar.scrolled a { color: #e0e0e0 !important; }
+  .navbar.scrolled a { color: #F6F1EB !important; }
   .cart-link.nav-cart,
   .login-link.nav-login,
   .nav-search-toggle,
@@ -8254,6 +8252,18 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
 footer {
   background-color: var(--accent-color);
 }
+/* Zappy custom logo size (desktop only — mobile stays at 110px/35px) */
+@media (min-width: 769px) {
+  .logo, img.logo, .logo img, .logo-link img, .nav-brand img {
+    max-height: none !important;
+    height: 67px !important;
+    max-width: 267px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+}
+/* /Zappy custom logo size */
+
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
