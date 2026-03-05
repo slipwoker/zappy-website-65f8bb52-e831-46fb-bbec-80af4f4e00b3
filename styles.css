@@ -8252,12 +8252,14 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
 footer {
   background-color: var(--accent-color);
 }
+
+
 /* Zappy custom logo size (desktop only — mobile stays at 110px/35px) */
 @media (min-width: 769px) {
   .logo, img.logo, .logo img, .logo-link img, .nav-brand img {
     max-height: none !important;
     height: 66px !important;
-    max-width: 264px !important;
+    max-width: 266px !important;
     width: auto !important;
     object-fit: contain !important;
   }
