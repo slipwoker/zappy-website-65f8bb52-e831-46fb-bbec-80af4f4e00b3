@@ -4818,15 +4818,15 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   .navbar::before, .navbar::after { background: transparent !important; opacity: 0 !important; }
   body.menu-open .navbar, body.nav-open .navbar, body.mobile-menu-open .navbar, .navbar.scrolled, .navbar.active, .navbar.open, .navbar.show, .navbar.menu-open, .navbar:has(.nav-menu.active), .navbar:has(#navMenu.active), .navbar:has(.mobile-menu.active), .navbar:has(.mobile-toggle.active), .navbar:has(#mobileToggle.active) { background-color: #1a1a1a !important; }
   .nav-menu, .nav-menu.active, .nav-menu.nav-menu-active, #navMenu, #navMenu.active, .mobile-menu, .mobile-menu.active, .mobile-nav, .mobile-nav.active { background-color: #1a1a1a !important; background: #1a1a1a !important; }
-  .nav-menu a, .nav-menu > li > a, #navMenu a, #navMenu > li > a { color: #6B0080 !important; }
+  .nav-menu a, .nav-menu > li > a, #navMenu a, #navMenu > li > a { color: #e0e0e0 !important; }
   .nav-menu a:hover, .nav-menu > li > a:hover { color: #ffffff !important; }
   .nav-menu .dropdown-menu { background: rgba(128,128,128,0.06) !important; }
-  .nav-menu .dropdown-menu a, .nav-menu .dropdown-menu li a { color: #6B0080 !important; }
+  .nav-menu .dropdown-menu a, .nav-menu .dropdown-menu li a { color: #e0e0e0 !important; }
   .nav-menu .dropdown-menu a:hover { color: #ffffff !important; }
-  .nav-menu .sub-menu a { color: #6B0080 !important; }
+  .nav-menu .sub-menu a { color: #e0e0e0 !important; }
   .nav-menu .sub-menu a:hover { color: #ffffff !important; }
   .nav-menu > li { position: relative !important; }
-  .navbar .nav-menu .mobile-submenu-toggle { color: #6B0080 !important; position: static !important; height: auto !important; flex-shrink: 0 !important; align-self: stretch !important; }
+  .navbar .nav-menu .mobile-submenu-toggle { color: #e0e0e0 !important; position: static !important; height: auto !important; flex-shrink: 0 !important; align-self: stretch !important; }
   .mobile-toggle { color: #e0e0e0 !important; }
   .mobile-toggle svg { color: inherit !important; }
   .mobile-toggle svg path { stroke: currentColor !important; }
@@ -4843,7 +4843,7 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   body.menu-open .navbar .phone-header-btn, body.nav-open .navbar .phone-header-btn, body.mobile-menu-open .navbar .phone-header-btn,
   .navbar.active .phone-header-btn, .navbar.open .phone-header-btn, .navbar.show .phone-header-btn, .navbar.menu-open .phone-header-btn,
   .navbar:has(.nav-menu.active) .phone-header-btn, .navbar:has(#navMenu.active) .phone-header-btn, .navbar:has(.mobile-menu.active) .phone-header-btn, .navbar:has(.mobile-toggle.active) .phone-header-btn {
-    color: #6B0080 !important;
+    color: #e0e0e0 !important;
   }
   
   .navbar.scrolled .mobile-toggle svg { color: inherit !important; }
@@ -4852,7 +4852,7 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   .navbar.scrolled .nav-menu > li > a,
   .navbar.scrolled .nav-menu > .nav-item > a,
   .navbar.scrolled .nav-link,
-  .navbar.scrolled a { color: #6B0080 !important; }
+  .navbar.scrolled a { color: #e0e0e0 !important; }
   .cart-link.nav-cart,
   .login-link.nav-login,
   .nav-search-toggle,
