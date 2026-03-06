@@ -218,71 +218,7 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
-    
-    <link rel="stylesheet" href="/styles.css">
-
-    <style id="zappy-dropdown-submenu-styles">
-      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
-      /* Base styles for dropdown submenus - parent must be positioned */
-      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
-      /* Submenu base - hidden by default */
-      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
-      /* CRITICAL: Desktop hover styles to show dropdown */
-      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Submenu item styling */
-      .sub-menu li { list-style: none; margin: 0; padding: 0; }
-      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
-      .sub-menu a:hover { background-color: #f5f5f5; }
-      /* RTL (Hebrew/Arabic) dropdown positioning */
-      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
-      /* Desktop: show submenu on Menu Group hover */
-      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
-      /* Menu Group title styling */
-      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
-      
-      /* ========== MOBILE SUBMENU STYLES ========== */
-      @media (max-width: 768px) {
-        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
-        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
-        /* Disable hover behavior on mobile */
-        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
-        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
-        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
-        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
-        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
-        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
-        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
-        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-light) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
-        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
-        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
-        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-light) !important; }
-        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-light) !important; }
-      }
-      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
-    </style>
-
-    <style id="zappy-widget-visibility">
-      #mic-access-tool-general-button, .mic-access-tool-general-button,
-      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
-      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
-      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
-        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
-      }
-    </style>
-</head>
-<body>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>חומרי גלם איכותיים לפאות ייחודיות — פיקוויג PICKWIG</title>
-  <meta name="description" content="שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.">
-  <meta name="keywords" content="חומרי גלם לפאות, שיער טבעי איכותי, פאות נוחות לאונקולוגיה, חומרים היפואלרגניים, רשתות נושמות לפאות">
-  <meta name="robots" content="index, follow">
-  
-  <meta property="og:title" content="חומרי גלם איכותיים לפאות ייחודיות — פיקוויג PICKWIG">
+    <meta property="og:title" content="חומרי גלם איכותיים לפאות ייחודיות — פיקוויג PICKWIG">
   <meta property="og:description" content="שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
@@ -290,7 +226,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="חומרי גלם איכותיים לפאות ייחודיות — פיקוויג PICKWIG">
   <meta name="twitter:description" content="שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.">
-  <link rel="stylesheet" href="/styles.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Favicons -->
@@ -2234,9 +2170,62 @@
   }
 }
 </style>
+    <link rel="stylesheet" href="/styles.css">
 
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-light) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-light) !important; }
+        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-light) !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
 
-  <nav class="navbar" dir="rtl" style="background: transparent;">
+    <style id="zappy-widget-visibility">
+      #mic-access-tool-general-button, .mic-access-tool-general-button,
+      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      }
+    </style>
+</head>
+<body>
+<nav class="navbar" dir="rtl" style="background: transparent;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1771797932969-fnrvqw8c9" data-native-element="true">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
@@ -2376,10 +2365,11 @@
       <div class="footer-section footer-social">
         <h3 class="footer-title" style="font-weight: 700; color: rgb(255, 153, 204)"><font color="#000000">עקבו אחרינו</font></h3>
         <div class="zappy-inserted-element" id="zappy-element-1772837711967-r5kq5l6tn" data-element-id="zappy-element-1772837711967-r5kq5l6tn" data-element-type="icon" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center; display: flex !important; justify-content: center !important; max-width: 1200px !important; width: 100% !important; color: rgb(61, 0, 102);"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="64" height="64" viewBox="0 0 512 116" data-icon="logos:youtube" data-iconify="logos:youtube" data-element-type="icon" data-icon-type="iconify" data-size-adjusted="true" style="width: 64px !important; height: 64px !important; display: inline-block; vertical-align: -0.125em; color: rgb(61, 0, 102);" class="iconify iconify--logos"><path fill="red" d="M159.89 17.93a20.55 20.55 0 0 0-14.471-14.47C132.73 0 81.666 0 81.666 0S30.6.105 17.913 3.565a20.55 20.55 0 0 0-14.47 14.47c-3.838 22.545-5.327 56.896.105 78.538a20.55 20.55 0 0 0 14.47 14.47c12.688 3.46 63.753 3.46 63.753 3.46s51.065 0 63.753-3.46a20.55 20.55 0 0 0 14.47-14.47c4.047-22.576 5.295-56.906-.105-78.642"></path><path fill="#FFF" d="m65.413 81.788l42.362-24.536l-42.362-24.537z"></path><path fill="#282828" d="M491.237 33.24c5.557 0 9.751 1.048 12.687 3.04q4.404 2.989 6.292 9.438c1.258 4.299 1.782 10.17 1.782 17.72v12.269H485.05v3.774l.42 10.381c.314 2.307.839 3.985 1.677 5.033c.84 1.049 2.202 1.573 3.985 1.573c2.412 0 4.09-.943 4.928-2.83c.944-1.888 1.363-5.034 1.468-9.333l13.946.839c.105.629.105 1.468.105 2.516c0 6.606-1.783 11.535-5.453 14.785s-8.703 4.928-15.309 4.928c-7.969 0-13.526-2.516-16.672-7.444C471 95 469.322 87.24 469.322 76.86V64.172c.356-17.825 3.491-30.88 21.915-30.932m-193.88 1.363v52.533c0 3.146.314 5.453 1.048 6.816c1.489 2.915 5.348 2.17 7.445.734a8.4 8.4 0 0 0 2.831-3.25V34.602h16.043v71.617h-12.583l-1.363-8.808h-.314c-3.46 6.606-8.599 9.961-15.414 9.961c-10.49-.026-13.057-7.584-13.668-15.26l-.04-.541a65 65 0 0 1-.133-3.492V34.603zm82.732 0v52.533c0 3.146.314 5.453 1.048 6.816c1.49 2.915 5.348 2.17 7.445.734a8.4 8.4 0 0 0 2.831-3.25V34.602h16.043v71.617h-12.583l-1.363-8.808h-.314c-3.46 6.606-8.599 9.961-15.414 9.961c-10.49-.026-13.057-7.584-13.668-15.26l-.04-.541a65 65 0 0 1-.133-3.492V34.603zM250.8 33.24c5.243 0 9.542 1.048 12.688 3.25c3.145 2.202 5.557 5.558 7.025 10.171c1.468 4.614 2.202 10.8 2.202 18.455v10.38c0 7.655-.734 13.737-2.202 18.35c-1.468 4.615-3.775 7.97-7.025 10.172c-3.25 2.097-7.655 3.25-13.107 3.25c-5.663.105-10.067-1.048-13.317-3.145c-3.25-2.202-5.558-5.558-6.92-10.171c-1.364-4.614-1.993-10.696-1.993-18.35V65.22c0-7.655.734-13.946 2.307-18.56c1.573-4.718 3.984-8.074 7.34-10.17c3.355-2.098 7.654-3.251 13.002-3.251m181.822-28.73v37.748h.105c1.468-2.726 3.355-4.928 5.977-6.606a14.8 14.8 0 0 1 8.283-2.516c3.88 0 6.816 1.048 9.018 3.04c2.202 2.098 3.775 5.348 4.718 9.857c.915 4.368 1.435 10.409 1.467 18.027l.001.743v11.324c0 10.59-1.363 18.455-3.88 23.488c-2.62 5.033-6.605 7.55-12.058 7.55c-3.04 0-5.767-.734-8.283-2.097a14.7 14.7 0 0 1-5.35-5.392l-.208-.376h-.314l-1.678 6.816h-13.317V4.51zm-64.173 3.67V21.18h-15.938v85.039h-15.728V21.181H320.74V8.18zm-172.909 0l.01.04c.153.681 2.273 10.106 4.605 21.087l.184.87l.278 1.315l.186.883l.093.443l.186.888l.093.445l.185.891l.27 1.303c1.575 7.604 3.078 15.23 3.977 20.698h.42c.861-4.905 2.112-11.182 3.446-17.591l.35-1.674q.263-1.258.53-2.512l.274-1.297a2039 2039 0 0 1 5.597-25.444l.03-.135l.048-.21h16.043l-18.56 66.165v31.771h-15.833V74.448h-.105l-18.35-66.27zm54.945 36.175c-2.202 0-3.67 1.154-4.613 3.566s-1.363 6.081-1.363 11.22v22.334c0 5.243.419 9.122 1.258 11.43q1.259 3.46 4.718 3.46q3.303 0 4.719-3.46c.944-2.308 1.363-6.187 1.363-11.43V59.139c0-5.138-.42-8.913-1.363-11.22c-.944-2.411-2.517-3.565-4.719-3.565m184.968 2.098c-1.278 1.18-2.187 2.635-2.728 4.454l-.103.369v40.684c1.3 2.202 3.146 3.67 6.396 3.775q2.516 0 4.09-1.887q1.572-1.887 2.201-6.292q.605-4.227.629-11.644v-9.956c0-5.662-.21-9.961-.524-13.002c-.42-3.041-.943-5.243-1.887-6.501c-1.825-2.622-5.767-2.59-8.074 0m55.47-2.412q-2.675.157-3.776 1.573c-.838 1.048-1.363 2.621-1.677 4.928c-.309 2.26-.415 10.16-.42 10.476v5.148h11.744v-4.54v.087c-.007 1.587-.04-.921-.112-4l-.01-.414c-.066-2.706-.162-5.723-.297-6.757c-.315-2.412-.84-4.09-1.678-5.033c-.839-.944-2.097-1.468-3.775-1.468"></path></svg></div><div class="social-links">
-          <a href="https://facebook.com/https://www.facebook.com/profile.php?id=61586173236226" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://instagram.com/https://www.instagram.com/bareketwigs/" aria-label="Instagram"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1772497957655-2uek9glah" data-icon-type="fontawesome" style="font-size: 15px !important; color: rgb(249, 230, 242);"></i></div></a>
+          <a href="https://facebook.com/profile.php?id=61586173236226" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/bareketwigs" aria-label="Instagram"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1772497957655-2uek9glah" data-icon-type="fontawesome" style="font-size: 15px !important; color: rgb(249, 230, 242);"></i></div></a>
           <a href="https://wa.me/972544509858" aria-label="WhatsApp"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1772497957655-wlyth1sum" data-icon-type="fontawesome" style="font-size: 13px !important; color: rgb(251, 233, 242);"></i></div></a>
-          <a href="https://tiktok.com/@https://www.tiktok.com/@pickwig" aria-label="TikTok" data-element-id="element-ai-1771795839210-t7k9m3" data-element-type="social-link"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-tiktok" data-element-type="icon" data-element-id="icon-1772497957655-mfb2sjnfw" data-icon-type="fontawesome" style="font-size: 13px !important; color: rgb(249, 225, 237);"></i></div></a>
+          <a href="https://tiktok.com/@pickwig" aria-label="TikTok" data-element-id="element-ai-1771795839210-t7k9m3" data-element-type="social-link"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-tiktok" data-element-type="icon" data-element-id="icon-1772497957655-mfb2sjnfw" data-icon-type="fontawesome" style="font-size: 13px !important; color: rgb(249, 225, 237);"></i></div></a>
+          <a href="https://youtube.com/@Pickwig" aria-label="YouTube" data-element-id="element-ai-1772838168850-y9k3m7" data-element-type="social-link"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-youtube" data-element-type="icon" data-element-id="icon-1772838168850-x2p5n8" data-icon-type="fontawesome" style="font-size: 13px !important; color: rgb(249, 225, 237);"></i></div></a>
         </div>
       </div>
     </div>
@@ -2408,9 +2398,7 @@
     <i class="fab fa-whatsapp"></i>
   </a>
   
-  <script src="/script.js"></script>
-
-    <div data-integration="accessibility:toolbar"></div>
+  <div data-integration="accessibility:toolbar"></div>
 
     <script src="/script.js"></script>
 
