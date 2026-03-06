@@ -1028,9 +1028,9 @@ window.onload = function() {
       var currentPath = window.location.pathname;
       try { var pg=new URLSearchParams(window.location.search).get('page'); if(pg) currentPath=pg; } catch(x){}
 
-      var wid = '';
+      var wid = '65f8bb52-e831-46fb-bbec-80af4f4e00b3';
 
-      var apiBase = (window.ZAPPY_API_BASE || 'https://qaapi.zappy5.com').replace(/\/$/,'');
+      var apiBase = (window.ZAPPY_API_BASE || 'https://api.zappy5.com').replace(/\/$/,'');
       apiBase = apiBase + '/api/email/contact-form';
 
       fetch(apiBase, {
