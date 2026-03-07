@@ -2686,500 +2686,554 @@
 </nav>
   
   <main>
-      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; background: linear-gradient(135deg, #2B1A2F 0%, #3B1A49 55%, #2B1A2F 100%); padding: 120px 0 80px; margin: 0;" data-zappy-section="true" class="section">
+      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: var(--gradient-dark-section); overflow: hidden; margin: 0; padding: 0;" data-zappy-section="true" class="section">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
-    
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
     .hair-design-section {
       font-family: var(--font-body);
       color: var(--text-light);
       position: relative;
       z-index: 1;
     }
-    
+
     .hair-design-hero {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      min-height: 100vh;
+      display: flex;
       align-items: center;
-      margin-bottom: 100px;
-    }
-    
-    .hero-content h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      font-weight: 800;
-      line-height: 0.95;
-      margin: 0 0 2rem 0;
-      background: linear-gradient(135deg, #FFFFFF 0%, #F6F1EB 50%, #664200 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
+      justify-content: center;
       position: relative;
-      animation: fadeInUp 0.8s ease-out;
-    }
-    
-    .hero-content h1::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 0;
-      width: 120px;
-      height: 4px;
-      background: var(--gradient-gold-shine);
-      animation: expandWidth 1s ease-out 0.3s both;
-    }
-    
-    .hero-description {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      line-height: 1.7;
-      color: #F6F1EB;
-      opacity: 0.95;
-      font-weight: 400;
-      font-style: italic;
-      margin-top: 3rem;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
-    
-    .hero-visual {
-      position: relative;
-      height: 500px;
-      animation: fadeInRight 1s ease-out 0.4s both;
-    }
-    
-    .floating-card {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    
-    .floating-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-    }
-    
-    .card-1 {
-      top: 0;
-      right: 100px;
-      width: 280px;
-      animation: float 6s ease-in-out infinite;
-    }
-    
-    .card-2 {
-      bottom: 50px;
-      left: 50px;
-      width: 320px;
-      animation: float 7s ease-in-out infinite 1s;
-    }
-    
-    .card-3 {
-      top: 180px;
-      right: 0;
-      width: 200px;
-      animation: float 5s ease-in-out infinite 2s;
-    }
-    
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 1rem;
-      opacity: 0.9;
-    }
-    
-    .card-title {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #FFFFFF;
-    }
-    
-    .card-text {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: rgba(246, 241, 235, 0.85);
-    }
-    
-    .features-grid {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      margin-bottom: 120px;
-    }
-    
-    .feature-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 3rem 2.5rem;
-      position: relative;
+      padding: 120px var(--container-padding) 80px;
+      background: var(--gradient-dark-section);
       overflow: hidden;
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      animation: fadeInUp 0.8s ease-out both;
     }
-    
-    .feature-card:nth-child(1) { animation-delay: 0.1s; }
-    .feature-card:nth-child(2) { animation-delay: 0.2s; }
-    .feature-card:nth-child(3) { animation-delay: 0.3s; }
-    
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-gold-shine);
-      transition: left 0.6s ease;
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-15px);
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(102, 66, 0, 0.4);
-      box-shadow: 0 25px 50px rgba(61, 0, 102, 0.3);
-    }
-    
-    .feature-card:hover::before {
-      left: 100%;
-    }
-    
-    .feature-card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: #FFFFFF;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .feature-card p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: rgba(246, 241, 235, 0.9);
-      position: relative;
-      z-index: 1;
-    }
-    
-    .warranty-section {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      background: linear-gradient(135deg, rgba(61, 0, 102, 0.3) 0%, rgba(102, 66, 0, 0.2) 100%);
-      border-radius: 32px;
-      padding: 5rem 4rem;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 0.8s ease-out 0.4s both;
-    }
-    
-    .warranty-section::before {
+
+    .hair-design-hero::before {
       content: '';
       position: absolute;
       top: -50%;
-      right: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .hair-design-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(61, 0, 102, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 15s ease-in-out infinite reverse;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-30px, 40px) scale(1.1); }
+    }
+
+    .hero-content-wrapper {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-text-side {
+      text-align: right;
+      direction: rtl;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 2rem 0;
+      background: var(--gradient-gold-accent);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 150px;
+      height: 4px;
+      background: var(--gradient-gold-shine);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.5; transform: scaleX(1); }
+      50% { opacity: 1; transform: scaleX(1.2); }
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      line-height: 1.8;
+      color: var(--text-light);
+      margin: 0;
+      font-weight: 300;
+      opacity: 0.95;
+    }
+
+    .hero-icon-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .hero-icon-item {
+      text-align: center;
+      padding: 25px 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-icon-item:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(102, 66, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-icon-item i {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .hero-icon-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-light);
+      line-height: 1.4;
+      margin: 5px 0 0 0;
+    }
+
+    .hero-icon-desc {
+      font-size: 0.85rem;
+      color: rgba(246, 241, 235, 0.7);
+      margin: 8px 0 0 0;
+      line-height: 1.4;
+    }
+
+    .process-cards-section {
+      padding: 100px var(--container-padding);
+      background: var(--bg-light);
+      position: relative;
+      direction: rtl;
+    }
+
+    .process-cards-container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .process-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .process-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 50px 35px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+    }
+
+    .process-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient-gold-accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s ease;
+    }
+
+    .process-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .process-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .process-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0 0 20px 0;
+      text-align: right;
+    }
+
+    .process-card-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+      text-align: right;
+      margin: 0;
+    }
+
+    .warranty-section {
+      padding: 120px var(--container-padding);
+      background: var(--gradient-light-section);
+      position: relative;
+      direction: rtl;
+    }
+
+    .warranty-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(102, 66, 0, 0.15) 0%, transparent 70%);
-      animation: rotate 20s linear infinite;
+      background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(61, 0, 102, 0.02) 50px, rgba(61, 0, 102, 0.02) 100px);
+      pointer-events: none;
     }
-    
-    .warranty-content {
+
+    .warranty-container {
+      max-width: 1200px;
+      margin: 0 auto;
       position: relative;
       z-index: 1;
     }
-    
-    .warranty-content h2 {
+
+    .warranty-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .warranty-title {
       font-family: var(--font-heading);
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
-      margin-bottom: 3rem;
-      color: #FFFFFF;
+      color: var(--primary);
+      margin: 0 0 30px 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    .warranty-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    .warranty-intro {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+      max-width: 900px;
+      margin: 30px auto 0;
       text-align: center;
     }
-    
-    .warranty-grid {
+
+    .warranty-features-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-bottom: 3rem;
+      gap: 50px;
+      margin-bottom: 70px;
     }
-    
-    .warranty-item {
+
+    .warranty-feature-card {
+      background: white;
+      padding: 45px 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s ease;
+      border-right: 5px solid var(--primary);
+    }
+
+    .warranty-feature-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateX(-10px);
+    }
+
+    .warranty-feature-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0 0 15px 0;
+      text-align: right;
+    }
+
+    .warranty-feature-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+      margin: 0;
+      text-align: right;
+    }
+
+    .warranty-list-section {
+      background: white;
+      padding: 50px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .warranty-list-title {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0 0 35px 0;
+      text-align: right;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 15px;
+    }
+
+    .warranty-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .warranty-list-item {
       display: flex;
       align-items: flex-start;
-      gap: 1.5rem;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 20px;
+      padding: 20px;
+      background: var(--gradient-light-section);
+      border-radius: var(--radius-md);
       transition: all 0.3s ease;
+      direction: rtl;
     }
-    
-    .warranty-item:hover {
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateX(10px);
+
+    .warranty-list-item:hover {
+      background: var(--bg-light);
+      box-shadow: var(--shadow-sm);
+      transform: translateX(-5px);
     }
-    
-    .warranty-icon {
-      width: 32px;
-      height: 32px;
+
+    .warranty-list-icon {
       flex-shrink: 0;
-      opacity: 0.9;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
     }
-    
-    .warranty-text {
+
+    .warranty-list-text {
+      flex: 1;
       font-size: 1.05rem;
-      line-height: 1.7;
-      color: rgba(246, 241, 235, 0.95);
+      line-height: 1.6;
+      color: var(--text-dark);
+      text-align: right;
     }
-    
-    .delivery-note {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: rgba(246, 241, 235, 0.9);
-      max-width: 900px;
-      margin: 3rem auto 0;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .highlight-text {
-      color: #664200;
-      font-weight: 600;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes fadeInRight {
-      from {
-        opacity: 0;
-        transform: translateX(60px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes expandWidth {
-      from {
-        width: 0;
-      }
-      to {
-        width: 120px;
-      }
-    }
-    
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-    
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-    
-    @media (max-width: 1200px) {
-      .hair-design-hero {
-        gap: 3rem;
-      }
-      
-      .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hair-design-section {
-        padding-top: 100px;
-      }
-      
-      .hair-design-hero {
+
+    @media (max-width: 1024px) {
+      .hero-content-wrapper {
         grid-template-columns: 1fr;
-        gap: 3rem;
-        margin-bottom: 60px;
+        gap: 50px;
       }
-      
-      .hero-content h1 {
+
+      .hero-icon-features {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .process-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .warranty-features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hair-design-hero {
+        min-height: auto;
+        padding: 100px var(--container-padding) 60px;
+      }
+
+      .hero-title {
         font-size: clamp(2.5rem, 10vw, 4rem);
       }
-      
-      .hero-visual {
-        height: 400px;
-      }
-      
-      .card-1 {
-        top: 0;
-        right: 20px;
-        width: 200px;
-      }
-      
-      .card-2 {
-        bottom: 20px;
-        left: 20px;
-        width: 220px;
-      }
-      
-      .card-3 {
-        display: none;
-      }
-      
-      .features-grid {
+
+      .hero-icon-features {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 80px;
+        gap: 15px;
+        margin-top: 30px;
       }
-      
+
+      .process-cards-section {
+        padding: 60px var(--container-padding);
+      }
+
       .warranty-section {
-        padding: 3rem 2rem;
+        padding: 60px var(--container-padding);
       }
-      
-      .warranty-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+
+      .warranty-header {
+        margin-bottom: 50px;
       }
-      
-      .warranty-item {
-        padding: 1.5rem;
+
+      .warranty-list-section {
+        padding: 30px 20px;
+      }
+
+      .warranty-list-item {
+        flex-direction: column;
+        text-align: right;
+      }
+
+      .warranty-list-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
       }
     }
   </style>
-  
+
   <div class="hair-design-section">
+    <!-- Hero Section -->
     <div class="hair-design-hero">
-      <div class="hero-content">
-        <h1>עיצוב שיער</h1>
-        <h3 class="hero-description">עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.</h3>
-      </div>
-      
-      <div class="hero-visual">
-        <div class="floating-card card-1">
-          <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#664200"></path>
-          </svg>
-          <div class="card-title">תהליך עדין</div>
-          <div class="card-text">שמירה מקסימלית על סיבי השיער</div>
+      <div class="hero-content-wrapper">
+        <div class="hero-text-side">
+          <h1 class="hero-title"><font color="#f5e6ed">עיצוב שיער</font></h1>
+          <h3 class="hero-subtitle">עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.</h3>
         </div>
-        
-        <div class="floating-card card-2">
-          <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#664200"></path>
-          </svg>
-          <div class="card-title">בחירה חכמה</div>
-          <div class="card-text">גוונים טבעיים והתאמה אישית</div>
-        </div>
-        
-        <div class="floating-card card-3">
-          <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" fill="#664200"></path>
-          </svg>
-          <div class="card-title">תוצאה עמידה</div>
-          <div class="card-text">יופי לאורך זמן</div>
+
+        <div class="hero-icon-features">
+          <div class="hero-icon-item">
+            <i>🌿</i>
+            <div class="hero-icon-label">תהליך עדין</div>
+            <div class="hero-icon-desc">שמירה מקסימלית על סיבי השיער</div>
+          </div>
+          <div class="hero-icon-item">
+            <i>✨</i>
+            <div class="hero-icon-label">בחירה חכמה</div>
+            <div class="hero-icon-desc">גוונים טבעיים והתאמה אישית</div>
+          </div>
+          <div class="hero-icon-item">
+            <i>💎</i>
+            <div class="hero-icon-label">תוצאה עמידה</div>
+            <div class="hero-icon-desc">יופי לאורך זמן</div>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>תהליך עדין ומבוקר</h3>
-        <p>כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את השינוי.</p>
-      </div>
-      
-      <div class="feature-card">
-        <h3>בחירה חכמה של שיער</h3>
-        <p>כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.</p>
-      </div>
-      
-      <div class="feature-card">
-        <h3>תוצאה טבעית</h3>
-        <p>המטרה שלנו היא להעניק לך מראה טבעי, רך ועמיד לאורך זמן, תוך שמירה מקסימלית על בריאות השיער ומינימום התערבות כימית, כך שהתוצאה תישאר יפה ואיכותית לאורך זמן.</p>
+
+    <!-- Process Cards Section -->
+    <div class="process-cards-section">
+      <div class="process-cards-container">
+        <div class="process-cards-grid">
+          <div class="process-card">
+            <h3 class="process-card-title">תהליך עדין ומבוקר</h3>
+            <p class="process-card-text">כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את השינוי.</p>
+          </div>
+
+          <div class="process-card">
+            <h3 class="process-card-title">בחירה חכמה של שיער</h3>
+            <p class="process-card-text">כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.</p>
+          </div>
+
+          <div class="process-card">
+            <h3 class="process-card-title">תוצאה טבעית</h3>
+            <p class="process-card-text">המטרה שלנו היא להעניק לך מראה טבעי, רך ועמיד לאורך זמן, תוך שמירה מקסימלית על בריאות השיער ומינימום התערבות כימית, כך שהתוצאה תישאר יפה ואיכותית לאורך זמן.</p>
+          </div>
+        </div>
       </div>
     </div>
-    
+
+    <!-- Warranty Section -->
     <div class="warranty-section">
-      <div class="warranty-content">
-        <h2>אחריות ושירות מלא</h2>
-        
-        <p style="text-align: center; font-size: 1.2rem; line-height: 1.8; color: rgba(246, 241, 235, 0.95); margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">פיקוויג מעניקה אחריות של שלושה חודשים מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך. האחריות כוללת בין היתר:</p>
-        
-        <div class="warranty-grid">
-          <div class="warranty-item">
-            <svg class="warranty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#664200"></path>
-            </svg>
-            <div class="warranty-text">התאמות בעבודת לייס</div>
+      <div class="warranty-container">
+        <div class="warranty-header">
+          <h2 class="warranty-title">אחריות ושירות מלא</h2>
+          <p class="warranty-intro">פיקוויג מעניקה אחריות של שלושה חודשים מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך. האחריות כוללת בין היתר:</p>
+        </div>
+
+        <div class="warranty-features-grid">
+          <div class="warranty-feature-card">
+            <h3 class="warranty-feature-title">⏱️ זמני אספקה מדויקים</h3>
+            <p class="warranty-feature-text">זמני האספקה בפיקוויג נעים בין 7 - 45 ימים ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם</p>
           </div>
-          
-          <div class="warranty-item">
-            <svg class="warranty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#664200"></path>
-            </svg>
-            <div class="warranty-text">שזירת שיער והוספת טרסים</div>
-          </div>
-          
-          <div class="warranty-item">
-            <svg class="warranty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#664200"></path>
-            </svg>
-            <div class="warranty-text">הגדלה או הקטנה של הרשת</div>
-          </div>
-          
-          <div class="warranty-item">
-            <svg class="warranty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#664400"></path>
-            </svg>
-            <div class="warranty-text">דיוקים בתספורת ובמבנה  העיצובי</div>
-          </div>
-          
-          <div class="warranty-item" style="grid-column: 1 / -1;">
-            <svg class="warranty-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#664200"></path>
-            </svg>
-            <div class="warranty-text">התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון</div>
+
+          <div class="warranty-feature-card">
+            <h3 class="warranty-feature-title">🔄 פאה חלופית</h3>
+            <p class="warranty-feature-text">בפיקוויג מבינים שאת רוצה להנות מהפאה מיד - בתקופת האחריות, אם תבחרי לדייק את הפאה שלך, תוכלי לקבל פאה חלופית עד שהפאה שלך תהיה מוכנה</p>
           </div>
         </div>
-        
-        <div class="delivery-note">
-          <p style="margin-bottom: 1rem;">זמני האספקה בפיקוויג נעים בין <span class="highlight-text">7 - 45 ימים</span> ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם</p>
-          <p style="margin: 0;">בפיקוויג מבינים שאת רוצה להנות מהפאה מיד - בתקופת האחריות, אם תבחרי לדייק את הפאה שלך, תוכלי לקבל <span class="highlight-text">פאה חלופית</span> עד שהפאה שלך תהיה מוכנה</p>
+
+        <div class="warranty-list-section">
+          <div class="warranty-list-title">שירותים הכלולים באחריות:</div>
+          <div class="warranty-list">
+            <div class="warranty-list-item">
+              <div class="warranty-list-icon">✂️</div>
+              <div class="warranty-list-text">התאמות בעבודת לייס</div>
+            </div>
+            <div class="warranty-list-item">
+              <div class="warranty-list-icon">💇</div>
+              <div class="warranty-list-text">שזירת שיער והוספת טרסים</div>
+            </div>
+            <div class="warranty-list-item">
+              <div class="warranty-list-icon">📐</div>
+              <div class="warranty-list-text">הגדלה או הקטנה של הרשת</div>
+            </div>
+            <div class="warranty-list-item">
+              <div class="warranty-list-icon">✨</div>
+              <div class="warranty-list-text">דיוקים בתספורת ובמבנה  העיצובי</div>
+            </div>
+            <div class="warranty-list-item">
+              <div class="warranty-list-icon">🎯</div>
+              <div class="warranty-list-text">התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
