@@ -2656,16 +2656,16 @@
 <body>
 <nav class="navbar" dir="rtl" style="background: transparent;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1771797932969-fnrvqw8c9" data-native-element="true">
-    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
-    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
+    <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display:none;">
       <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call" data-element-type="button" data-element-id="btn-1771797932969-jvwxjho66" data-native-element="true">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
@@ -2686,99 +2686,50 @@
 </nav>
   
   <main>
-      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: var(--gradient-dark-section); overflow: hidden; padding: 0; margin: 0; background-color: #371b30; --zappy-bg-color: #371b30" data-zappy-section="true" class="section" id="zappy-section-1772652096120-7677" data-zappy-bg-type="color" data-zappy-bg-color="#371b30" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="0" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
+      <section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: var(--gradient-dark-section); overflow: hidden; padding: 0; margin: 0;" data-zappy-section="true" class="section">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
     
-    .hair-design-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
+    .hair-design-section {
       font-family: var(--font-body);
-      direction: rtl;
       color: var(--text-light);
-      overflow: visible;
+      direction: rtl;
     }
     
-    .hair-design-hero {
-      position: relative;
+    .hair-hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--gradient-primary);
-      padding: 120px 2rem 100px;
-      overflow: hidden;
-    }
-    
-    .hair-design-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 30% 50%, rgba(102, 66, 0, 0.15) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 80%, rgba(61, 0, 102, 0.2) 0%, transparent 50%);
-      z-index: 1;
-      animation: pulseGlow 8s ease-in-out infinite;
-    }
-    
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.05); }
-    }
-    
-    .hero-content-container {
       position: relative;
-      z-index: 10;
+      background: var(--gradient-dark-section);
+      padding: 120px 2rem 80px;
+      overflow: visible;
+    }
+    
+    .hero-content {
       max-width: 1200px;
-      width: 100%;
       margin: 0 auto;
       text-align: center;
+      position: relative;
+      z-index: 10;
     }
     
-    .hero-icon-wrapper {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-      border-radius: 50%;
-      margin-bottom: 2rem;
-      box-shadow: 0 20px 60px rgba(61, 0, 102, 0.4);
-      animation: floatIcon 6s ease-in-out infinite;
-      border: 3px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    @keyframes floatIcon {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(5deg); }
-    }
-    
-    .hero-icon-wrapper svg,
-    .hero-icon-wrapper i {
-      font-size: 3.5rem;
-      color: var(--text-light);
-    }
-    
-    .hair-design-hero h1 {
+    .hero-title {
       font-family: var(--font-heading);
-      font-size: clamp(3rem, 8vw, 7rem);
+      font-size: clamp(4rem, 12vw, 10rem);
       font-weight: 800;
-      line-height: 1.1;
-      margin: 0 0 1.5rem 0;
-      background: linear-gradient(135deg, #FFFFFF 0%, var(--text-light) 50%, #E0D5C7 100%);
+      margin: 0 0 2rem;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F6F1EB 50%, #664200 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 4px 20px rgba(102, 66, 0, 0.3);
       letter-spacing: -0.02em;
-      animation: fadeInUp 1s ease-out;
+      animation: heroTitleFade 1.2s ease-out;
     }
     
-    @keyframes fadeInUp {
+    @keyframes heroTitleFade {
       from {
         opacity: 0;
         transform: translateY(30px);
@@ -2789,70 +2740,79 @@
       }
     }
     
-    .hero-intro-text {
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      line-height: 1.8;
-      color: rgba(246, 241, 235, 0.9);
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      line-height: 1.6;
       max-width: 800px;
       margin: 0 auto 3rem;
-      font-weight: 300;
-      animation: fadeInUp 1s ease-out 0.2s both;
+      color: var(--text-light);
+      opacity: 0.95;
+      animation: heroSubtitleFade 1.4s ease-out 0.2s both;
     }
     
-    .content-grid-section {
-      position: relative;
-      padding: 120px 2rem;
-      background: var(--bg-light);
-      z-index: 2;
+    @keyframes heroSubtitleFade {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 0.95;
+        transform: translateY(0);
+      }
     }
     
-    .content-grid-container {
-      max-width: 1200px;
+    .floating-ornament {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(102, 66, 0, 0.15) 0%, transparent 70%);
+      filter: blur(40px);
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .ornament-1 {
+      top: 10%;
+      right: 5%;
+      animation-delay: 0s;
+    }
+    
+    .ornament-2 {
+      bottom: 15%;
+      left: 10%;
+      animation-delay: 2s;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(30px, -30px) scale(1.1);
+      }
+    }
+    
+    .content-grid {
+      max-width: 1400px;
       margin: 0 auto;
+      padding: 0 2rem 120px;
+      position: relative;
+      z-index: 10;
     }
     
-    .section-header {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-    
-    .section-header h2 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0 0 1.5rem 0;
-      line-height: 1.2;
-    }
-    
-    .section-header h2::after {
-      content: '';
-      display: block;
-      width: 100px;
-      height: 4px;
-      background: var(--gradient-gold-accent);
-      margin: 1.5rem auto 0;
-      border-radius: 2px;
-    }
-    
-    .info-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 3rem;
-      margin-bottom: 6rem;
-    }
-    
-    .info-card {
-      background: linear-gradient(135deg, rgba(61, 0, 102, 0.03) 0%, rgba(102, 66, 0, 0.02) 100%);
-      border: 2px solid var(--border-light);
+    .service-card {
+      background: rgba(59, 26, 73, 0.5);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(102, 66, 0, 0.3);
       border-radius: var(--radius-lg);
-      padding: 3rem 2.5rem;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      padding: 4rem 3rem;
+      margin-bottom: 3rem;
       position: relative;
       overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    .info-card::before {
+    .service-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -2861,94 +2821,133 @@
       height: 100%;
       background: var(--gradient-gold-shine);
       transition: left 0.6s ease;
-      pointer-events: none;
+      z-index: 1;
     }
     
-    .info-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary);
-    }
-    
-    .info-card:hover::before {
+    .service-card:hover::before {
       left: 100%;
     }
     
-    .info-card h3 {
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(102, 66, 0, 0.6);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .service-card > * {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .card-title {
       font-family: var(--font-heading);
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin: 0 0 1.5rem 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin: 0 0 1.5rem;
       display: flex;
       align-items: center;
       gap: 1rem;
     }
     
-    .info-card h3::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 40px;
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: var(--gradient-gold-accent);
-      border-radius: 3px;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
     
-    .info-card p {
-      font-size: 1.05rem;
+    .card-text {
+      font-size: 1.125rem;
       line-height: 1.8;
-      color: var(--text-dark);
-      margin: 0;
-      font-weight: 400;
+      color: rgba(246, 241, 235, 0.9);
+      margin-bottom: 1.5rem;
+    }
+    
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1400px;
+      margin: 0 auto 6rem;
+      min-height: 600px;
+      position: relative;
+    }
+    
+    .split-content {
+      background: rgba(43, 26, 47, 0.8);
+      backdrop-filter: blur(15px);
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    }
+    
+    .split-visual {
+      background: linear-gradient(135deg, rgba(102, 66, 0, 0.4) 0%, rgba(61, 0, 102, 0.4) 100%);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    .split-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(102, 66, 0, 0.1) 0px,
+        rgba(102, 66, 0, 0.1) 2px,
+        transparent 2px,
+        transparent 10px
+      );
+      animation: slidePattern 20s linear infinite;
+    }
+    
+    @keyframes slidePattern {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(14.14px);
+      }
     }
     
     .warranty-section {
-      background: var(--gradient-dark-section);
-      padding: 5rem 3rem;
+      background: rgba(59, 26, 73, 0.6);
+      backdrop-filter: blur(25px);
       border-radius: var(--radius-lg);
+      padding: 5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
       position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
+      border: 2px solid rgba(102, 66, 0, 0.4);
     }
     
-    .warranty-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(102, 66, 0, 0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: rotateGlow 20s linear infinite;
-    }
-    
-    @keyframes rotateGlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    .warranty-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .warranty-section h2 {
+    .warranty-title {
       font-family: var(--font-heading);
-      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
       color: var(--text-light);
+      margin: 0 0 3rem;
       text-align: center;
-      margin: 0 0 1rem 0;
+      position: relative;
     }
     
-    .warranty-intro {
-      text-align: center;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: rgba(246, 241, 235, 0.85);
-      max-width: 800px;
-      margin: 0 auto 4rem;
+    .warranty-title::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 4px;
+      background: var(--gradient-gold-accent);
+      margin: 1.5rem auto 0;
+      border-radius: 2px;
     }
     
     .warranty-grid {
@@ -2959,71 +2958,38 @@
     }
     
     .warranty-item {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-md);
+      background: rgba(43, 26, 47, 0.5);
       padding: 2rem;
+      border-radius: var(--radius-md);
+      border-right: 4px solid var(--secondary);
       transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
     }
     
     .warranty-item:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: var(--secondary);
-      transform: translateX(-5px);
+      background: rgba(43, 26, 47, 0.8);
+      transform: translateX(-8px);
+      border-right-color: var(--primary);
     }
     
-    .warranty-item::before {
-      content: '✓';
-      display: inline-block;
-      width: 32px;
-      height: 32px;
-      background: var(--secondary);
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 32px;
-      font-weight: 700;
-      margin-left: 1rem;
-      font-size: 1.2rem;
-      float: right;
-    }
-    
-    .warranty-item p {
-      font-size: 1.05rem;
+    .warranty-item-text {
+      font-size: 1.125rem;
       line-height: 1.7;
-      color: var(--text-light);
-      margin: 0;
+      color: rgba(246, 241, 235, 0.95);
     }
     
-    .additional-info-boxes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    
-    .info-box {
-      background: rgba(102, 66, 0, 0.15);
-      border: 2px solid rgba(102, 66, 0, 0.3);
-      border-radius: var(--radius-md);
+    .delivery-note {
+      background: linear-gradient(135deg, rgba(102, 66, 0, 0.2) 0%, rgba(61, 0, 102, 0.2) 100%);
       padding: 2.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(102, 66, 0, 0.4);
       text-align: center;
-      transition: all 0.3s ease;
     }
     
-    .info-box:hover {
-      background: rgba(102, 66, 0, 0.25);
-      border-color: var(--secondary);
-      transform: scale(1.03);
-    }
-    
-    .info-box p {
-      font-size: 1.1rem;
+    .delivery-text {
+      font-size: 1.125rem;
       line-height: 1.8;
       color: var(--text-light);
       margin: 0;
-      font-weight: 300;
     }
     
     .divider-wrapper {
@@ -3032,52 +2998,44 @@
       left: 0;
       width: 100%;
       height: 100px;
-      z-index: 5;
       pointer-events: none;
+      z-index: 5;
     }
     
-    .divider-wrapper svg {
-      display: block;
-      width: 100%;
-      height: 100%;
+    @media (max-width: 1024px) {
+      .split-section {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      
+      .split-content {
+        clip-path: none;
+        padding: 4rem 2rem;
+      }
+      
+      .split-visual {
+        clip-path: none;
+        min-height: 300px;
+      }
     }
     
     @media (max-width: 768px) {
-      .hair-design-hero {
-        padding: 100px 1.5rem 80px;
+      .hair-hero {
+        padding: 100px 1.5rem 60px;
         min-height: 90vh;
       }
       
-      .hero-icon-wrapper {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 1.5rem;
+      .content-grid {
+        padding: 0 1.5rem 80px;
       }
       
-      .hero-icon-wrapper svg,
-      .hero-icon-wrapper i {
-        font-size: 2.5rem;
-      }
-      
-      .content-grid-section {
-        padding: 80px 1.5rem;
-      }
-      
-      .section-header {
-        margin-bottom: 3rem;
-      }
-      
-      .info-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      
-      .info-card {
-        padding: 2rem 1.5rem;
+      .service-card {
+        padding: 3rem 2rem;
+        margin-bottom: 2rem;
       }
       
       .warranty-section {
-        padding: 3rem 1.5rem;
+        padding: 3rem 2rem;
       }
       
       .warranty-grid {
@@ -3085,78 +3043,101 @@
         gap: 1.5rem;
       }
       
-      .additional-info-boxes {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      .floating-ornament {
+        width: 250px;
+        height: 250px;
       }
     }
   </style>
-
-  <div class="hair-design-wrapper">
-    <!-- Hero Section -->
-    <div class="hair-design-hero">
-      <div class="hero-content-container">
-        <div class="hero-icon-wrapper">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M12 4L20 12L12 20L4 12L12 4M12 7C10.9 7 10 7.9 10 9S10.9 11 12 11 14 10.1 14 9 13.1 7 12 7Z" fill="currentColor"></path>
-          </svg>
-        </div>
-        <h1 style="color: #FF3399;"><font color="#8c5722">עיצוב שיער</font></h1>
-        <p class="hero-intro-text"><font color="#f7daf4">עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.</font></p>
+  
+  <div class="hair-design-section">
+    <div class="floating-ornament ornament-1"></div>
+    <div class="floating-ornament ornament-2"></div>
+    
+    <div class="hair-hero">
+      <div class="hero-content">
+        <h1 class="hero-title">עיצוב שיער</h1>
+        <p class="hero-subtitle">עיצוב השיער בפיקוויג נעשה מתוך שמירה מקסימלית על סיבי השיער, מינימום התערבות כימית, ותוצאה טבעית, רכה ועמידה לאורך זמן.</p>
       </div>
     </div>
-
-    <div class="divider-wrapper">
-      <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
-        <path d="M0,100 C300,20 600,20 900,60 C1050,80 1150,100 1200,100 L1200,100 L0,100 Z" fill="var(--primary)"></path>
-      </svg>
+    
+    <div class="content-grid">
+      <div class="service-card">
+        <h2 class="card-title">
+          <span class="card-icon">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </span>
+          שירות עיצוב השיער בפיקוויג
+        </h2>
+      </div>
+      
+      <div class="split-section">
+        <div class="split-content">
+          <h3 class="card-title">
+            <span class="card-icon">
+              <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </span>
+            תהליך עדין ומבוקר
+          </h3>
+          <p class="card-text">כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את השינוי.</p>
+        </div>
+        
+        <div class="split-visual"></div>
+      </div>
+      
+      <div class="service-card">
+        <h3 class="card-title">בחירה חכמה של שיער</h3>
+        <p class="card-text">כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.</p>
+      </div>
+      
+      <div class="warranty-section">
+        <h2 class="warranty-title">אחריות ושירות מלא</h2>
+        <p class="card-text" style="text-align: center; margin-bottom: 3rem;">פיקוויג מעניקה אחריות של שלושה חודשים מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך. האחריות כוללת בין היתר:</p>
+        
+        <div class="warranty-grid">
+          <div class="warranty-item">
+            <p class="warranty-item-text">התאמות בעבודת לייס</p>
+          </div>
+          
+          <div class="warranty-item">
+            <p class="warranty-item-text">שזירת שיער והוספת טרסים</p>
+          </div>
+          
+          <div class="warranty-item">
+            <p class="warranty-item-text">הגדלה או הקטנה של הרשת</p>
+          </div>
+          
+          <div class="warranty-item">
+            <p class="warranty-item-text">דיוקים בתספורת ובמבנה  העיצובי</p>
+          </div>
+          
+          <div class="warranty-item">
+            <p class="warranty-item-text">התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון</p>
+          </div>
+        </div>
+        
+        <div class="delivery-note">
+          <p class="delivery-text">זמני האספקה בפיקוויג נעים בין 7-45 ימים ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם</p>
+        </div>
+        
+        <div style="margin-top: 3rem; background: rgba(102, 66, 0, 0.2); padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid rgba(102, 66, 0, 0.4);">
+          <p class="card-text" style="margin: 0; text-align: center;">בפיקוויג מבינים שאת רוצה להנות מהפאה מיד - בתקופת האחריות, אם תבחרי לדייק את הפאה שלך, תוכלי לקבל פאה חלופית עד שהפאה שלך תהיה מוכנה</p>
+        </div>
+      </div>
     </div>
-
-    <!-- Main Content Section -->
-    <div class="content-grid-section">
-      <div class="content-grid-container zappy-vertical-grid"><div class="section-header">
-          <h2 class="">שירות עיצוב השיער בפיקוויג</h2>
-        </div><div class="info-cards-grid zappy-inline-grid-active zappy-item-component zappy-preserve-css-grid zappy-grid-item-nested-grid zappy-grid-item-no-stretch" id="zappy-auto-grid-1772924921395-ofuzjy" data-zappy-auto-grid="true" data-original-item-width="576" data-original-gap="48px" style="grid-template-columns: 576px 576px 0px;">
-          <div class="info-card">
-            <h3 class="">תהליך עדין ומבוקר</h3>
-            <p class="" style="">כאשר נדרש תהליך כימי, הוא נעשה בעדינות רבה, בשלבים מבוקרים ובשיטות השומרות על סיב השיערה. במקרים של גוונים, שינוי צבע או התאמות עיצוביות, נעדיף להתחיל במינון עדין, לראות כיצד זה משתלב עם מבנה הפנים, הגוון הטבעי והתחושה שלך, ורק לאחר מכן להעמיק את השינוי.</p>
-          </div>
-
-          <div class="info-card">
-            <h3 class="">בחירה חכמה של שיער</h3>
-            <p class="" style="">כבר בשלב בחירת השיער אנו מקפידות כלל האפשר לבחור שיער בגוונים בהירים או בסיס טבעי מתאים - במיוחד עבור נשים המעוניינות בגוונים.הבחירה הזו מאפשרת להפחית משמעותית שימוש בכימיה מיותרת ולשמור על איכות השיער, הברק והמרקם.</p>
-          </div>
-        </div><div class="warranty-section zappy-grid-item-no-stretch">
-          <div class="warranty-content">
-            <h2 class="">אחריות ושירות מלא</h2>
-            <p class="warranty-intro" style="">פיקוויג מעניקה אחריות של שלושה חודשים מועד קבלת הפאה או הטופר, הכוללת התאמות ודיוקים אישיים, מתוך הבנה שפאה מושלמת היא תהליך. האחריות כוללת בין היתר:</p>
-            
-            <div class="warranty-grid zappy-inline-grid-active zappy-item-component zappy-preserve-css-grid" id="zappy-auto-grid-1772924921398-7pqp6c" data-zappy-auto-grid="true" data-original-item-width="347" data-original-gap="32px" style="grid-template-columns: 346.656px 346.672px 346.656px;">
-              <div class="warranty-item">
-                <p class="">התאמות בעבודת לייס</p>
-              </div>
-              <div class="warranty-item">
-                <p class="">שזירת שיער והוספת טרסים</p>
-              </div>
-              <div class="warranty-item">
-                <p class="">הגדלה או הקטנה של הרשת</p>
-              </div>
-              <div class="warranty-item" data-zappy-original-transform="" style="transform: translateX(-189.321px);" data-zappy-center-transform="true">
-                <p class="">דיוקים בתספורת ובמבנה  העיצובי</p>
-              </div>
-              <div class="warranty-item" data-zappy-original-transform="" style="transform: translateX(-189.321px);" data-zappy-center-transform="true">
-                <p class="">התאמות נוספות שנועדו לשפר נוחות, מראה ותחושת ביטחון</p>
-              </div>
-            </div>
-
-            <div class="additional-info-boxes zappy-preserve-css-grid" id="zappy-auto-grid-1772924921401-iyqdd8" data-zappy-auto-grid="true" data-original-item-width="536" data-original-gap="32px" style="display: grid; grid-template-columns: 536px 536px 0px;"><div class="info-box">
-                <p class="" style="">זמני האספקה בפיקוויג נעים בין 7-45 ימים ואנו מקפידות לשקף מראש את לוחות הזמנים ולעמוד בהם</p>
-              </div><div class="info-box">
-                <p class="" style="">בפיקוויג מבינים שאת רוצה להנות מהפאה מיד - בתקופת האחריות, אם תבחרי לדייק את הפאה שלך, תוכלי לקבל פאה חלופית עד שהפאה שלך תהיה מוכנה</p>
-              </div></div>
-          </div>
-        </div></div>
-    </div>
+  </div>
+  
+  <div class="divider-wrapper">
+    <svg viewbox="0 0 1200 100" preserveaspectratio="none" style="display: block; width: 100%; height: 100%;">
+      <path d="M0,100 C300,20 900,20 1200,100 L1200,100 L0,100 Z" fill="var(--bg-light)"></path>
+    </svg>
   </div>
 </section>
     </main>
@@ -3201,7 +3182,7 @@
       
       <div class="footer-section footer-social">
         <h3 class="footer-title" style="font-weight: 700; color: rgb(255, 153, 204)"><font color="#000000">עקבו אחרינו</font></h3>
-        <div class="zappy-inserted-element" id="zappy-element-1772837711967-r5kq5l6tn" data-element-id="zappy-element-1772837711967-r5kq5l6tn" data-element-type="icon" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center; display: flex !important; justify-content: center !important; max-width: 1200px !important; width: 100% !important; color: rgb(61, 0, 102);"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="64" height="64" viewBox="0 0 512 116" data-icon="logos:youtube" data-iconify="logos:youtube" data-element-type="icon" data-icon-type="iconify" data-size-adjusted="true" style="width: 64px !important; height: 64px !important; display: inline-block; vertical-align: -0.125em; color: rgb(61, 0, 102);" class="iconify iconify--logos"><path fill="red" d="M159.89 17.93a20.55 20.55 0 0 0-14.471-14.47C132.73 0 81.666 0 81.666 0S30.6.105 17.913 3.565a20.55 20.55 0 0 0-14.47 14.47c-3.838 22.545-5.327 56.896.105 78.538a20.55 20.55 0 0 0 14.47 14.47c12.688 3.46 63.753 3.46 63.753 3.46s51.065 0 63.753-3.46a20.55 20.55 0 0 0 14.47-14.47c4.047-22.576 5.295-56.906-.105-78.642"></path><path fill="#FFF" d="m65.413 81.788l42.362-24.536l-42.362-24.537z"></path><path fill="#282828" d="M491.237 33.24c5.557 0 9.751 1.048 12.687 3.04q4.404 2.989 6.292 9.438c1.258 4.299 1.782 10.17 1.782 17.72v12.269H485.05v3.774l.42 10.381c.314 2.307.839 3.985 1.677 5.033c.84 1.049 2.202 1.573 3.985 1.573c2.412 0 4.09-.943 4.928-2.83c.944-1.888 1.363-5.034 1.468-9.333l13.946.839c.105.629.105 1.468.105 2.516c0 6.606-1.783 11.535-5.453 14.785s-8.703 4.928-15.309 4.928c-7.969 0-13.526-2.516-16.672-7.444C471 95 469.322 87.24 469.322 76.86V64.172c.356-17.825 3.491-30.88 21.915-30.932m-193.88 1.363v52.533c0 3.146.314 5.453 1.048 6.816c1.489 2.915 5.348 2.17 7.445.734a8.4 8.4 0 0 0 2.831-3.25V34.602h16.043v71.617h-12.583l-1.363-8.808h-.314c-3.46 6.606-8.599 9.961-15.414 9.961c-10.49-.026-13.057-7.584-13.668-15.26l-.04-.541a65 65 0 0 1-.133-3.492V34.603zm82.732 0v52.533c0 3.146.314 5.453 1.048 6.816c1.49 2.915 5.348 2.17 7.445.734a8.4 8.4 0 0 0 2.831-3.25V34.602h16.043v71.617h-12.583l-1.363-8.808h-.314c-3.46 6.606-8.599 9.961-15.414 9.961c-10.49-.026-13.057-7.584-13.668-15.26l-.04-.541a65 65 0 0 1-.133-3.492V34.603zM250.8 33.24c5.243 0 9.542 1.048 12.688 3.25c3.145 2.202 5.557 5.558 7.025 10.171c1.468 4.614 2.202 10.8 2.202 18.455v10.38c0 7.655-.734 13.737-2.202 18.35c-1.468 4.615-3.775 7.97-7.025 10.172c-3.25 2.097-7.655 3.25-13.107 3.25c-5.663.105-10.067-1.048-13.317-3.145c-3.25-2.202-5.558-5.558-6.92-10.171c-1.364-4.614-1.993-10.696-1.993-18.35V65.22c0-7.655.734-13.946 2.307-18.56c1.573-4.718 3.984-8.074 7.34-10.17c3.355-2.098 7.654-3.251 13.002-3.251m181.822-28.73v37.748h.105c1.468-2.726 3.355-4.928 5.977-6.606a14.8 14.8 0 0 1 8.283-2.516c3.88 0 6.816 1.048 9.018 3.04c2.202 2.098 3.775 5.348 4.718 9.857c.915 4.368 1.435 10.409 1.467 18.027l.001.743v11.324c0 10.59-1.363 18.455-3.88 23.488c-2.62 5.033-6.605 7.55-12.058 7.55c-3.04 0-5.767-.734-8.283-2.097a14.7 14.7 0 0 1-5.35-5.392l-.208-.376h-.314l-1.678 6.816h-13.317V4.51zm-64.173 3.67V21.18h-15.938v85.039h-15.728V21.181H320.74V8.18zm-172.909 0l.01.04c.153.681 2.273 10.106 4.605 21.087l.184.87l.278 1.315l.186.883l.093.443l.186.888l.093.445l.185.891l.27 1.303c1.575 7.604 3.078 15.23 3.977 20.698h.42c.861-4.905 2.112-11.182 3.446-17.591l.35-1.674q.263-1.258.53-2.512l.274-1.297a2039 2039 0 0 1 5.597-25.444l.03-.135l.048-.21h16.043l-18.56 66.165v31.771h-15.833V74.448h-.105l-18.35-66.27zm54.945 36.175c-2.202 0-3.67 1.154-4.613 3.566s-1.363 6.081-1.363 11.22v22.334c0 5.243.419 9.122 1.258 11.43q1.259 3.46 4.718 3.46q3.303 0 4.719-3.46c.944-2.308 1.363-6.187 1.363-11.43V59.139c0-5.138-.42-8.913-1.363-11.22c-.944-2.411-2.517-3.565-4.719-3.565m184.968 2.098c-1.278 1.18-2.187 2.635-2.728 4.454l-.103.369v40.684c1.3 2.202 3.146 3.67 6.396 3.775q2.516 0 4.09-1.887q1.572-1.887 2.201-6.292q.605-4.227.629-11.644v-9.956c0-5.662-.21-9.961-.524-13.002c-.42-3.041-.943-5.243-1.887-6.501c-1.825-2.622-5.767-2.59-8.074 0m55.47-2.412q-2.675.157-3.776 1.573c-.838 1.048-1.363 2.621-1.677 4.928c-.309 2.26-.415 10.16-.42 10.476v5.148h11.744v-4.54v.087c-.007 1.587-.04-.921-.112-4l-.01-.414c-.066-2.706-.162-5.723-.297-6.757c-.315-2.412-.84-4.09-1.678-5.033c-.839-.944-2.097-1.468-3.775-1.468"></path></svg></div><div class="social-links">
+        <div class="zappy-inserted-element" id="zappy-element-1772837711967-r5kq5l6tn" data-element-id="zappy-element-1772837711967-r5kq5l6tn" data-element-type="icon" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center; display: flex !important; justify-content: center !important; max-width: 1200px !important; width: 100% !important; color: rgb(61, 0, 102);"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="64" height="64" viewbox="0 0 512 116" data-icon="logos:youtube" data-iconify="logos:youtube" data-element-type="icon" data-icon-type="iconify" data-size-adjusted="true" style="width: 64px !important; height: 64px !important; display: inline-block; vertical-align: -0.125em; color: rgb(61, 0, 102);" class="iconify iconify--logos"><path fill="red" d="M159.89 17.93a20.55 20.55 0 0 0-14.471-14.47C132.73 0 81.666 0 81.666 0S30.6.105 17.913 3.565a20.55 20.55 0 0 0-14.47 14.47c-3.838 22.545-5.327 56.896.105 78.538a20.55 20.55 0 0 0 14.47 14.47c12.688 3.46 63.753 3.46 63.753 3.46s51.065 0 63.753-3.46a20.55 20.55 0 0 0 14.47-14.47c4.047-22.576 5.295-56.906-.105-78.642"></path><path fill="#FFF" d="m65.413 81.788l42.362-24.536l-42.362-24.537z"></path><path fill="#282828" d="M491.237 33.24c5.557 0 9.751 1.048 12.687 3.04q4.404 2.989 6.292 9.438c1.258 4.299 1.782 10.17 1.782 17.72v12.269H485.05v3.774l.42 10.381c.314 2.307.839 3.985 1.677 5.033c.84 1.049 2.202 1.573 3.985 1.573c2.412 0 4.09-.943 4.928-2.83c.944-1.888 1.363-5.034 1.468-9.333l13.946.839c.105.629.105 1.468.105 2.516c0 6.606-1.783 11.535-5.453 14.785s-8.703 4.928-15.309 4.928c-7.969 0-13.526-2.516-16.672-7.444C471 95 469.322 87.24 469.322 76.86V64.172c.356-17.825 3.491-30.88 21.915-30.932m-193.88 1.363v52.533c0 3.146.314 5.453 1.048 6.816c1.489 2.915 5.348 2.17 7.445.734a8.4 8.4 0 0 0 2.831-3.25V34.602h16.043v71.617h-12.583l-1.363-8.808h-.314c-3.46 6.606-8.599 9.961-15.414 9.961c-10.49-.026-13.057-7.584-13.668-15.26l-.04-.541a65 65 0 0 1-.133-3.492V34.603zm82.732 0v52.533c0 3.146.314 5.453 1.048 6.816c1.49 2.915 5.348 2.17 7.445.734a8.4 8.4 0 0 0 2.831-3.25V34.602h16.043v71.617h-12.583l-1.363-8.808h-.314c-3.46 6.606-8.599 9.961-15.414 9.961c-10.49-.026-13.057-7.584-13.668-15.26l-.04-.541a65 65 0 0 1-.133-3.492V34.603zM250.8 33.24c5.243 0 9.542 1.048 12.688 3.25c3.145 2.202 5.557 5.558 7.025 10.171c1.468 4.614 2.202 10.8 2.202 18.455v10.38c0 7.655-.734 13.737-2.202 18.35c-1.468 4.615-3.775 7.97-7.025 10.172c-3.25 2.097-7.655 3.25-13.107 3.25c-5.663.105-10.067-1.048-13.317-3.145c-3.25-2.202-5.558-5.558-6.92-10.171c-1.364-4.614-1.993-10.696-1.993-18.35V65.22c0-7.655.734-13.946 2.307-18.56c1.573-4.718 3.984-8.074 7.34-10.17c3.355-2.098 7.654-3.251 13.002-3.251m181.822-28.73v37.748h.105c1.468-2.726 3.355-4.928 5.977-6.606a14.8 14.8 0 0 1 8.283-2.516c3.88 0 6.816 1.048 9.018 3.04c2.202 2.098 3.775 5.348 4.718 9.857c.915 4.368 1.435 10.409 1.467 18.027l.001.743v11.324c0 10.59-1.363 18.455-3.88 23.488c-2.62 5.033-6.605 7.55-12.058 7.55c-3.04 0-5.767-.734-8.283-2.097a14.7 14.7 0 0 1-5.35-5.392l-.208-.376h-.314l-1.678 6.816h-13.317V4.51zm-64.173 3.67V21.18h-15.938v85.039h-15.728V21.181H320.74V8.18zm-172.909 0l.01.04c.153.681 2.273 10.106 4.605 21.087l.184.87l.278 1.315l.186.883l.093.443l.186.888l.093.445l.185.891l.27 1.303c1.575 7.604 3.078 15.23 3.977 20.698h.42c.861-4.905 2.112-11.182 3.446-17.591l.35-1.674q.263-1.258.53-2.512l.274-1.297a2039 2039 0 0 1 5.597-25.444l.03-.135l.048-.21h16.043l-18.56 66.165v31.771h-15.833V74.448h-.105l-18.35-66.27zm54.945 36.175c-2.202 0-3.67 1.154-4.613 3.566s-1.363 6.081-1.363 11.22v22.334c0 5.243.419 9.122 1.258 11.43q1.259 3.46 4.718 3.46q3.303 0 4.719-3.46c.944-2.308 1.363-6.187 1.363-11.43V59.139c0-5.138-.42-8.913-1.363-11.22c-.944-2.411-2.517-3.565-4.719-3.565m184.968 2.098c-1.278 1.18-2.187 2.635-2.728 4.454l-.103.369v40.684c1.3 2.202 3.146 3.67 6.396 3.775q2.516 0 4.09-1.887q1.572-1.887 2.201-6.292q.605-4.227.629-11.644v-9.956c0-5.662-.21-9.961-.524-13.002c-.42-3.041-.943-5.243-1.887-6.501c-1.825-2.622-5.767-2.59-8.074 0m55.47-2.412q-2.675.157-3.776 1.573c-.838 1.048-1.363 2.621-1.677 4.928c-.309 2.26-.415 10.16-.42 10.476v5.148h11.744v-4.54v.087c-.007 1.587-.04-.921-.112-4l-.01-.414c-.066-2.706-.162-5.723-.297-6.757c-.315-2.412-.84-4.09-1.678-5.033c-.839-.944-2.097-1.468-3.775-1.468"></path></svg></div><div class="social-links">
           <a href="https://facebook.com/profile.php?id=61586173236226" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://instagram.com/bareketwigs" aria-label="Instagram"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1772497957655-2uek9glah" data-icon-type="fontawesome" style="font-size: 15px !important; color: rgb(249, 230, 242);"></i></div></a>
           <a href="https://youtube.com/@Pickwig" aria-label="YouTube" data-element-id="element-ai-1772838169059-y8m3k2" data-element-type="social-link"><div class="zappy-icon-alignment-wrapper" style="display: flex; width: 100%; justify-content: center;"><i class="fab fa-youtube" data-element-type="icon" data-element-id="icon-1772838169059-p9x4n7" data-icon-type="fontawesome" style="font-size: 13px !important; color: rgb(251, 233, 242);"></i></div></a>
