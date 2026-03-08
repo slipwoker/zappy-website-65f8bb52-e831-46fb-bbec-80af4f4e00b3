@@ -8279,6 +8279,15 @@ nav.navbar .sub-menu li a:hover { color: var(--nav-text-hover, #ffffff) !importa
 }
 /* === NAVBAR STYLE OVERRIDES END === */
 
+.pickwig-hero-section .hero-dot, 
+#zappy-section-1772488567007-5181 .hero-dot,
+#zappy-section-1772488567007-5181 [class*="dot"],
+#zappy-section-1772488567007-5181 [class*="circle"],
+#zappy-section-1772488567007-5181 [class*="bullet"] {
+  background-color: #7B2FBE;
+  border-color: #7B2FBE;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
