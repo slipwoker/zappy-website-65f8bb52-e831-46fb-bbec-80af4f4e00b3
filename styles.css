@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 
 /* Self-hosted fonts (Inter + Rubik for multi-language support) */
 
@@ -157,7 +157,7 @@
   --gradient-light-section: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
   --gradient-overlay-light: linear-gradient(180deg, rgba(251,245,238,0.00) 0%, rgba(251,245,238,0.80) 60%, rgba(251,245,238,1.00) 100%);
   
-  --font-heading: 'Montserrat', sans-serif;
+  --font-heading: 'Nunito', sans-serif;
   --font-body: 'Heebo', sans-serif;
   
   --container-max: 1200px;
@@ -183,7 +183,7 @@
   --text-color: #6a6a6a;
   --text-secondary-color: #717171;
 
-  --heading-font: 'Montserrat', sans-serif;
+  --heading-font: 'Nunito', sans-serif;
   --body-font: 'Heebo', sans-serif;
   --font-family: 'Heebo', sans-serif;
   --nav-bg: #000000;
@@ -223,7 +223,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: #FF99CC;
   letter-spacing: -0.02em;
 
@@ -245,7 +245,8 @@ h2 {
   line-height: 1.3 !important;
   margin-bottom: 1rem !important;
   margin-top: 0.5rem !important;
-}
+
+  color: #FF0080;}
 
 h3 {
   font-size: 22px !important;
@@ -523,7 +524,8 @@ ol {
   h2 {
     font-size: 28px !important;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   h3 {
     font-size: 20px !important;
@@ -568,7 +570,8 @@ ol {
     margin-bottom: 1rem !important;
     margin-top: 0.5rem !important;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   h3 {
     font-size: 18px !important;
@@ -2327,11 +2330,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-intro h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: #FF0080;
   margin-bottom: 20px;
 }
 
@@ -2363,7 +2366,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-services-card h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
@@ -2445,7 +2448,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .home-services-intro h2 {
     font-size: 32px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .home-services-cards {
     gap: 24px;
@@ -2599,11 +2603,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .home-cta-section h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.3;
-  color: var(--text-dark);
+  color: #FF0080;
   margin-bottom: 20px;
   letter-spacing: -0.01em;
 }
@@ -2678,7 +2682,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .home-cta-section h2 {
     font-size: 26px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .home-cta-section .btn-primary {
     padding: 12px 28px;
@@ -2718,11 +2723,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-spotlight-section h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: #FF0080;
   margin: 0 0 32px 0;
   letter-spacing: -0.02em;
 }
@@ -2787,7 +2792,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
     font-size: 32px;
     margin-bottom: 24px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .about-spotlight-section p {
     margin-bottom: 20px;
@@ -2820,11 +2826,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-intro h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: #2B1A2F;
+  color: #FF0080;
   margin-bottom: 16px;
 }
 
@@ -2891,7 +2897,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-process-step h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.18;
@@ -2936,7 +2942,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .about-process-intro h2 {
     font-size: 32px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .about-process-grid {
     grid-template-columns: 1fr !important;
@@ -3009,11 +3016,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-team-header h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.3;
-  color: var(--text-light);
+  color: #FF0080;
   margin-bottom: 20px;
   letter-spacing: -0.01em;
 }
@@ -3085,7 +3092,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .about-team-info h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 1.375rem;
   font-weight: 500;
   line-height: 1.4;
@@ -3128,7 +3135,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .about-team-header h2 {
     font-size: 1.75rem;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .about-team-grid {
     grid-template-columns: 1fr !important;
@@ -3205,11 +3213,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-cover-section h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 48px;
   font-weight: 400;
   line-height: 1.2;
-  color: var(--text-light);
+  color: #FF0080;
   margin: 0 0 24px 0;
   text-shadow: 0 10px 26px rgba(43,26,47,0.60);
   letter-spacing: -0.02em;
@@ -3257,7 +3265,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
     font-size: 36px;
     margin-bottom: 16px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .materials-cover-section p {
     font-size: 16px;
@@ -3294,11 +3303,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .materials-intro h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: #2B1A2F;
+  color: #FF0080;
   margin-bottom: 16px;
   letter-spacing: -0.01em;
 }
@@ -3364,7 +3373,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-section .material-content h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
@@ -3410,7 +3419,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .materials-section .materials-intro h2 {
     font-size: 32px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
   
   .materials-section .materials-grid {
     grid-template-columns: 1fr !important;
@@ -3452,11 +3462,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .materials-comparison-header h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: #2B1A2F;
+  color: #FF0080;
   margin-bottom: 16px;
 }
 
@@ -3490,7 +3500,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .comparison-label h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 34px;
   font-weight: 700;
   line-height: 1.18;
@@ -3513,7 +3523,7 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-comparison-section .comparison-item h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
@@ -3557,7 +3567,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .materials-comparison-section .materials-comparison-header h2 {
     font-size: 32px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .materials-comparison-section .materials-comparison-grid {
     gap: 40px;
@@ -3609,11 +3620,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .materials-portfolio-header h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: #2B1A2F;
+  color: #FF0080;
   margin-bottom: 20px;
 }
 
@@ -3695,7 +3706,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .materials-portfolio-header h2 {
     font-size: 32px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .materials-portfolio-grid {
     grid-template-columns: 1fr !important;
@@ -3736,11 +3748,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-intro-section .contact-intro-content h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: #FF0080;
   margin-bottom: 32px;
   text-align: start;
 }
@@ -3805,7 +3817,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
     font-size: 32px;
     margin-bottom: 24px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .contact-intro-section .contact-intro-content p {
     margin-bottom: 16px;
@@ -3835,11 +3848,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-form-section .contact-form-content h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: #2B1A2F;
+  color: #FF0080;
   margin-bottom: 16px;
   text-align: start;
 }
@@ -3959,7 +3972,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
   .contact-form-section .contact-form-content h2 {
     font-size: 32px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
   
   .contact-form-section .contact-form {
     padding: 24px 20px;
@@ -4017,11 +4031,11 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
 }
 
 .contact-details-section h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.15;
-  color: var(--text-light);
+  color: #FF0080;
   margin-bottom: 40px;
   letter-spacing: -0.01em;
 }
@@ -4099,7 +4113,8 @@ main { margin-top: 0 !important; padding-top: 0 !important; }
     font-size: 32px;
     margin-bottom: 32px;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
 
   .contact-details-section .contact-info-item {
     margin-bottom: 20px;
@@ -4252,7 +4267,8 @@ img, picture, figure {
   h2 {
     font-size: clamp(24px, 6vw, 36px) !important;
   
-  font-weight: 400;}
+  font-weight: 400;
+  color: #FF0080;}
   
   h3 {
     font-size: clamp(20px, 5vw, 28px) !important;
@@ -4391,7 +4407,7 @@ img, picture, figure {
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: inherit;
+  color: #FF0080;
 
   font-weight: 400;}
 
@@ -5476,17 +5492,17 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-cover-section h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: #FF0080;
   margin: 0 0 24px 0;
   letter-spacing: -0.02em;
 }
 
 .materials-cover-section h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 28px;
   font-weight: 600;
   line-height: 1.4;
@@ -5573,7 +5589,8 @@ body.accessibility-widget-visible ._access-menu {
     font-size: 32px;
     line-height: 1.2;
     margin-bottom: 20px;
-  }
+  
+  color: #FF0080;}
 
   .materials-cover-section h3 {
     font-size: 22px;
@@ -6320,11 +6337,11 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .materials-intro h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: #FF0080;
   margin: 0 0 24px 0;
   letter-spacing: -0.01em;
 }
@@ -6453,7 +6470,7 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .material-card h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.25;
@@ -6529,7 +6546,8 @@ body.accessibility-widget-visible ._access-menu {
   .materials-materials-section .materials-intro h2 {
     font-size: 32px;
     margin-bottom: 16px;
-  }
+  
+  color: #FF0080;}
 
   .materials-materials-section .materials-grid {
     grid-template-columns: 1fr !important;
@@ -6629,11 +6647,11 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .materials-intro h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: #FF0080;
   margin-bottom: 20px;
 }
 
@@ -6735,7 +6753,7 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .material-card-content h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.25;
@@ -6781,7 +6799,8 @@ body.accessibility-widget-visible ._access-menu {
 
   .materials-materials-section .materials-intro h2 {
     font-size: 32px;
-  }
+  
+  color: #FF0080;}
 
   .materials-materials-section .materials-grid {
     grid-template-columns: 1fr !important;
@@ -6855,11 +6874,11 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .materials-intro h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.4;
-  color: var(--text-dark);
+  color: #FF0080;
   margin: 0;
 }
 
@@ -6936,7 +6955,7 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .card-content h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.3;
@@ -6995,7 +7014,8 @@ body.accessibility-widget-visible ._access-menu {
   .materials-materials-section .materials-intro h2 {
     font-size: 24px;
     line-height: 1.5;
-  }
+  
+  color: #FF0080;}
 
   .materials-materials-section .materials-intro .highlight-text {
     font-size: 18px;
@@ -7055,11 +7075,11 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .materials-header h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: #FF0080;
   margin: 0;
   letter-spacing: -0.01em;
 }
@@ -7123,7 +7143,7 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 .materials-materials-section .material-content h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.25;
@@ -7170,7 +7190,8 @@ body.accessibility-widget-visible ._access-menu {
   .materials-materials-section .materials-header h2 {
     font-size: 28px;
     line-height: 1.3;
-  }
+  
+  color: #FF0080;}
 
   .materials-materials-section .materials-grid {
     grid-template-columns: 1fr !important;
