@@ -2657,16 +2657,16 @@
 
   <nav class="navbar" dir="rtl" style="background: transparent;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1771797932969-fnrvqw8c9" data-native-element="true">
-    <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
-    <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display:none;">
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
       <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call" data-element-type="button" data-element-id="btn-1771797932969-jvwxjho66" data-native-element="true">
-    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
@@ -2689,9 +2689,406 @@
   <main>
       
 
-<section id="layout-1773053665682" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0px; direction: rtl; background-image: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), url(&quot;assets/image-section-background-1773054142431-kh7gya.webp?v=1773054144123&quot;); --zappy-bg-overlay: rgba(0, 0, 0, 0.22); --zappy-bg-image: url(&quot;assets/image-section-background-1773054142431-kh7gya.webp?v=1773054144123&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; position: relative; overflow: hidden; --zappy-bg-color: #000000; min-height: 1052.19px !important;" data-zappy-bg-type="image" data-zappy-bg-color="#000000" data-zappy-bg-image="assets/image-section-background-1773054142431-kh7gya.webp?v=1773054144123" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="22" data-zappy-bg-video-type="" data-zappy-bg-video-url="" data-component-id="empty-section"><div class="zappy-inserted-element" id="zappy-element-1773064624177-ygr6rbo9h" data-element-id="zappy-element-1773064624177-ygr6rbo9h" data-element-type="h2" data-zappy-newly-inserted="true" style="width: 100%;"><font color="#3d0066">&nbsp; לפאות היוקרה של פיקוויג אין מחירון! <br><br> המחיר קבוע לכל אורכי השיער, הגוונים והמלאות לבחירתך<br><br> ב - 9,999 ש"ח בצירוף מע"מ<br><br>שניים עשר תשלומים ללא ריבית<br><br>ובתוספת חבילת עיצוב שיער במחיר אטרקטיבי&nbsp;&nbsp;</font></div>
-  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+<section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; background: var(--gradient-dark-section); overflow: hidden; padding: 0; margin: 0;" data-zappy-section="true" class="section" id="layout-1773053665682">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
     
+    .pricing-hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 2rem 80px;
+      direction: rtl;
+      font-family: var(--font-body);
+      overflow: hidden;
+    }
+    
+    .pricing-bg-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      opacity: 0.1;
+      background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px),
+        repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+    }
+    
+    .pricing-glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.3;
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .pricing-glow-orb-1 {
+      top: 10%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+      animation-delay: 0s;
+    }
+    
+    .pricing-glow-orb-2 {
+      bottom: 20%;
+      left: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #664200 0%, transparent 70%);
+      animation-delay: -4s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+    
+    .pricing-content-wrapper {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .pricing-main-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(30px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 32px;
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        0 30px 90px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .pricing-main-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: var(--gradient-gold-shine);
+      opacity: 0;
+      transform: rotate(45deg);
+      transition: opacity 0.8s ease;
+      pointer-events: none;
+    }
+    
+    .pricing-main-card:hover::before {
+      opacity: 0.15;
+      animation: shine 2s ease-in-out infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: rotate(45deg) translateX(-100%); }
+      100% { transform: rotate(45deg) translateX(100%); }
+    }
+    
+    .pricing-main-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .pricing-accent-line {
+      width: 120px;
+      height: 4px;
+      background: var(--gradient-gold-accent);
+      margin: 0 auto 40px;
+      border-radius: 2px;
+      box-shadow: 0 0 20px rgba(61, 0, 102, 0.6);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scaleX(1); }
+      50% { opacity: 0.7; transform: scaleX(1.1); }
+    }
+    
+    .pricing-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-light);
+      text-align: center;
+      margin: 0 0 50px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    
+    .pricing-headline-line {
+      display: block;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease-out backwards;
+    }
+    
+    .pricing-headline-line:nth-child(1) { animation-delay: 0.1s; }
+    .pricing-headline-line:nth-child(2) { animation-delay: 0.2s; }
+    .pricing-headline-line:nth-child(3) { animation-delay: 0.3s; }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .pricing-highlight {
+      color: #FFD700;
+      position: relative;
+      display: inline-block;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+    
+    .pricing-price-box {
+      background: linear-gradient(135deg, var(--primary) 0%, #5A0099 100%);
+      border-radius: 24px;
+      padding: 50px;
+      text-align: center;
+      margin: 50px auto 0;
+      max-width: 600px;
+      position: relative;
+      box-shadow: 
+        0 20px 60px rgba(61, 0, 102, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    }
+    
+    .pricing-price-box::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+      border-radius: 24px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .pricing-price-box:hover::after {
+      opacity: 0.3;
+      animation: borderGlow 2s linear infinite;
+    }
+    
+    @keyframes borderGlow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    
+    .pricing-price-label {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+    
+    .pricing-price-amount {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 900;
+      color: #FFD700;
+      line-height: 1;
+      margin: 0;
+      text-shadow: 0 4px 30px rgba(255, 215, 0, 0.4);
+      letter-spacing: -0.03em;
+    }
+    
+    .pricing-price-details {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    
+    .pricing-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+      animation: fadeInUp 0.8s ease-out 0.5s backwards;
+    }
+    
+    .pricing-feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 35px 30px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pricing-feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-gold-accent);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .pricing-feature-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .pricing-feature-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 215, 0, 0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .pricing-feature-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      background: var(--gradient-gold-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 24px rgba(61, 0, 102, 0.4);
+    }
+    
+    .pricing-feature-text {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .pricing-decorative-corner {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    
+    .pricing-decorative-corner-tl {
+      top: 0;
+      right: 0;
+      background: radial-gradient(circle at top right, var(--primary) 0%, transparent 70%);
+    }
+    
+    .pricing-decorative-corner-br {
+      bottom: 0;
+      left: 0;
+      background: radial-gradient(circle at bottom left, #664200 0%, transparent 70%);
+    }
+    
+    @media (max-width: 768px) {
+      .pricing-hero-section {
+        padding: 100px 1.5rem 60px;
+        min-height: auto;
+      }
+      
+      .pricing-main-card {
+        padding: 50px 30px;
+        border-radius: 24px;
+      }
+      
+      .pricing-headline {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+      
+      .pricing-price-box {
+        padding: 35px 25px;
+        margin-top: 35px;
+      }
+      
+      .pricing-price-amount {
+        font-size: 3rem;
+      }
+      
+      .pricing-features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 40px;
+      }
+      
+      .pricing-feature-card {
+        padding: 25px 20px;
+      }
+      
+      .pricing-glow-orb {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  </style>
+  
+  <div class="pricing-bg-pattern"></div>
+  <div class="pricing-glow-orb pricing-glow-orb-1"></div>
+  <div class="pricing-glow-orb pricing-glow-orb-2"></div>
+  
+  <div class="pricing-hero-section">
+    <div class="pricing-content-wrapper">
+      <div class="pricing-main-card">
+        <div class="pricing-decorative-corner pricing-decorative-corner-tl"></div>
+        <div class="pricing-decorative-corner pricing-decorative-corner-br"></div>
+        
+        <div class="pricing-accent-line"></div>
+        
+        <h2 class="pricing-headline">
+          <span class="pricing-headline-line">לפאות היוקרה של פיקוויג</span>
+          <span class="pricing-headline-line"><span class="pricing-highlight">אין מחירון!</span></span>
+          <span class="pricing-headline-line">המחיר קבוע לכל אורכי השיער,</span>
+          <span class="pricing-headline-line">הגוונים והמלאות לבחירתך ב -</span>
+        </h2>
+        
+        <div class="pricing-price-box">
+          <div class="pricing-price-label">מחיר אחיד</div>
+          <div class="pricing-price-amount">9,999 ₪</div>
+          <div class="pricing-price-details">בצירוף מע"מ</div>
+        </div>
+        
+        <div class="pricing-features-grid">
+          <div class="pricing-feature-card">
+            <div class="pricing-feature-icon">💳</div>
+            <p class="pricing-feature-text">שניים עשר תשלומים ללא ריבית</p>
+          </div>
+          
+          <div class="pricing-feature-card">
+            <div class="pricing-feature-icon">✨</div>
+            <p class="pricing-feature-text">ובתוספת חבילת עיצוב שיער במחיר אטרקטיבי</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
