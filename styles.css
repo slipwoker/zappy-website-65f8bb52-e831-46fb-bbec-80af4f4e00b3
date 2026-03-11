@@ -8308,6 +8308,10 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
 }
 
 
+#zappy-drop-l2bfq9wkb img, #zappy-drop-l2bfq9wkb {
+  max-height: 500px;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
