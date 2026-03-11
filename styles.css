@@ -8287,6 +8287,12 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
 }
 
 /* Added Component Styles */
+/* Fix: navbar should not overlap hero content */
+.navbar {
+  position: sticky !important;
+  top: 0;
+}
+
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
