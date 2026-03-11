@@ -8293,6 +8293,20 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   top: 0;
 }
 
+/* Fix: footer background & text contrast */
+.site-footer {
+  background-color: #b2acaa !important;
+  background: #b2acaa !important;
+  color: #2B1A2F !important;
+}
+.site-footer .footer-legal a,
+.site-footer .footer-legal .separator,
+.site-footer .footer-copyright,
+.site-footer .footer-copyright p,
+.site-footer .footer-bottom {
+  color: #2B1A2F !important;
+}
+
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
