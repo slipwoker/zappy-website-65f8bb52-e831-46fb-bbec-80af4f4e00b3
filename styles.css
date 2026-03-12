@@ -8312,6 +8312,25 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   max-height: 500px;
 }
 
+#layout-1773272082503 .zappy-inserted-element,
+#layout-1773272082503 .zappy-grid-item,
+#layout-1773272082503 > div,
+#layout-1773272082503 [class*="container"],
+#layout-1773272082503 [class*="wrapper"],
+#layout-1773272082503 [class*="content"] {
+  width: 100%;
+  max-width: 100%;
+}
+
+#layout-1773272082503 .zappy-inserted-element h1,
+#layout-1773272082503 .zappy-inserted-element h2,
+#layout-1773272082503 .zappy-inserted-element h3,
+#layout-1773272082503 .zappy-inserted-element p,
+#layout-1773272082503 .zappy-inserted-element font {
+  text-align: center;
+  width: 100%;
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
