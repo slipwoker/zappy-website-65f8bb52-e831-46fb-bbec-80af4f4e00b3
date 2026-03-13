@@ -8315,7 +8315,7 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
 /* Override: let user-inserted paragraphs fill their container */
 .zappy-inserted-element p { max-width: none !important; }
 
-#zappy-auto-grid-1773066999751-rycwpi .info-item {
+#zappy-section-1773064921612-7928 div.info-item:nth-child(2) {
   display: flex;
   align-items: center;
   gap: 12px;
