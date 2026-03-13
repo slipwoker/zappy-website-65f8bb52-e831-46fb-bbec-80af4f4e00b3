@@ -8312,23 +8312,13 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
   max-height: 500px;
 }
 
-#layout-1773272082503 .zappy-inserted-element,
-#layout-1773272082503 .zappy-grid-item,
-#layout-1773272082503 > div,
-#layout-1773272082503 [class*="container"],
-#layout-1773272082503 [class*="wrapper"],
-#layout-1773272082503 [class*="content"] {
-  width: 100%;
-  max-width: 100%;
-}
+/* Override: let user-inserted paragraphs fill their container */
+.zappy-inserted-element p { max-width: none !important; }
 
-#layout-1773272082503 .zappy-inserted-element h1,
-#layout-1773272082503 .zappy-inserted-element h2,
-#layout-1773272082503 .zappy-inserted-element h3,
-#layout-1773272082503 .zappy-inserted-element p,
-#layout-1773272082503 .zappy-inserted-element font {
-  text-align: center;
-  width: 100%;
+#zappy-auto-grid-1773066999751-rycwpi .info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
