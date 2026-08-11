@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# פיקוויג PICKWIG — Generative Engine Optimization Map
+
+> A יופי ובריאות business.
 
 ---
 
@@ -47,12 +49,42 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## How to Contact Us
 
-## About Business
+- Email: bareketwigs@gmail.com
+- Phone: 054-4509858
+- Phone (tel): tel:0544509858
+- Address: , תל אביב, פרדס חנה כרכור
+
+### Contact form
+- URL: https://pickwig.com/contact
+- Endpoint: https://pickwig.com/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `phone` (tel, required)
+  - `email` (email, required)
+  - `subject` (select, required)
+  - `message` (textarea, required)
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://pickwig.com/sitemap.xml
-- **Robots.txt**: https://pickwig.com/robots.txt
+## About פיקוויג PICKWIG
+פיקוויג PICKWIG is a business in the יופי ובריאות industry.
+
+## Target Audience
+חולות אונקולוגיה, נשים עם אלופציה ודלילות שיער, נשים דתיות, נשים המעוניינות במראה של שיער שופע ובריא
+
+## Industry
+יופי ובריאות
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://pickwig.com/sitemap.xml
+- Robots: https://pickwig.com/robots.txt
+- Flattened page text (for LLMs): https://pickwig.com/llms-full.txt

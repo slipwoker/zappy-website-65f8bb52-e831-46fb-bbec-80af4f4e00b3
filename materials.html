@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
+<!DOCTYPE html><html lang="he" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
@@ -161,26 +159,31 @@
       // Track button clicks (counted as actions)
       if (target.tagName === 'BUTTON' || target.closest('button')) {
         var button = target.tagName === 'BUTTON' ? target : target.closest('button');
-        trackEvent('click', {
+        var clickMeta = {
           element: 'button',
           text: button.textContent.trim().substring(0, 100),
           id: button.id || null,
           class: button.className || null
-        });
+        };
+        
+        trackEvent('click', clickMeta);
       }
       
       // Track link clicks (navigation - not counted as actions)
       else if (target.tagName === 'A' || target.closest('a')) {
         var link = target.tagName === 'A' ? target : target.closest('a');
-        trackEvent('navigation', {
+        var navMeta = {
           element: 'link',
           text: link.textContent.trim().substring(0, 100),
           href: link.href,
           external: link.hostname !== window.location.hostname
-        });
+        };
+        
+        trackEvent('navigation', navMeta);
       }
     }, true);
   }
+  
   
   // Track form submissions
   if (config.trackFormSubmissions) {
@@ -218,18 +221,391 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
+<!-- Zappy Marketing Events -->
+<script>
+(function() {
+  'use strict';
+  if (window.zappyFireMarketingEvent) return;
+
+  var ECOM_MODE = "";
+  var IS_CATALOG = false;
+  var IS_FULL = false;
+
+  var ECOM_ALIAS = {
+    begin_checkout: 'checkout_started',
+    purchase: 'checkout_complete',
+    add_to_cart: 'add_to_cart',
+    view_product: 'view_product'
+  };
+
+  function pagePath() {
+    try {
+      if (window.ZAPPY_CONFIG && window.ZAPPY_CONFIG.currentPagePath) {
+        return window.ZAPPY_CONFIG.currentPagePath;
+      }
+    } catch (e) {}
+    try { return window.location.pathname || '/'; } catch (e2) { return '/'; }
+  }
+
+  function normalizeItems(meta) {
+    meta = meta || {};
+    var raw = meta.items || meta.cartItems || meta.cart_items || meta.lineItems || [];
+    if (!Array.isArray(raw)) raw = [];
+    var out = [];
+    for (var i = 0; i < raw.length; i++) {
+      var item = raw[i];
+      if (!item || typeof item !== 'object') continue;
+      var id = String(item.item_id || item.productId || item.product_id || item.id || '').trim();
+      var name = String(item.item_name || item.productName || item.product_name || item.name || '').trim();
+      var price = parseFloat(item.price != null ? item.price : (item.unitPrice != null ? item.unitPrice : 0)) || 0;
+      var quantity = Math.max(1, parseInt(item.quantity != null ? item.quantity : (item.qty != null ? item.qty : 1), 10) || 1);
+      if (!id && !name) continue;
+      out.push({ item_id: id || name, item_name: name || id, price: price, quantity: quantity });
+    }
+    return out;
+  }
+
+  function buildGa4Params(eventId, meta) {
+    meta = meta || {};
+    var items = normalizeItems(meta);
+    var value = parseFloat(meta.value != null ? meta.value : (meta.total != null ? meta.total : 0)) || 0;
+    var currency = String(meta.currency || 'USD').toUpperCase();
+
+    if (eventId === 'checkout_complete') {
+      return {
+        transaction_id: String(meta.transaction_id || meta.orderId || meta.order_id || meta.orderNumber || '') || undefined,
+        value: value,
+        currency: currency,
+        items: items
+      };
+    }
+    if (eventId === 'checkout_started') {
+      return { value: value, currency: currency, items: items };
+    }
+    if (eventId === 'add_to_cart') {
+      var atcItems = items.length ? items : [{
+        item_id: String(meta.productId || meta.product_id || ''),
+        item_name: String(meta.productName || meta.product_name || ''),
+        price: parseFloat(meta.value != null ? meta.value : (meta.price != null ? meta.price : 0)) || 0,
+        quantity: parseInt(meta.quantity != null ? meta.quantity : 1, 10) || 1
+      }].filter(function(x) { return x.item_id || x.item_name; });
+      return {
+        value: value || (atcItems[0] ? atcItems[0].price * atcItems[0].quantity : 0),
+        currency: currency,
+        items: atcItems
+      };
+    }
+    if (eventId === 'view_product') {
+      var vpItems = items.length ? items : [{
+        item_id: String(meta.productId || meta.product_id || ''),
+        item_name: String(meta.productName || meta.product_name || ''),
+        price: parseFloat(meta.price != null ? meta.price : (meta.value != null ? meta.value : 0)) || 0,
+        quantity: 1
+      }].filter(function(x) { return x.item_id || x.item_name; });
+      return {
+        currency: currency,
+        value: value || (vpItems[0] ? vpItems[0].price : 0),
+        items: vpItems
+      };
+    }
+    if (eventId === 'whatsapp_click' || eventId === 'phone_click') {
+      return { method: eventId === 'whatsapp_click' ? 'whatsapp' : 'phone', page_path: meta.pagePath || pagePath() };
+    }
+    if (eventId === 'contact_form_submitted' || eventId === 'product_inquiry') {
+      return { page_path: meta.pagePath || pagePath() };
+    }
+    return meta;
+  }
+
+  function buildMetaParams(eventId, meta) {
+    meta = meta || {};
+    var items = normalizeItems(meta);
+    var value = parseFloat(meta.value != null ? meta.value : (meta.total != null ? meta.total : 0)) || 0;
+    var currency = String(meta.currency || 'USD').toUpperCase();
+    var contentIds = [];
+    var numItems = 0;
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].item_id) contentIds.push(items[i].item_id);
+      numItems += items[i].quantity || 1;
+    }
+
+    if (eventId === 'checkout_complete') {
+      return {
+        value: value,
+        currency: currency,
+        content_ids: contentIds.length ? contentIds : undefined,
+        content_type: 'product',
+        num_items: numItems || undefined,
+        order_id: String(meta.order_id || meta.orderId || meta.transaction_id || meta.orderNumber || '') || undefined
+      };
+    }
+    if (eventId === 'checkout_started') {
+      return {
+        value: value,
+        currency: currency,
+        content_ids: contentIds.length ? contentIds : undefined,
+        content_type: 'product',
+        num_items: numItems || parseInt(meta.itemCount != null ? meta.itemCount : 0, 10) || undefined
+      };
+    }
+    if (eventId === 'add_to_cart') {
+      var id = String(meta.productId || meta.product_id || contentIds[0] || '');
+      return {
+        value: value || (items[0] ? items[0].price * items[0].quantity : 0),
+        currency: currency,
+        content_ids: id ? [id] : (contentIds.length ? contentIds : undefined),
+        content_type: 'product',
+        content_name: meta.productName || meta.product_name || (items[0] && items[0].item_name),
+        num_items: parseInt(meta.quantity != null ? meta.quantity : (numItems || 1), 10) || 1
+      };
+    }
+    if (eventId === 'view_product') {
+      var vid = String(meta.productId || meta.product_id || contentIds[0] || '');
+      return {
+        value: value || parseFloat(meta.price != null ? meta.price : 0) || 0,
+        currency: currency,
+        content_ids: vid ? [vid] : (contentIds.length ? contentIds : undefined),
+        content_type: 'product',
+        content_name: meta.productName || meta.product_name || (items[0] && items[0].item_name)
+      };
+    }
+    if (eventId === 'whatsapp_click' || eventId === 'phone_click') {
+      return {
+        content_name: eventId === 'whatsapp_click' ? 'WhatsApp' : 'Phone',
+        content_category: 'contact'
+      };
+    }
+    if (eventId === 'contact_form_submitted' || eventId === 'product_inquiry') {
+      return {
+        content_name: eventId === 'product_inquiry' ? 'Product inquiry' : 'Contact form',
+        content_category: meta.productName || meta.product_name || undefined
+      };
+    }
+    return meta;
+  }
+
+  var PLATFORM = {
+    whatsapp_click: { ga4: 'contact', meta: 'Contact', gtm: 'whatsapp_click', ecom: false },
+    phone_click: { ga4: 'contact', meta: 'Contact', gtm: 'phone_click', ecom: false },
+    contact_form_submitted: { ga4: 'generate_lead', meta: 'Lead', gtm: 'contact_form_submitted', ecom: false },
+    checkout_started: { ga4: 'begin_checkout', meta: 'InitiateCheckout', gtm: 'begin_checkout', ecom: true },
+    checkout_complete: { ga4: 'purchase', meta: 'Purchase', gtm: 'purchase', ecom: true },
+    product_inquiry: { ga4: 'generate_lead', meta: 'Lead', gtm: 'product_inquiry', ecom: false },
+    add_to_cart: { ga4: 'add_to_cart', meta: 'AddToCart', gtm: 'add_to_cart', ecom: true },
+    view_product: { ga4: 'view_item', meta: 'ViewContent', gtm: 'view_item', ecom: true }
+  };
+
+  function purchaseDedupKey(orderId) {
+    return 'zappy_purchase_fired_' + String(orderId || '');
+  }
+
+  function alreadyFiredPurchase(orderId) {
+    if (!orderId) return false;
+    try {
+      return sessionStorage.getItem(purchaseDedupKey(orderId)) === '1';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markPurchaseFired(orderId) {
+    if (!orderId) return;
+    try { sessionStorage.setItem(purchaseDedupKey(orderId), '1'); } catch (e) {}
+  }
+
+  /**
+   * Fire a marketing event to first-party analytics + GA4/GTM/Meta when present.
+   * @param {string} eventName marketing ID or ecommerce alias
+   * @param {object} [metadata]
+   * @param {{ skipFirstParty?: boolean }} [opts]
+   */
+  window.zappyFireMarketingEvent = function(eventName, metadata, opts) {
+    try {
+      opts = opts || {};
+      metadata = metadata || {};
+      var eventId = ECOM_ALIAS[eventName] || eventName;
+      var plat = PLATFORM[eventId];
+      if (!plat) return;
+
+      if (!metadata.pagePath && !metadata.page_path) {
+        metadata.pagePath = pagePath();
+      }
+
+      if (eventId === 'checkout_complete') {
+        var oid = String(metadata.orderId || metadata.order_id || metadata.transaction_id || '');
+        if (oid && alreadyFiredPurchase(oid)) return;
+        if (oid) markPurchaseFired(oid);
+      }
+
+      // First-party (skip when already tracked via zappyTrackEcomAnalytics path
+      // that opts out, or when caller already recorded under a different name)
+      if (!opts.skipFirstParty) {
+        try {
+          if (window.zappyAnalytics && typeof window.zappyAnalytics.track === 'function') {
+            window.zappyAnalytics.track(eventId, metadata);
+          }
+        } catch (e1) {}
+      }
+
+      // GTM / dataLayer — platform-standard ecommerce event names
+      try {
+        window.dataLayer = window.dataLayer || [];
+        if (plat.ecom) {
+          var ga4ForGtm = buildGa4Params(eventId, metadata);
+          var ecommerce = {};
+          if (ga4ForGtm.transaction_id) ecommerce.transaction_id = ga4ForGtm.transaction_id;
+          if (ga4ForGtm.value != null) ecommerce.value = ga4ForGtm.value;
+          if (ga4ForGtm.currency) ecommerce.currency = ga4ForGtm.currency;
+          if (ga4ForGtm.items) ecommerce.items = ga4ForGtm.items;
+          window.dataLayer.push({ event: plat.gtm, ecommerce: ecommerce });
+          // Secondary Zappy-specific trigger for merchants who want it
+          if (eventId === 'checkout_complete' || eventId === 'checkout_started') {
+            window.dataLayer.push({ event: eventId, ecommerce: ecommerce });
+          }
+        } else {
+          var dl = { event: plat.gtm };
+          for (var k in metadata) {
+            if (Object.prototype.hasOwnProperty.call(metadata, k)) dl[k] = metadata[k];
+          }
+          window.dataLayer.push(dl);
+        }
+      } catch (e2) {}
+
+      // GA4 gtag
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', plat.ga4, buildGa4Params(eventId, metadata));
+        }
+      } catch (e3) {}
+
+      // Meta Pixel (only when fbq is loaded — consent-gated lazy loader)
+      try {
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', plat.meta, buildMetaParams(eventId, metadata));
+        }
+      } catch (e4) {}
+    } catch (err) {}
+  };
+
+  // ---- Click listeners (capture) ----
+  var recent = Object.create(null);
+  function dedupe(key) {
+    var now = Date.now();
+    if (recent[key] && now - recent[key] < 800) return true;
+    recent[key] = now;
+    return false;
+  }
+
+  function closest(el, selector) {
+    if (!el) return null;
+    if (el.closest) return el.closest(selector);
+    return null;
+  }
+
+  function findAnchor(el) {
+    var node = el;
+    while (node && node !== document) {
+      if (node.tagName === 'A') return node;
+      node = node.parentElement;
+    }
+    return null;
+  }
+
+  function isWhatsAppHref(href) {
+    if (!href) return false;
+    var h = String(href).toLowerCase();
+    return h.indexOf('wa.me/') !== -1 ||
+      h.indexOf('api.whatsapp.com') !== -1 ||
+      h.indexOf('whatsapp.com/send') !== -1 ||
+      h.indexOf('whatsapp:') === 0;
+  }
+
+  document.addEventListener('click', function(e) {
+    try {
+      var target = e.target;
+      if (!target) return;
+
+      // WhatsApp
+      var waFloat = closest(target, '.whatsapp-float, a.whatsapp-float, [data-zappy-whatsapp]');
+      var anchor = findAnchor(target);
+      var href = (anchor && anchor.href) || '';
+      if (waFloat || (anchor && isWhatsAppHref(href))) {
+        if (!dedupe('wa:' + href)) {
+          var waSource = waFloat ? 'float' : 'link';
+          window.zappyFireMarketingEvent('whatsapp_click', {
+            source: waSource,
+            href: href || null,
+            pagePath: pagePath()
+          });
+        }
+        return;
+      }
+
+      // Phone
+      var phoneBtn = closest(target, '.phone-header-btn, .nav-phone-btn, .call-btn, [data-zappy-phone]');
+      var telHref = '';
+      if (anchor && anchor.href && String(anchor.href).toLowerCase().indexOf('tel:') === 0) {
+        telHref = anchor.href;
+      } else if (phoneBtn && phoneBtn.href && String(phoneBtn.href).toLowerCase().indexOf('tel:') === 0) {
+        telHref = phoneBtn.href;
+      }
+      if (phoneBtn || telHref) {
+        var phone = '';
+        if (telHref) {
+          phone = String(telHref).replace(/^tel:/i, '').trim();
+        }
+        if (!dedupe('tel:' + (phone || (phoneBtn && phoneBtn.id) || 'btn'))) {
+          window.zappyFireMarketingEvent('phone_click', {
+            source: phoneBtn ? 'button' : 'link',
+            phone: phone || null,
+            href: telHref || null,
+            pagePath: pagePath()
+          });
+        }
+        return;
+      }
+
+      // Catalog / product inquiry
+      if (IS_CATALOG || IS_FULL) {
+        var inq = closest(target, '.card-inquiry-btn, #zappy-pdp-inquiry-btn, a.inquiry-btn');
+        if (inq) {
+          if (!dedupe('inq:' + (inq.id || inq.className))) {
+            var product = window.currentProduct || null;
+            var productId = (inq.getAttribute && inq.getAttribute('data-product-id')) ||
+              (product && product.id) || null;
+            var productName = (inq.getAttribute && inq.getAttribute('data-product-name')) ||
+              (product && product.name) || null;
+            var channel = 'contact_page';
+            var inqHref = (inq.tagName === 'A' && inq.href) ? inq.href : '';
+            if (inqHref && String(inqHref).toLowerCase().indexOf('mailto:') === 0) channel = 'mailto';
+            window.zappyFireMarketingEvent('product_inquiry', {
+              source: inq.id === 'zappy-pdp-inquiry-btn' ? 'pdp' : 'card',
+              productId: productId,
+              productName: productName,
+              channel: channel,
+              pagePath: pagePath()
+            });
+          }
+        }
+      }
+    } catch (err) {}
+  }, true);
+})();
+</script>
     <meta property="og:title" content="חומרי גלם איכותיים לפאות ייחודיות — פיקוויג PICKWIG">
-  <meta property="og:description" content="שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.">
-  <meta property="og:type" content="website">
+    <meta property="og:description" content="שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="חומרי גלם איכותיים לפאות ייחודיות — פיקוויג PICKWIG">
+    <meta name="twitter:description" content="שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://pickwig.com#organization","name":"פיקוויג PICKWIG","url":"https://pickwig.com","address":{"@type":"PostalAddress","streetAddress":", תל אביב, פרדס חנה כרכור"},"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","email":"bareketwigs@gmail.com","telephone":"054-4509858"}]},{"@type":"WebSite","@id":"https://pickwig.com#website","url":"https://pickwig.com","name":"פיקוויג PICKWIG","publisher":{"@id":"https://pickwig.com#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pickwig.com"},{"@type":"ListItem","position":2,"name":"Materials","item":"https://pickwig.com/materials"}]}]}</script>
+    <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
   
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="חומרי גלם איכותיים לפאות ייחודיות — פיקוויג PICKWIG">
-  <meta name="twitter:description" content="שיער טבעי 100%, רשתות נושמות וחומרים היפואלרגניים לנוחות מקסימלית. גלי את החומרים המתקדמים שהופכים את הפאות שלנו לנוחות במיוחד לאונקולוגיה ולשימוש יומיומי ארוך טווח.">
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Favicons -->
+  
+  
+  
+  <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
@@ -239,9 +615,9 @@
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
     <!-- Cookie Consent -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    
     <!-- Mickidum Accessibility Toolbar -->
-    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+    
 
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
@@ -2605,14 +2981,91 @@
               });
             })();
           </script>
+    <style id="zappy-critical-above-fold-css">
+html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,*::before,*::after{box-sizing:inherit}body{margin:0;min-width:320px;overflow-x:clip}img,svg,video{max-width:100%;height:auto}main{display:block}.container{width:min(100% - 32px,1200px);margin-inline:auto}.navbar,nav.navbar,header .navbar,header[role="banner"]{position:relative;z-index:1000;width:100%}.nav-container,.navbar .container{display:flex;align-items:center;justify-content:space-between;min-height:64px}.logo,.logo-link img{display:block;width:35px;height:35px;object-fit:contain}.nav-menu,#navMenu{list-style:none;margin:0;padding:0}.navbar a,.nav-menu a,#navMenu a,.navbar .nav-links a{color:inherit;text-decoration:none}.navbar .sub-menu,.nav-menu .sub-menu,#navMenu .sub-menu{display:none}.fa,.fas,.far,.fab,.fa-solid,.fa-regular,.fa-brands{display:inline-block;min-width:1em;text-align:center}html:not(#zappy-noop)[data-zappy-site-type="ecommerce"] .phone-header-btn,html:not(#zappy-noop) .navbar:has(.nav-ecommerce-icons)>.phone-header-btn{display:none!important;visibility:hidden!important;width:0!important;height:0!important;pointer-events:none!important}.zappy-preview-empty-store-cta{display:none!important;visibility:hidden!important;height:0!important;max-height:0!important;overflow:hidden!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important}.zappy-catalog-menu{background:var(--surface-color,var(--surface,linear-gradient(135deg,#f8f9fa 0%,#fff 100%)));border-bottom:1px solid var(--border-color,#e5e7eb);padding:0;position:sticky;top:0;z-index:90}.zappy-catalog-menu[dir=rtl],.zappy-catalog-menu.rtl{direction:rtl}.zappy-catalog-menu[dir=ltr],.zappy-catalog-menu.ltr{direction:ltr}.catalog-menu-container{max-width:1440px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:10px 24px;overflow:visible}.catalog-menu-categories,.catalog-menu-list{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:0;padding:0;list-style:none}.catalog-menu-item{display:inline-flex;align-items:center;padding:8px 16px;font-size:14px;font-weight:500;color:var(--text-color,var(--text,#374151));text-decoration:none;border-radius:20px;white-space:nowrap}.catalog-menu-all{background:var(--primary-color,var(--primary,#111));color:var(--text-light,#fff)!important}.catalog-menu-parent{position:relative;display:inline-flex;align-items:center}.catalog-menu-trigger{display:inline-flex;align-items:center;gap:6px}.catalog-menu-chevron{flex-shrink:0}.catalog-menu-parent>.sub-menu{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}.hero-section,.index-hero-section,section[class*="hero"]{position:relative;overflow:hidden}.hero-section,.index-hero-section{min-height:560px}section[data-hero-type*="fullscreen"]{min-height:100vh}.hero-bg-wrapper,.hero-bg-image,section[class*="hero"] [class*="hero-bg"]{position:absolute;inset:0;width:100%;height:100%}.hero-bg-wrapper img,.hero-bg-image img,section[class*="hero"] [data-hero-bg],section[class*="hero"] img[data-hero-background="true"]{width:100%!important;height:100%!important;object-fit:cover!important;display:block}.hero-content,section[class*="hero"] .container{position:relative;z-index:2}@media(max-width:768px){:root{--header-height:72px;--total-header-height:72px;--zappy-mobile-menu-top:72px}html[data-zappy-site-type="ecommerce"] body{padding-top:var(--total-header-height,72px)}html[data-zappy-site-type="ecommerce"] body>nav.navbar,html[data-zappy-site-type="ecommerce"] body>.navbar:not(.zappy-catalog-menu){position:fixed!important;top:0;left:0;right:0;z-index:100000;width:100%;margin-bottom:0}.zappy-catalog-menu{position:fixed;top:var(--header-height,72px);left:0;right:0;z-index:99999}.nav-container,.navbar .container{min-height:60px}.nav-menu,#navMenu{max-width:100vw;overflow-x:hidden}.hero-section,.index-hero-section,section[class*="hero"],section[data-hero-type*="fullscreen"]{min-height:100svh}.hero-bg-wrapper,.hero-bg-image,.hero-scrim{min-height:100svh}}
+:root{--nav-bg:#1a1a1a}.navbar{background-color:#1a1a1a!important}
+
+/* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V3 */
+:root {
+  --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
+}
+body:has(.zappy-announcement-bar) nav.navbar:not(.zappy-catalog-menu),
+body:has(.zappy-announcement-bar) header.navbar,
+body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-search-panel) {
+  top: var(--zappy-announcement-height, 40px) !important;
+}
+
+
+
+/* ZAPPY_CONTENT_ALIGNMENT_FIRST_PAINT_CSS_V1 */
+[data-zappy-content-align] {
+  display: flex !important;
+  flex-direction: column !important;
+}
+[data-zappy-content-align^="top-"] { justify-content: flex-start !important; }
+[data-zappy-content-align^="upper-"],
+[data-zappy-content-align^="center-"],
+[data-zappy-content-align^="lower-"] { justify-content: center !important; }
+[data-zappy-content-align^="bottom-"] { justify-content: flex-end !important; }
+[data-zappy-content-align$="-left"],
+[data-zappy-content-align$="-mid-left"] {
+  align-items: flex-start !important;
+  text-align: start !important;
+}
+[data-zappy-content-align$="-center"] {
+  align-items: center !important;
+  text-align: center !important;
+}
+[data-zappy-content-align$="-right"],
+[data-zappy-content-align$="-mid-right"] {
+  align-items: flex-end !important;
+  text-align: end !important;
+}
+[data-zappy-content-align] [data-zappy-align-target] {
+  margin-left: auto;
+  margin-right: auto;
+}
+[data-zappy-content-align$="-center"] [data-zappy-align-target],
+[data-zappy-content-align$="-center"] [data-zappy-align-target] > * {
+  text-align: center !important;
+}
+
+</style>
     <link rel="stylesheet" href="/styles.css">
+    <script>window.ZAPPY_WEBSITE_ID = "65f8bb52-e831-46fb-bbec-80af4f4e00b3"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
 
     <style id="zappy-widget-visibility">
-      #mic-access-tool-general-button, .mic-access-tool-general-button,
-      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
-      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
-      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
-        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
       }
     </style>
 </head>
@@ -2620,16 +3073,16 @@
 
   <nav class="navbar" dir="rtl" style="background: transparent;">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" data-element-type="button" data-element-id="btn-1771797932969-fnrvqw8c9" data-native-element="true">
-    <svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+    <svg style="display:block !important" class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
-    <svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display:none;">
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none !important">
       <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call" data-element-type="button" data-element-id="btn-1771797932969-jvwxjho66" data-native-element="true" data-phone="0544509858">
-    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
@@ -2637,7 +3090,7 @@
   <div class="nav-container">
     <div class="nav-brand">
       <a href="/" class="logo-link" data-nav-menu-item="true">
-        <img src="/assets/pickwig-logo-1771796589174-xv1mbh.webp?v=1771796589433-b2j6va" alt="פיקוויג PICKWIG" class="logo" data-image-type="logo"  data-element-type="image" data-element-id="img-1772401910601-obh7mnw3p">
+        <img src="/assets/pickwig-logo-1771796589174-xv1mbh.webp?v=1771796589433-b2j6va" alt="פיקוויג PICKWIG" class="logo" data-image-type="logo" data-element-type="image" data-element-id="img-1772401910601-obh7mnw3p" decoding="async" width="35" height="35">
       </a>
     </div>
     
@@ -2655,17 +3108,17 @@
 <section class="materials-materials-section" data-layout-spec="חומרים-materials" data-zappy-section="true" id="zappy-section-1772650983527-697" style="position: relative; overflow: hidden; background-color: rgb(35, 18, 31); --zappy-bg-color: #23121F; text-align: center; min-height: 1768.62px !important;" data-zappy-bg-type="color" data-zappy-bg-color="#23121F" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
   <div class="materials-materials-container">
     <div class="materials-header">
-      <h3><font color="#cc945c">PICKWIG חרטה על דגלה לבטל את כל הפקטורים שהופכים פאת יוקרה ליקרה כלכלית</font></h3><p style="margin: 0 auto 1rem;"><font color="#cc945c">PICKWIG היא הפיכה בענף הפאות המאפשרת רכישת פאות יוקרה לצד חופש יצירה מוחלט בבחירת הגוון, האורך והמלאות במחיר קבוע שאינו משתנה</font><font color="#cc945c"><br><br></font></p><h2 ></h2><h3 ><font color="#cc945c" style="font-weight: normal;">כדי שאת תוכלי להתרכז במה שחשוב באמת - המראה שלך&nbsp;</font></h3>
+      <h3><font color="#cc945c">PICKWIG חרטה על דגלה לבטל את כל הפקטורים שהופכים פאת יוקרה ליקרה כלכלית</font></h3><p style="margin: 0 auto 1rem;"><font color="#cc945c">PICKWIG היא הפיכה בענף הפאות המאפשרת רכישת פאות יוקרה לצד חופש יצירה מוחלט בבחירת הגוון, האורך והמלאות במחיר קבוע שאינו משתנה</font><font color="#cc945c"><br><br></font></p><h2></h2><h3><font color="#cc945c" style="font-weight: normal;">כדי שאת תוכלי להתרכז במה שחשוב באמת - המראה שלך&nbsp;</font></h3>
     </div>
 
-    <div class="materials-grid zappy-preserve-css-grid" id="zappy-auto-grid-1772642343319-1wa4bj" data-zappy-auto-grid="true" data-original-item-width="580" data-original-gap="40px" style="display: grid; --zappy-grid-cols: repeat(2, minmax(0, 1fr)); grid-template-columns: repeat(2, minmax(0, 1fr));" data-zappy-explicit-columns="true"><article class="material-card">
+    <div class="materials-grid zappy-preserve-css-grid" id="zappy-auto-grid-1772642343319-1wa4bj" data-zappy-auto-grid="true" data-original-item-width="580" data-original-gap="40px" style="--zappy-grid-cols: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));" data-zappy-explicit-columns="true"><article class="material-card">
         <div class="material-image-wrapper">
-          <img alt="סיבי שיער רוסי פרימיום - מבט מקרוב על מרקם השיער" src="/assets/site-materials-materials-image-1-1772639054028-feapri.webp?v=1772639055875" data-placeholder="materials-materials-image-1" data-context="Extreme close-up macro photograph of premium Russian hair fiber strands for luxury wigs, showing individual hair cuticles and natural shine, soft focus background with warm pearl lighting, editorial beauty photography style for high-end wig boutique" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; " data-element-type="image" data-element-id="img-1772642343312-l942cxk33" class="zappy-editable-image">
+          <img alt="סיבי שיער רוסי פרימיום - מבט מקרוב על מרקם השיער" src="/assets/site-materials-materials-image-1-1772639054028-feapri.webp?v=1772639055875" data-placeholder="materials-materials-image-1" data-context="Extreme close-up macro photograph of premium Russian hair fiber strands for luxury wigs, showing individual hair cuticles and natural shine, soft focus background with warm pearl lighting, editorial beauty photography style for high-end wig boutique" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; " data-element-type="image" data-element-id="img-1772642343312-l942cxk33" class="zappy-editable-image" loading="lazy" decoding="async" fetchpriority="low">
           <div class="material-overlay"></div>
         </div>
         <div class="material-content">
-          <h3 ><font color="#3d0066">טופ לייס משיער רוסי איכותי</font></h3>
-          <p ><font color="#3d0066">סיבים עדינים במיוחד עם ברק טבעי ומרקם
+          <h3><font color="#3d0066">טופ לייס משיער רוסי איכותי</font></h3>
+          <p><font color="#3d0066">סיבים עדינים במיוחד עם ברק טבעי ומרקם
 חלק. אידיאלי למי שמחפשת מראה אלגנטי, תנועה זורמת ותחושה משי. השיער הרוסי נחשב
 לעדין ביותר, עם יכולת סטיילינג גבוהה ועמידות לאורך זמן. הטופלייסים של פיקוויג נבחרים בקפידה
 ומותאמים במדויק לשביל השיער ולמסגרת הצמיחה הטבעית שלך. כל טופלייס עובר עבודת יד
@@ -2673,23 +3126,23 @@
         </div>
       </article><article class="material-card">
         <div class="material-image-wrapper">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1772642343312-ivqp45hie" data-element-type="image" data-zappy-zoom-wrapper-width="624px" data-zappy-zoom-wrapper-height="346px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 624px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 346px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="סיבי שיער ברזילאי פרימיום - מבט מקרוב על נפח ומרקם" src="/assets/site-materials-materials-image-2.webp" data-placeholder="materials-materials-image-2" data-context="Extreme close-up macro photograph of premium Brazilian hair fiber strands for luxury wigs, showing natural volume and body, rich texture with dimensional highlights, warm studio lighting, editorial beauty photography for high-end wig salon" style="object-position: 50% 50%; width: 108% !important; height: 131.704% !important; object-fit: cover !important; position: absolute !important; margin: 0px !important; left: -4% !important; top: -15.8519% !important; max-width: none !important; max-height: none !important; display: block !important" data-element-type="image" data-element-id="img-1772642343312-ivqp45hie" class="zappy-editable-image" data-zappy-zoom="1.08"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1772642343312-ivqp45hie" data-element-type="image" data-zappy-zoom-wrapper-width="624px" data-zappy-zoom-wrapper-height="346px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 624px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 346px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="סיבי שיער ברזילאי פרימיום - מבט מקרוב על נפח ומרקם" src="/assets/site-materials-materials-image-2.webp" data-placeholder="materials-materials-image-2" data-context="Extreme close-up macro photograph of premium Brazilian hair fiber strands for luxury wigs, showing natural volume and body, rich texture with dimensional highlights, warm studio lighting, editorial beauty photography for high-end wig salon" style="object-position: 50% 50%; width: 108% !important; height: 131.704% !important; object-fit: cover !important; position: absolute !important; margin: 0px !important; left: -4% !important; top: -15.8519% !important; max-width: none !important; max-height: none !important; display: block !important" data-element-type="image" data-element-id="img-1772642343312-ivqp45hie" class="zappy-editable-image" data-zappy-zoom="1.08" loading="lazy" decoding="async" fetchpriority="low"></div>
           <div class="material-overlay"></div>
         </div>
         <div class="material-content">
-          <h3 ><font color="#3d0066">שיער ברזילאי - נפח ועוצמה</font></h3>
-          <p ><font color="#3d0066">שיער ברזילאי טבעי ומפואר, מושלם למי
+          <h3><font color="#3d0066">שיער ברזילאי - נפח ועוצמה</font></h3>
+          <p><font color="#3d0066">שיער ברזילאי טבעי ומפואר, מושלם למי
 שרוצה שיער שופע עם נפח מרשים ונוכחות מרהיבה. השיער הברזילאי מציע עמידות יוצאת
 דופן, יכולת עיצוב תסרוקת קלה ומראה בריא, מלא חיים וזוהר טבעי.&nbsp; &nbsp;</font> &nbsp; &nbsp;</p>
         </div>
       </article><article class="material-card">
         <div class="material-image-wrapper">
-          <img alt="Image placeholder" src="/assets/image-image-placeholder-1772640138164-56m4r5.webp?v=1772640139834" data-placeholder="image-placeholder" data-context="Extreme close-up macro photograph of premium Brazilian hair fiber strands for luxury wigs, showing natural volume and body, rich texture with dimensional highlights, warm studio lighting, editorial beauty photography for high-end wig salon" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; " data-element-type="image" data-element-id="img-1772642343312-4wmec8gbg" class="zappy-editable-image">
+          <img alt="Image placeholder" src="/assets/image-image-placeholder-1772640138164-56m4r5.webp?v=1772640139834" data-placeholder="image-placeholder" data-context="Extreme close-up macro photograph of premium Brazilian hair fiber strands for luxury wigs, showing natural volume and body, rich texture with dimensional highlights, warm studio lighting, editorial beauty photography for high-end wig salon" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; " data-element-type="image" data-element-id="img-1772642343312-4wmec8gbg" class="zappy-editable-image" loading="lazy" decoding="async" fetchpriority="low">
           <div class="material-overlay"></div>
         </div>
         <div class="material-content">
-          <h3 ><font color="#3d0066">טופר לכיסוי אזורים עם דלילות שיער</font></h3>
-          <p ><font color="#3d0066">
+          <h3><font color="#3d0066">טופר לכיסוי אזורים עם דלילות שיער</font></h3>
+          <p><font color="#3d0066">
 
 
 
@@ -2714,12 +3167,12 @@
         </div>
       </article><article class="material-card">
         <div class="material-image-wrapper">
-          <img alt="Image placeholder" src="/assets/image-image-placeholder-1772641755974-spw9le.webp?v=1772641757469" data-placeholder="image-placeholder" data-context="Extreme close-up macro photograph of premium Brazilian hair fiber strands for luxury wigs, showing natural volume and body, rich texture with dimensional highlights, warm studio lighting, editorial beauty photography for high-end wig salon" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; " data-element-type="image" data-element-id="img-1772642343313-qtem35rp3" class="zappy-editable-image">
+          <img alt="Image placeholder" src="/assets/image-image-placeholder-1772641755974-spw9le.webp?v=1772641757469" data-placeholder="image-placeholder" data-context="Extreme close-up macro photograph of premium Brazilian hair fiber strands for luxury wigs, showing natural volume and body, rich texture with dimensional highlights, warm studio lighting, editorial beauty photography for high-end wig salon" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; " data-element-type="image" data-element-id="img-1772642343313-qtem35rp3" class="zappy-editable-image" loading="lazy" decoding="async" fetchpriority="low">
           <div class="material-overlay"></div>
         </div>
         <div class="material-content">
-          <h3 ><font color="#3d0066">טופ סקין</font></h3>
-          <p ><font color="#3d0066">
+          <h3><font color="#3d0066">טופ סקין</font></h3>
+          <p><font color="#3d0066">
 
 
 
@@ -2745,7 +3198,7 @@
   </div>
 
   <div class="materials-materials-divider-wrapper">
-    <svg aria-hidden="true" viewbox="0 0 1200 80" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,80 L0,45 Q100,38 200,42 T400,35 Q500,40 600,38 T800,42 Q900,35 1000,40 T1200,38 L1200,80 Z" fill="#b2acaa"></path>
     </svg>
   </div>
@@ -2768,18 +3221,15 @@
   <title>פיקוויג PICKWIG - יופי ובריאות טבעיים</title>
 
 
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
+
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PICKWIG</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-<footer class="site-footer" style="background-color: #b2acaa">
+  <footer class="site-footer" style="background-color: #b2acaa">
   <div class="footer-container">
-    <div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1772648783174-gguhoitg1" data-element-type="image" data-zappy-zoom-wrapper-width="180px" data-zappy-zoom-wrapper-height="180px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 180px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 180px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img src="/assets/business-general-service-upload-1772648792531.webp" alt="Image" style="width: 130% !important; height: 130% !important; max-width: none !important; max-height: none !important; object-fit: cover !important; display: block; margin: 0px !important; position: absolute !important; object-position: 63% 55%; left: -18.9% !important; top: -16.5% !important;" data-element-type="image" data-element-id="zappy-element-1772648783174-gguhoitg1" id="zappy-element-1772648783174-gguhoitg1" class="zappy-editable-image" data-zappy-zoom="1.3"></div>
+    <div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1772648783174-gguhoitg1" data-element-type="image" data-zappy-zoom-wrapper-width="180px" data-zappy-zoom-wrapper-height="180px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 180px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 180px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img src="/assets/business-general-service-upload-1772648792531.webp" alt="Image" style="width: 130% !important; height: 130% !important; max-width: none !important; max-height: none !important; object-fit: cover !important; display: block; margin: 0px !important; position: absolute !important; object-position: 63% 55%; left: -18.9% !important; top: -16.5% !important;" data-element-type="image" data-element-id="zappy-element-1772648783174-gguhoitg1" id="zappy-element-1772648783174-gguhoitg1" class="zappy-editable-image" data-zappy-zoom="1.3" loading="lazy" decoding="async" fetchpriority="low"></div>
     
     <div class="footer-social-links" data-element-id="element-ai-1773324478091-s9m4k2" data-element-type="social-links" style="display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0;">
       <a href="https://facebook.com/profile.php?id=61586173236226" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="color: #241c26; font-size: 24px; transition: color 0.3s ease, transform 0.3s ease;">
@@ -2813,6 +3263,22 @@
     </div>
   </div>
 </footer>
+
+
+
+
+  
+  <a href="https://wa.me/972544509858" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
+
+    <script id="zappy-font-awesome-loader">
+(function(){if(window.__zappyFontAwesomeLoader)return;window.__zappyFontAwesomeLoader=true;var href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';function load(){if(document.querySelector('link[href*="font-awesome"][href*="all.min.css"]'))return;var l=document.createElement('link');l.rel='stylesheet';l.href=href;l.crossOrigin='anonymous';l.referrerPolicy='no-referrer';document.head.appendChild(l);}function schedule(){if('requestIdleCallback'in window){requestIdleCallback(load,{timeout:5000});}else{setTimeout(load,3500);}}['pointerdown','keydown','touchstart','mouseover'].forEach(function(evt){window.addEventListener(evt,load,{once:true,passive:true});});schedule();})();
+</script>
 
     <script id="zappy-mobile-submenu-script">
     (function() {
@@ -2875,16 +3341,22 @@
         // small wrappers (e.g. 139px logo wrappers) to their parent width, conflicting with
         // the correct stored dimensions.
       }
+      function _parsePos(s){var x=50,y=50;try{var m=(s||'').match(/(-?d+(?:.d+)?)%s+(-?d+(?:.d+)?)%/);if(m){x=parseFloat(m[1]);y=parseFloat(m[2]);}}catch(e){}if(!isFinite(x))x=50;if(!isFinite(y))y=50;return{x:Math.max(0,Math.min(100,x)),y:Math.max(0,Math.min(100,y))};}
+      function _coverPct(iA,cA){if(!isFinite(iA)||iA<=0||!isFinite(cA)||cA<=0)return{w:100,h:100};if(iA>=cA)return{w:(iA/cA)*100,h:100};return{w:100,h:(cA/iA)*100};}
       function applyMobile(){
         if(_applied)return;_applied=true;
         document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          if(_isHeroBg(w))return;
           var cw=w.style.getPropertyValue('width');
-          if(!cw||cw==='100%')return;
+          var _sW=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-width'))||0;
+          var _sH=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-height'))||0;
+          if(!cw&&!(_sW>0&&_sH>0))return;
           if(!w._zappyDesktop)w._zappyDesktop={wStyle:w.getAttribute('style')};
           var img=w.querySelector('img');
           if(!img)return;
           if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
-          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
+          var mobileZoomStr=img.getAttribute('data-zappy-mobile-zoom');
+          var mobileZoom=parseFloat(mobileZoomStr);
           var mobileSrc=img.getAttribute('data-zappy-mobile-src');
           var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
           var parentOvf=w.parentElement?((w.parentElement.style.overflow||'')+(window.getComputedStyle(w.parentElement).overflow||'')).trim():'';
@@ -2896,22 +3368,44 @@
             w.style.setProperty('max-width','100%','important');
           }
           if(mobileSrc)img.src=mobileSrc;
-          var pos=mobilePos||img.style.getPropertyValue('object-position')||'50% 50%';
-          if(mobileZoom>1){
-            var wH=w.getAttribute('data-zappy-zoom-wrapper-height');
-            w.style.setProperty('height',wH||'200px','important');
-            img.style.setProperty('position','relative','important');
-            img.style.setProperty('width','100%','important');
-            img.style.setProperty('height','auto','important');
-            img.style.setProperty('min-height','100%','important');
-            img.style.setProperty('max-width','none','important');
-            img.style.setProperty('max-height','none','important');
-            img.style.setProperty('object-fit','cover','important');
-            img.style.setProperty('left','0','important');
-            img.style.setProperty('top','0','important');
-            img.style.setProperty('object-position',pos,'important');
-            img.style.setProperty('transform','scale('+mobileZoom+')','important');
-            img.style.setProperty('transform-origin',pos,'important');
+          function _applyZoomCrop(_img,_w,_ePos,_eZoom){
+            var rect=_w.getBoundingClientRect();
+            if(!rect||!rect.width||!rect.height)return;
+            var nW=_img.naturalWidth||0,nH=_img.naturalHeight||0;
+            if(!(nW>0&&nH>0))return;
+            var iA=nW/nH,cA=rect.width/rect.height;
+            var cv=_coverPct(iA,cA);
+            var wP=100,hP=100;
+            if(_eZoom>=1){wP=cv.w*_eZoom;hP=cv.h*_eZoom;}
+            else{var t2=(_eZoom-0.5)/0.5;if(!isFinite(t2))t2=0;t2=Math.max(0,Math.min(1,t2));wP=100+t2*(cv.w-100);hP=100+t2*(cv.h-100);}
+            var p2=_parsePos(_ePos);
+            var lP=(100-wP)*(p2.x/100);
+            var tP=(100-hP)*(p2.y/100);
+            _img.style.setProperty('position','absolute','important');
+            _img.style.setProperty('left',lP+'%','important');
+            _img.style.setProperty('top',tP+'%','important');
+            _img.style.setProperty('width',wP+'%','important');
+            _img.style.setProperty('height',hP+'%','important');
+            _img.style.setProperty('max-width','none','important');
+            _img.style.setProperty('max-height','none','important');
+            _img.style.setProperty('display','block','important');
+            _img.style.setProperty('object-fit',_eZoom<1?'fill':'cover','important');
+            _img.style.setProperty('transform','none','important');
+            _img.style.setProperty('margin','0','important');
+          }
+          if(_sW>0&&_sH>0){
+            var effZoom=(isFinite(mobileZoom)&&mobileZoom>0)?mobileZoom:(parseFloat(img.getAttribute('data-zappy-zoom'))||1);
+            var effPos=mobilePos||img.getAttribute('data-zappy-object-position')||img.style.objectPosition||'50% 50%';
+            w.style.setProperty('overflow','hidden','important');
+            w.style.setProperty('position','relative','important');
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+            if(_sW>0&&_sH>0){w.style.setProperty('padding-bottom','0','important');w.style.setProperty('aspect-ratio',_sW+'/'+_sH,'important');w.style.setProperty('height','auto','important');}
+            _applyZoomCrop(img,w,effPos,effZoom);
+            if(!(img.complete&&img.naturalWidth>0)){
+              (function(_i,_w2,_p,_z){_i.addEventListener('load',function _ol(){_i.removeEventListener('load',_ol);try{_applyZoomCrop(_i,_w2,_p,_z);}catch(e){}});
+              })(img,w,effPos,effZoom);
+            }
           }else{
             if(!inConstrainedParent)w.style.setProperty('height','auto','important');
             img.style.setProperty('position','relative','important');
@@ -2923,7 +3417,6 @@
             img.style.setProperty('left','0','important');
             img.style.setProperty('top','0','important');
             img.style.setProperty('transform','none','important');
-            if(mobilePos)img.style.setProperty('object-position',pos,'important');
           }
         });
         document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
@@ -2979,17 +3472,4 @@
       else setTimeout(init,50);
     })();
     </script>
-</body>
-</html>
-
-
-  
-  <a href="https://wa.me/972544509858" class="whatsapp-float" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  
-  <div data-integration="accessibility:toolbar"></div>
-
-    <script src="/script.js"></script>
-</body>
-</html>
+</body></html>
