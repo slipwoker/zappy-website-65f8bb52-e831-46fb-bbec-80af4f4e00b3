@@ -89,7 +89,6 @@ Description: פאות טבעיות ונוחות במיוחד לחולות אונ
 
 
 
-
 # PICKWIG
 
 
@@ -2361,18 +2360,6 @@ URL: https://pickwig.com/hair-straightening
 #
 
 # Pickwig
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
