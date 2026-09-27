@@ -4532,140 +4532,202 @@
 </style>
 
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .pickwig-process-section {
-  background: linear-gradient(180deg, #FBF5EE 0%, #F2E8DC 100%);
+  background: linear-gradient(180deg, #FDF2F4 0%, #F8E0E5 100%);
   color: var(--text-dark);
   padding: 110px 16px;
   position: relative;
   overflow: visible;
-}
-
-.pickwig-process-section .pickwig-process-container {
-  max-width: 1200px;
-  margin: 0 auto;
   direction: rtl;
 }
 
-.pickwig-process-section .pickwig-process-header {
+.pickwig-process-section .process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pickwig-process-section .process-header {
   max-width: 620px;
   margin-bottom: 48px;
   text-align: right;
 }
 
-.pickwig-process-section .pickwig-process-header h2 {
+.pickwig-process-section .process-header h2 {
   font-family: "Noto Serif Hebrew", "Times New Roman", serif;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.15;
-  color: #2B1A2F;
-  margin-bottom: 16px;
+  line-height: 1.3;
+  color: #6E3A42;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
 }
 
-.pickwig-process-section .pickwig-process-header p {
+.pickwig-process-section .process-header p {
   font-family: "Heebo", "Rubik", Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.8;
-  color: rgba(43,26,47,0.78);
-  max-width: 620px;
+  line-height: 1.7;
+  color: rgba(94, 47, 55, 0.82);
+  margin: 0;
+  max-width: 560px;
 }
 
-.pickwig-process-section .pickwig-process-grid {
+.pickwig-process-section .process-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-  direction: rtl;
+  gap: 0;
   position: relative;
+  direction: rtl;
 }
 
-.pickwig-process-section .pickwig-process-grid::before {
+.pickwig-process-section .process-grid::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(46,23,54,0.12) 50%, transparent 50%);
-  background-size: 12px 1px;
-  background-repeat: repeat-x;
+  top: 12px;
+  bottom: 12px;
+  right: 25%;
+  width: 1px;
+  background-image: linear-gradient(to bottom, rgba(110, 58, 66, 0.25) 50%, transparent 50%);
+  background-size: 1px 12px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
-.pickwig-process-section .pickwig-process-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(200,154,87,0.25);
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(43,26,47,0.04);
-  padding: 32px 24px;
-  position: relative;
+.pickwig-process-section .process-grid::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  right: 50%;
+  width: 1px;
+  background-image: linear-gradient(to bottom, rgba(110, 58, 66, 0.25) 50%, transparent 50%);
+  background-size: 1px 12px;
+  pointer-events: none;
   z-index: 1;
+}
+
+.pickwig-process-section .process-card {
+  background: #FFFBFB;
+  border: 1px solid rgba(200, 155, 162, 0.45);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(180, 110, 120, 0.08);
+  padding: 36px 28px 32px;
+  position: relative;
   min-width: 0;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin: 0 10px;
 }
 
-.pickwig-process-section .pickwig-process-card:hover {
-  box-shadow: 0 12px 26px rgba(43,26,47,0.10);
+.pickwig-process-section .process-card:hover {
+  box-shadow: 0 14px 30px rgba(180, 110, 120, 0.15);
   transform: translateY(-4px);
 }
 
-.pickwig-process-section .pickwig-process-number {
+.pickwig-process-section .step-number {
+  display: block;
   font-family: "Noto Serif Hebrew", "Times New Roman", serif;
-  font-size: 72px;
+  font-size: 58px;
   font-weight: 700;
   line-height: 1;
-  color: rgba(102,66,0,0.18);
-  display: block;
-  margin-bottom: 16px;
+  color: rgba(180, 110, 120, 0.22);
+  margin-bottom: 20px;
   letter-spacing: -0.02em;
 }
 
-.pickwig-process-section .pickwig-process-card h3 {
+.pickwig-process-section .process-card h3 {
   font-family: "Noto Serif Hebrew", "Times New Roman", serif;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4;
-  color: #2E1736;
-  margin-bottom: 12px;
+  color: #6E3A42;
+  margin: 0 0 14px 0;
 }
 
-.pickwig-process-section .pickwig-process-card p {
+.pickwig-process-section .process-card p {
   font-family: "Heebo", "Rubik", Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
   line-height: 1.7;
-  color: rgba(43,26,47,0.78);
+  color: rgba(94, 47, 55, 0.78);
   margin: 0;
 }
 
+.pickwig-process-section .card-image-wrap {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 155, 162, 0.35);
+  aspect-ratio: 16 / 10;
+  background: #F5E2E6;
+}
+
+.pickwig-process-section .card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 @media (max-width: 1024px) {
-  .pickwig-process-section .pickwig-process-grid {
+  .pickwig-process-section .process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 0;
   }
-  .pickwig-process-section .pickwig-process-grid::before {
+  .pickwig-process-section .process-grid::before,
+  .pickwig-process-section .process-grid::after {
     display: none;
+  }
+  .pickwig-process-section .process-card {
+    margin: 0;
   }
 }
 
 @media (max-width: 768px) {
   .pickwig-process-section {
-    padding: 100px 12px 60px;
+    padding: 100px 16px 60px;
   }
-  .pickwig-process-section .pickwig-process-grid {
+  .pickwig-process-section .process-grid {
     grid-template-columns: 1fr !important;
-    gap: 16px;
+    gap: 20px;
   }
-  .pickwig-process-section .pickwig-process-header h2 {
-    font-size: 32px;
+  .pickwig-process-section .process-header {
+    margin-bottom: 32px;
   }
-  .pickwig-process-section .pickwig-process-card {
-    padding: 24px 20px;
+  .pickwig-process-section .process-header h2 {
+    font-size: 28px;
   }
-  .pickwig-process-section .pickwig-process-number {
-    font-size: 56px;
-    margin-bottom: 12px;
+  .pickwig-process-section .process-card {
+    padding: 28px 22px 26px;
+  }
+  .pickwig-process-section .step-number {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  .pickwig-process-section .process-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pickwig-process-section .process-card:nth-child(odd) {
+    margin-inline-end: 8px;
+  }
+  .pickwig-process-section .process-card:nth-child(even) {
+    margin-inline-start: 8px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .pickwig-process-section .process-card:first-child {
+    margin-inline-start: 0;
+    margin-inline-end: 10px;
+  }
+  .pickwig-process-section .process-card:last-child {
+    margin-inline-end: 0;
+    margin-inline-start: 10px;
   }
 }
 
@@ -4855,35 +4917,37 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 
 
 
-<section class="pickwig-process-section" data-layout-spec="פאה מהשיער שלך לחולות אונקולוגיה | פיקוויג PICKWIG-process" data-zappy-section="true" id="pickwig-process-section">
-  <div class="pickwig-process-container">
-    <div class="pickwig-process-header">
+<section class="pickwig-process-section" data-layout-spec="פאה מהשיער שלך לחולות אונקולוגיה | פיקוויג PICKWIG-process" dir="rtl" data-zappy-section="true" id="pickwig-process-section">
+  <div class="process-container">
+    <div class="process-header">
       <h2>התהליך שלנו מהשיער ועד הפאה</h2>
       <p>כל שלב בתהליך נעשה בידיים אוהבות ובתשומת לב מוחלטת לפרטים הקטנים ביותר. אנחנו מלוות אותך לאורך כל הדרך, מרגע קבלת השיער ועד להתאמה המושלמת.</p>
     </div>
-    <div class="pickwig-process-grid">
-      <article class="pickwig-process-card">
-        <span class="pickwig-process-number" aria-hidden="true">01</span>
+    <div class="process-grid">
+      <article class="process-card">
+        <span class="step-number" aria-hidden="true">01</span>
         <h3>פגישת ייעוץ אישית</h3>
         <p>נפגש לשיחה אינטימית ונקשיב לסיפור שלך. נבחן יחד את סוג שיערך, האורך והמלאות כדי לבדוק התאמת שיערך להכנת פאה.</p>
       </article>
-      <article class="pickwig-process-card">
-        <span class="pickwig-process-number" aria-hidden="true">02</span>
+      <article class="process-card">
+        <span class="step-number" aria-hidden="true">02</span>
         <h3>גזירת השיער</h3>
         <p>נגזור את השיער לפי אזורים ואורכים באופן שיהיה מיצוי מקסימלי של השיער, ולבסוף נגלח באופן אחיד את הקרקפת.</p>
       </article>
-      <article class="pickwig-process-card">
-        <span class="pickwig-process-number" aria-hidden="true">03</span>
+      <article class="process-card">
+        <span class="step-number" aria-hidden="true">03</span>
         <h3>עבודת יד ושזירה</h3>
         <p>שלב הכנת הפאה בסטודיו נעשה בצורה מדוקדקת וקפדנית על רשת עדינה עם תוספת שיערות עדינות לטופ. ההכנה מהירה כדי שתוכלי כבר לכבוש את הפאה ולעשות בה שימוש יומיומי - בתוך פחות משבוע!</p>
+        <div class="card-image-wrap">
+          <img alt="עבודת יד ושזירה של פאה פרימיום בסטודיו פיקוויג" data-placeholder="pickwig-process-image-1" data-context="Macro photography of a handcrafted luxury wig cap being woven in a bright studio, silk hair fibers and fine lace mesh, soft champagne and warm light, editorial magazine style for a premium hair and beauty business" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
       </article>
-      <article class="pickwig-process-card">
-        <span class="pickwig-process-number" aria-hidden="true">04</span>
+      <article class="process-card">
+        <span class="step-number" aria-hidden="true">04</span>
         <h3>עיצוב והתאמה סופית</h3>
         <p>לאחר סיום השזירה, נבצע עיצוב ותספורת אישית. נתאים את הפאה לראשך ונוודא שהיא יושבת בנוחות מושלמת ומרגישה כמו שיער טבעי.</p>
       </article>
     </div>
-    <img data-placeholder="pickwig-process-image-1" data-context="Macro photography of a handcrafted luxury wig cap being woven in a bright studio, silk hair fibers and fine lace mesh, soft champagne and warm light, editorial magazine style for a premium hair and beauty business" width="600" height="400" src="" alt="עבודת יד ושזירה של פאה פרימיום בסטודיו פיקוויג" style="display:none;; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
   </div>
 </section>
 
