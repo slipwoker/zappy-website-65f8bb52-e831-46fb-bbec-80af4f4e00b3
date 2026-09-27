@@ -8792,6 +8792,15 @@ nav.navbar .sub-menu li a:hover { color: #ffffff !important; background-color: r
     order: 3;
   }
 }
+
+#zappy-section-0 .pickwig-cover-grid > h3 {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  margin: 0 auto 24px !important;
+  justify-self: center !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
