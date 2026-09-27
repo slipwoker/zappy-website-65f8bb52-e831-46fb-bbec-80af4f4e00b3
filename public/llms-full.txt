@@ -90,6 +90,7 @@ Description: פאות טבעיות ונוחות במיוחד לחולות אונ
 
 
 
+
 # PICKWIG
 
 
@@ -2566,13 +2567,9 @@ Description: פיקוויג PICKWIG - פאה מהשיער שלך לחולות א
 
 ###
 
-### השיער שלך.
-
-### הכוח שלך.
-
 ###
 
-My hair MY wig
+M y h a i r M y w i g
 
 
 
