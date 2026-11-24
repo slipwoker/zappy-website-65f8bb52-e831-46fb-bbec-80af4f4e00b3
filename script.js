@@ -453,6 +453,80 @@ document.addEventListener('DOMContentLoaded', function() {
 } catch (e) {
   if (typeof console !== 'undefined' && console.error) console.error('[Zappy] Added component script failed', e);
 }
+/* ZAPPY_CUSTOM_JS_START:619258913e3f */
+(function () {
+  function __zappyCustomInit() {
+    try {
+(function() {
+  function fixOne(item) {
+    var wrapper = item.querySelector('[data-zappy-zoom-wrapper]');
+    var img = item.querySelector('img.layout-placeholder-image');
+    if (!img || !img.src) return;
+    
+    item.style.setProperty('height', 'auto', 'important');
+    item.style.setProperty('overflow', 'visible', 'important');
+    item.style.setProperty('min-height', '0', 'important');
+    
+    if (wrapper) {
+      wrapper.style.setProperty('height', 'auto', 'important');
+      wrapper.style.setProperty('overflow', 'visible', 'important');
+      wrapper.style.setProperty('padding-bottom', '0', 'important');
+    }
+    
+    img.style.setProperty('position', 'relative', 'important');
+    img.style.setProperty('top', '0', 'important');
+    img.style.setProperty('left', '0', 'important');
+    img.style.setProperty('width', '100%', 'important');
+    img.style.setProperty('height', 'auto', 'important');
+    img.style.setProperty('max-width', '100%', 'important');
+    img.style.setProperty('max-height', 'none', 'important');
+    img.style.setProperty('object-fit', 'contain', 'important');
+    img.style.setProperty('object-position', 'center center', 'important');
+    img.style.setProperty('margin', '0', 'important');
+    img.style.setProperty('inset', 'auto', 'important');
+    img.style.setProperty('display', 'block', 'important');
+  }
+  
+  function fixAll() {
+    var items = document.querySelectorAll('.zappy-grid-item-media-only');
+    items.forEach(fixOne);
+  }
+  
+  function start() {
+    fixAll();
+    setTimeout(fixAll, 150);
+    setTimeout(fixAll, 500);
+    setTimeout(fixAll, 1200);
+    
+    // Keep watching for runtime re-applying inline styles
+    var observer = new MutationObserver(function() {
+      fixAll();
+    });
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['style'],
+      subtree: true,
+      childList: false
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+    } catch (e) {
+      if (typeof console !== 'undefined' && console.warn) { console.warn('[zappy-custom-js]', e); }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __zappyCustomInit);
+  } else {
+    __zappyCustomInit();
+  }
+})();
+/* ZAPPY_CUSTOM_JS_END:619258913e3f */
 
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
@@ -4843,7 +4917,12 @@ function fixContrast(){
             }
           }
           var priceEl = block.querySelector('.shipping-price.free');
-          if (priceEl) priceEl.textContent = getText('free');
+          if (priceEl) {
+            // Free-shipping methods may carry the struck-through original price
+            // next to the label; translate only the label, keep the price.
+            var freeLabelEl = priceEl.querySelector('.shipping-free-label') || priceEl;
+            freeLabelEl.textContent = getText('free');
+          }
           var addressEl = block.querySelector('.shipping-address');
           var addressText = formatPickupAddress(method);
           if (addressEl && addressText) addressEl.textContent = addressText;
